@@ -1,10 +1,12 @@
 package tieorange.edu.googlemapstest;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -20,6 +22,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 
     GoogleMap mMap; // object of a map
+    private FloatingActionButton mFAB;
 
 
     @Override
@@ -33,11 +36,36 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapFragment.getMapAsync(this);
         mMap = mapFragment.getMap();
 
+        setupFab();
         setupToolbar();
 
     }
 
-    private void setupToolbar(){
+    private void getUserLocation() {
+        Snackbar
+                .make(findViewById(R.id.main_content),
+                        "Finding the nearest Pee Pee :)",
+                        Snackbar.LENGTH_SHORT)
+                .show(); // Do not forget to show!
+
+        MarkersFactory.initMarkers(this); // create places on map
+
+        // TODO: getUserLocation: http://hmkcode.com/material-design-app-android-design-support-library-appcompat/
+
+    }
+
+    private void setupFab() {
+        mFAB = (FloatingActionButton) findViewById(R.id.fab);
+        mFAB.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (v.getId() == R.id.fab)
+                    getUserLocation();
+            }
+        });
+    }
+
+
+    private void setupToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         // Show menu icon

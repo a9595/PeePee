@@ -37,12 +37,12 @@ public class MarkersFactory {
 
     private static void moveMapCameraTo(MapsActivity activity, MyMarker markerMoveTo) {
         // Move camera
-        final int zoomLevel = 18;
+        final int zoomLevel = 16;
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(
                 markerMoveTo.getLatLng()
                 , zoomLevel);
 
-        final int durationAnimationZoomMs = 15000;
+        final int durationAnimationZoomMs = 5000;
         activity.mMap.animateCamera(cameraUpdate, durationAnimationZoomMs, null);
     }
 
