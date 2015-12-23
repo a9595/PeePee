@@ -9,16 +9,15 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-    <!--If you're targeting version 8.3 or later of the Google Play services SDK, you no longer need the WRITE_EXTERNAL_STORAGE permission to use the Google Maps Android API.-->
-    <uses-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- If you're targeting version 8.3 or later of the Google Play services SDK, you no longer need the WRITE_EXTERNAL_STORAGE permission to use the Google Maps Android API. -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Base.Theme.HMKCodeApp">
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -40,11 +39,22 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
-     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        </activity>
+        <!--
+ ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".MapsActivityNew"
+            android:label="@string/title_activity_maps_activity_new">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="tieorange.edu.googlemapstest.MapsActivity" />
+        </activity>
     </application>
 
 </manifest>

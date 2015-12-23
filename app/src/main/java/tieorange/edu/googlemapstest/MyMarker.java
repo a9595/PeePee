@@ -5,7 +5,8 @@ import com.google.android.gms.maps.model.LatLngBounds;
 
 /**
  * Created by tieorange on 11/12/15.
- */public class MyMarker {
+ */
+public class MyMarker {
     private String mLabel;
     private String mIcon;
     private Double mLatitude;
@@ -18,7 +19,7 @@ import com.google.android.gms.maps.model.LatLngBounds;
         this.mIcon = icon;
     }
 
-    public String getmLabel() {
+    public String getLabel() {
         return mLabel;
     }
 

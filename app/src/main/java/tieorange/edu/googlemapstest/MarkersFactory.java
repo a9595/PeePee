@@ -49,9 +49,9 @@ public class MarkersFactory {
     static void plotMarkers(MapsActivity activity) {
         if (activity.mMyMarkersArray.size() > 0) { // check if is not empty
             for (MyMarker myMarker : activity.mMyMarkersArray) {
-
                 // Create user marker with custom icon and other options
                 MarkerOptions markerOption = new MarkerOptions().position(new LatLng(myMarker.getmLatitude(), myMarker.getmLongitude()));
+
                 markerOption.icon(BitmapDescriptorFactory.fromResource(R.drawable.currentlocation_icon));
 
                 Marker currentMarker = activity.mMap.addMarker(markerOption);

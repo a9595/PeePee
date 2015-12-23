@@ -32,22 +32,22 @@ public class MarkerInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
 
     @Override
     public View getInfoContents(Marker marker) {
-        View v = mapsActivity.getLayoutInflater().inflate(R.layout.infowindow_layout, null);
+        View infoWindowView = mapsActivity.getLayoutInflater().inflate(R.layout.infowindow_layout, null);
 
         MyMarker myMarker = mapsActivity.mMarkersHashMap.get(marker);
 
-        ImageView markerIcon = (ImageView) v.findViewById(R.id.marker_icon);
+        ImageView markerIcon = (ImageView) infoWindowView.findViewById(R.id.marker_icon);
 
-        TextView markerLabel = (TextView) v.findViewById(R.id.marker_label);
+        TextView markerLabel = (TextView) infoWindowView.findViewById(R.id.marker_label);
 
-        TextView anotherLabel = (TextView) v.findViewById(R.id.another_label);
+        TextView anotherLabel = (TextView) infoWindowView.findViewById(R.id.another_label);
 
         markerIcon.setImageResource(manageMarkerIcon(myMarker.getmIcon()));
 
-        markerLabel.setText(myMarker.getmLabel());
+        markerLabel.setText(myMarker.getLabel());
         anotherLabel.setText("Opened: \n8:00 - 23:00");
 
-        return v;
+        return infoWindowView;
     }
     private int manageMarkerIcon(String markerIcon) {
         if (markerIcon.equals("icon1"))
