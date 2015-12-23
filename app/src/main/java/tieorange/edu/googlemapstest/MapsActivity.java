@@ -1,11 +1,8 @@
 package tieorange.edu.googlemapstest;
 
 import android.net.Uri;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.support.v4.app.FragmentActivity;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -18,15 +15,19 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.maps.android.ui.BubbleIconFactory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
-    private GoogleMap mMap;
-    private HashMap<Marker, MyMarker> mMarkersHashMap;
+    private GoogleMap mMap; // object of a map
+    HashMap<Marker, MyMarker> mMarkersHashMap;
     private ArrayList<MyMarker> mMyMarkersArray = new ArrayList<MyMarker>();
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,54 +39,49 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
         mMap = mapFragment.getMap();
         //initMarkers();
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        //mMap.addMarker(new MarkerOptions().position(sydney).title("Marker"));
-
-        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener()
-        {
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
-            public boolean onMarkerClick(com.google.android.gms.maps.model.Marker marker)
-            {
-                //marker.showInfoWindow();
-
+            public boolean onMarkerClick(Marker marker) {
+                marker.showInfoWindow();
                 return true;
             }
         });
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-
-        //
-        initMarkers();
-        plotMarkers(mMyMarkersArray);
+        initMarkers(); // create places on map
+        plotMarkers(mMyMarkersArray); // put them to the map
     }
 
 
     private void initMarkers() {
         // Initialize the HashMap for Markers and MyMarker object
-        mMarkersHashMap = new HashMap<Marker, MyMarker>();
+        mMarkersHashMap = new HashMap<>();
+        // Init markers
+        MyMarker markerKinoteka = new MyMarker("Kinoteka", "icon5",
+                Double.parseDouble("52.2309919"), Double.parseDouble("21.00669907"));
+        MyMarker markerBurgerKing = new MyMarker("BurgerKing", "icon3", Double.parseDouble("52.22773123"), Double.parseDouble("21.01449105"));
+        MyMarker markerZloteTarasy = new MyMarker("Zlote tarasy", "icon6", Double.parseDouble("52.2294632"), Double.parseDouble("21.0036817"));
+        MyMarker markerBasen = new MyMarker("Basen", "icon7", Double.parseDouble("52.22837277"), Double.parseDouble("21.00359623"));
 
-        mMyMarkersArray.add(new MyMarker("Brasil", "icon1", Double.parseDouble("-28.5971788"), Double.parseDouble("-52.7309824")));
-        mMyMarkersArray.add(new MyMarker("United States", "icon2", Double.parseDouble("33.7266622"), Double.parseDouble("-87.1469829")));
-        mMyMarkersArray.add(new MyMarker("Canada", "icon3", Double.parseDouble("51.8917773"), Double.parseDouble("-86.0922954")));
-        mMyMarkersArray.add(new MyMarker("England", "icon4", Double.parseDouble("52.4435047"), Double.parseDouble("-3.4199249")));
-        mMyMarkersArray.add(new MyMarker("España", "icon5", Double.parseDouble("41.8728262"), Double.parseDouble("-0.2375882")));
-        mMyMarkersArray.add(new MyMarker("Portugal", "icon6", Double.parseDouble("40.8316649"), Double.parseDouble("-4.936009")));
-        mMyMarkersArray.add(new MyMarker("Deutschland", "icon7", Double.parseDouble("51.1642292"), Double.parseDouble("10.4541194")));
-        mMyMarkersArray.add(new MyMarker("Atlantic Ocean", "icondefault", Double.parseDouble("-13.1294607"), Double.parseDouble("-19.9602353")));
+        // add markers to my array
+        mMyMarkersArray.add(markerBurgerKing);
+        mMyMarkersArray.add(markerKinoteka);
+        mMyMarkersArray.add(markerZloteTarasy);
+        mMyMarkersArray.add(markerBasen);
+
+        // Move camera
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(markerKinoteka.getmLatitude(), markerKinoteka.getmLongitude())));
     }
 
-    private void plotMarkers(ArrayList<MyMarker> markers)
-    {
-        if(markers.size() > 0)
-        {
-            for (MyMarker myMarker : markers)
-            {
+    private void plotMarkers(ArrayList<MyMarker> markers) {
+        if (markers.size() > 0) { // check if is not empty
+            for (MyMarker myMarker : markers) {
 
                 // Create user marker with custom icon and other options
                 MarkerOptions markerOption = new MarkerOptions().position(new LatLng(myMarker.getmLatitude(), myMarker.getmLongitude()));
@@ -94,75 +90,51 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 Marker currentMarker = mMap.addMarker(markerOption);
                 mMarkersHashMap.put(currentMarker, myMarker);
 
-                //mMap.setInfoWindowAdapter(new MarkerInfoWindowAdapter()); // TODO: create a window for marker.click()
+                mMap.setInfoWindowAdapter(new MarkerInfoWindowAdapter(this)); // TODO: create a window for marker.click()
             }
         }
     }
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
+    @Override
+    public void onStart() {
+        super.onStart();
 
-
-//    public class MarkerInfoWindowAdapter implements GoogleMap.InfoWindowAdapter
-//    {
-//        public MarkerInfoWindowAdapter()
-//        {
-//        }
-//
-//        @Override
-//        public View getInfoWindow(Marker marker)
-//        {
-//            return null;
-//        }
-//
-//        @Override
-//        public View getInfoContents(Marker marker)
-//        {
-//            View v  = getLayoutInflater().inflate(R.layout.infowindow_layout, null);
-//
-//            MyMarker myMarker = mMarkersHashMap.get(marker);
-//
-//            ImageView markerIcon = (ImageView) v.findViewById(R.id.marker_icon);
-//
-//            TextView markerLabel = (TextView)v.findViewById(R.id.marker_label);
-//
-//            TextView anotherLabel = (TextView)v.findViewById(R.id.another_label);
-//
-//            markerIcon.setImageResource(manageMarkerIcon(myMarker.getmIcon()));
-//
-//            markerLabel.setText(myMarker.getmLabel());
-//            anotherLabel.setText("A custom text");
-//
-//            return v;
-//        }
-//    }
-
-    private int manageMarkerIcon(String markerIcon)
-    {
-        if (markerIcon.equals("icon1"))
-            return R.drawable.icon1;
-        else if(markerIcon.equals("icon2"))
-            return R.drawable.icon2;
-        else if(markerIcon.equals("icon3"))
-            return R.drawable.icon3;
-        else if(markerIcon.equals("icon4"))
-            return R.drawable.icon4;
-        else if(markerIcon.equals("icon5"))
-            return R.drawable.icon5;
-        else if(markerIcon.equals("icon6"))
-            return R.drawable.icon6;
-        else if(markerIcon.equals("icon7"))
-            return R.drawable.icon7;
-        else
-            return R.drawable.icondefault;
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client.connect();
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "Maps Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app deep link URI is correct.
+                Uri.parse("android-app://tieorange.edu.googlemapstest/http/host/path")
+        );
+        AppIndex.AppIndexApi.start(client, viewAction);
     }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "Maps Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app deep link URI is correct.
+                Uri.parse("android-app://tieorange.edu.googlemapstest/http/host/path")
+        );
+        AppIndex.AppIndexApi.end(client, viewAction);
+        client.disconnect();
+    }
+
 
 
 
