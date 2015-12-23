@@ -7,7 +7,6 @@ import android.support.v4.app.FragmentActivity;
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -20,9 +19,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
-    private GoogleMap mMap; // object of a map
-    HashMap<Marker, MyMarker> mMarkersHashMap;
-    private ArrayList<MyMarker> mMyMarkersArray = new ArrayList<MyMarker>();
+    public HashMap<Marker, MyMarker> mMarkersHashMap;
+    static ArrayList<MyMarker> mMyMarkersArray = new ArrayList<MyMarker>();
+
+
+    GoogleMap mMap; // object of a map
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -54,45 +55,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
 
-        initMarkers(); // create places on map
-        plotMarkers(mMyMarkersArray); // put them to the map
-    }
-
-
-    private void initMarkers() {
-        // Initialize the HashMap for Markers and MyMarker object
-        mMarkersHashMap = new HashMap<>();
-        // Init markers
-        MyMarker markerKinoteka = new MyMarker("Kinoteka", "icon5",
-                Double.parseDouble("52.2309919"), Double.parseDouble("21.00669907"));
-        MyMarker markerBurgerKing = new MyMarker("BurgerKing", "icon3", Double.parseDouble("52.22773123"), Double.parseDouble("21.01449105"));
-        MyMarker markerZloteTarasy = new MyMarker("Zlote tarasy", "icon6", Double.parseDouble("52.2294632"), Double.parseDouble("21.0036817"));
-        MyMarker markerBasen = new MyMarker("Basen", "icon7", Double.parseDouble("52.22837277"), Double.parseDouble("21.00359623"));
-
-        // add markers to my array
-        mMyMarkersArray.add(markerBurgerKing);
-        mMyMarkersArray.add(markerKinoteka);
-        mMyMarkersArray.add(markerZloteTarasy);
-        mMyMarkersArray.add(markerBasen);
-
-        // Move camera
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(markerKinoteka.getmLatitude(), markerKinoteka.getmLongitude())));
-    }
-
-    private void plotMarkers(ArrayList<MyMarker> markers) {
-        if (markers.size() > 0) { // check if is not empty
-            for (MyMarker myMarker : markers) {
-
-                // Create user marker with custom icon and other options
-                MarkerOptions markerOption = new MarkerOptions().position(new LatLng(myMarker.getmLatitude(), myMarker.getmLongitude()));
-                markerOption.icon(BitmapDescriptorFactory.fromResource(R.drawable.currentlocation_icon));
-
-                Marker currentMarker = mMap.addMarker(markerOption);
-                mMarkersHashMap.put(currentMarker, myMarker);
-
-                mMap.setInfoWindowAdapter(new MarkerInfoWindowAdapter(this)); // TODO: create a window for marker.click()
-            }
-        }
+        MarkersFactory.initMarkers(this); // create places on map
+        MarkersFactory.plotMarkers(this); // put them to the map
     }
 
     @Override

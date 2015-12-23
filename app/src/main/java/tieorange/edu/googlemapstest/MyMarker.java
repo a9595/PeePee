@@ -1,59 +1,57 @@
 package tieorange.edu.googlemapstest;
 
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
+
 /**
  * Created by tieorange on 11/12/15.
- */public class MyMarker
-{
+ */public class MyMarker {
     private String mLabel;
     private String mIcon;
     private Double mLatitude;
     private Double mLongitude;
 
-    public MyMarker(String label, String icon, Double latitude, Double longitude)
-    {
+    public MyMarker(String label, String icon, Double latitude, Double longitude) {
         this.mLabel = label;
         this.mLatitude = latitude;
         this.mLongitude = longitude;
         this.mIcon = icon;
     }
 
-    public String getmLabel()
-    {
+    public String getmLabel() {
         return mLabel;
     }
 
-    public void setmLabel(String mLabel)
-    {
+    public void setmLabel(String mLabel) {
         this.mLabel = mLabel;
     }
 
-    public String getmIcon()
-    {
+    public String getmIcon() {
         return mIcon;
     }
 
-    public void setmIcon(String icon)
-    {
+    public void setmIcon(String icon) {
         this.mIcon = icon;
     }
 
-    public Double getmLatitude()
-    {
+    public Double getmLatitude() {
         return mLatitude;
     }
 
-    public void setmLatitude(Double mLatitude)
-    {
+    public void setmLatitude(Double mLatitude) {
         this.mLatitude = mLatitude;
     }
 
-    public Double getmLongitude()
-    {
+    public Double getmLongitude() {
         return mLongitude;
     }
 
-    public void setmLongitude(Double mLongitude)
-    {
+    public void setmLongitude(Double mLongitude) {
         this.mLongitude = mLongitude;
+    }
+
+    public LatLng getLatLng()
+    {
+        return new LatLng(mLatitude, mLongitude);
     }
 }
