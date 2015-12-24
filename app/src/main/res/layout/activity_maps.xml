@@ -1,39 +1,71 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?><!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"--><!--xmlns:app="http://schemas.android.com/apk/res-auto"--><!--xmlns:tools="http://schemas.android.com/tools"--><!--android:id="@+id/main_content"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--tools:context="tieorange.edu.googlemapstest.MapsActivity">-->
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_content"
+    android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="tieorange.edu.googlemapstest.MapsActivity">
+    tools:context=".MapsActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary" />
-
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tabLayout"
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar"
-        android:background="?attr/colorPrimary"
-        android:scrollbars="horizontal"
-        app:layout_scrollFlags="scroll|enterAlways" />
+        android:fitsSystemWindows="true">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:theme="@style/Base.Theme.HMKCodeApp" />
+
+        <it.neokree.materialtabs.MaterialTabHost
+            android:id="@+id/materialTabHost"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            app:accentColor="@color/colorAccent"
+            app:hasIcons="true"
+            app:primaryColor="@color/colorPrimary"
+            app:textColor="#FFFFFF"/>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+            />
+        <!--<android.support.design.widget.TabLayout-->
+            <!--android:id="@+id/tabLayout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/toolbar"-->
+            <!--android:background="?attr/colorPrimary"-->
+            <!--android:scrollbars="horizontal"-->
+            <!--app:layout_scrollFlags="scroll|enterAlways" />-->
 
 
-    <fragment
-    android:id="@+id/map"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
+        <!--<FrameLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical">-->
+
+            <!--&lt;!&ndash;<fragment&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/map"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:name="com.google.android.gms.maps.SupportMapFragment"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;tools:context="tieorange.edu.googlemapstest.MapsActivity" />&ndash;&gt;-->
+
+
+        <!--</FrameLayout>-->
+
+    </android.support.design.widget.AppBarLayout>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
-        app:elevation="6dp"
-        app:pressedTranslationZ="12dp"
-        app:borderWidth="0dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -41,6 +73,8 @@
         android:layout_marginBottom="20dp"
         android:layout_marginRight="20dp"
         android:src="@drawable/ic_action_location_found"
-        app:rippleColor="@color/colorPrimary"
-        app:fabSize="normal" />
-</RelativeLayout>
+        app:elevation="6dp"
+        app:fabSize="mini"
+        app:pressedTranslationZ="12dp"
+        app:rippleColor="@android:color/holo_green_light" />
+</android.support.design.widget.CoordinatorLayout>

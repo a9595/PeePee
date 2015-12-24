@@ -8,7 +8,7 @@
          location permissions for the 'MyLocation' functionality. 
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <!-- If you're targeting version 8.3 or later of the Google Play services SDK, you no longer need the WRITE_EXTERNAL_STORAGE permission to use the Google Maps Android API. -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -49,13 +49,6 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity
-            android:name=".MapsActivityNew"
-            android:label="@string/title_activity_maps_activity_new">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="tieorange.edu.googlemapstest.MapsActivity" />
-        </activity>
     </application>
 
 </manifest>

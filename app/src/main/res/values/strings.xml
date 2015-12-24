@@ -2,4 +2,13 @@
     <string name="app_name">GoogleMapsTest</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_maps_activity_new">MapNew</string>
+
+    <string-array name="tabs">
+
+        <item>TAB 1</item>
+        <item>TAB 2</item>
+        <item>TAB 3</item>
+
+    </string-array>
+    <string name="title_activity_action_bar">ActionBarActivity</string>
 </resources>
