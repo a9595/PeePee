@@ -3,6 +3,10 @@ package tieorange.edu.googlemapstest.pojo;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 
+import java.util.ArrayList;
+
+import static java.lang.Double.parseDouble;
+
 /**
  * Created by tieorange on 11/12/15.
  */
@@ -12,6 +16,7 @@ public class MyMarker {
     private Double mLatitude;
     private Double mLongitude;
 
+
     public MyMarker(String label, String icon, Double latitude, Double longitude) {
         this.mLabel = label;
         this.mLatitude = latitude;
@@ -19,35 +24,55 @@ public class MyMarker {
         this.mIcon = icon;
     }
 
+    public static ArrayList<MyMarker> getDummyMarkersFromDatabase()
+    {
+        // TODO: CSV reader from file
+        MyMarker markerKinoteka = new MyMarker("Kinoteka", "icon5", parseDouble("52.2309919"), parseDouble("21.00669907"));
+        MyMarker markerBurgerKing = new MyMarker("BurgerKing", "icon3", parseDouble("52.22773123"), parseDouble("21.01449105"));
+        MyMarker markerZloteTarasy = new MyMarker("Zlote tarasy", "icon6", parseDouble("52.2294632"), parseDouble("21.0036817"));
+        MyMarker markerBasen = new MyMarker("Basen", "icon7", parseDouble("52.22837277"), parseDouble("21.00359623"));
+
+        // add markers to my array
+        ArrayList<MyMarker> markersArray = new ArrayList<>();
+        markersArray.add(markerBurgerKing);
+        markersArray.add(markerKinoteka);
+        markersArray.add(markerZloteTarasy);
+        markersArray.add(markerBasen);
+
+        return  markersArray;
+    }
+
+
+
     public String getLabel() {
         return mLabel;
     }
 
-    public void setmLabel(String mLabel) {
+    public void setLabel(String mLabel) {
         this.mLabel = mLabel;
     }
 
-    public String getmIcon() {
+    public String getIcon() {
         return mIcon;
     }
 
-    public void setmIcon(String icon) {
+    public void setIcon(String icon) {
         this.mIcon = icon;
     }
 
-    public Double getmLatitude() {
+    public Double getLatitude() {
         return mLatitude;
     }
 
-    public void setmLatitude(Double mLatitude) {
+    public void setLatitude(Double mLatitude) {
         this.mLatitude = mLatitude;
     }
 
-    public Double getmLongitude() {
+    public Double getLongitude() {
         return mLongitude;
     }
 
-    public void setmLongitude(Double mLongitude) {
+    public void setLongitude(Double mLongitude) {
         this.mLongitude = mLongitude;
     }
 

@@ -51,7 +51,7 @@ public class MarkerInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
 
         TextView anotherLabel = (TextView) infoWindowView.findViewById(R.id.another_label);
 
-        markerIcon.setImageResource(manageMarkerIcon(myMarker.getmIcon()));
+        markerIcon.setImageResource(manageMarkerIcon(myMarker.getIcon()));
 
         markerLabel.setText(myMarker.getLabel());
         anotherLabel.setText("Opened: \n8:00 - 23:00");

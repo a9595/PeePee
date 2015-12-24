@@ -17,12 +17,13 @@ import com.google.android.gms.maps.GoogleMap;
 import it.neokree.materialtabs.MaterialTab;
 import it.neokree.materialtabs.MaterialTabHost;
 import it.neokree.materialtabs.MaterialTabListener;
+import tieorange.edu.googlemapstest.fragments.ListViewFragment;
 import tieorange.edu.googlemapstest.fragments.MapFragment;
 import tieorange.edu.googlemapstest.R;
 
 public class MainActivity extends AppCompatActivity implements MaterialTabListener {
     GoogleMap mMap; // object of a mMap
-public static final int pizda = 3;
+    public static final int pizda = 3;
 
     private FloatingActionButton mFAB;
     TabLayout tabLayout;
@@ -43,22 +44,10 @@ public static final int pizda = 3;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        //setupMap();
-        //setupFab();
         setupToolbar();
         setupTab();
-//        setupTablayout();
-
     }
 
-    private void setupMap() {
-        // Obtain the SupportMapFragment and get notified when the mMap is ready to be used.
-//        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-//                .findFragmentById(R.id.mMap);
-//        mapFragment.getMapAsync(this);
-//        mMap = mapFragment.getMap();
-    }
 
     private void setupTab() {
         mTabHost = (MaterialTabHost) findViewById(R.id.materialTabHost);
@@ -85,7 +74,6 @@ public static final int pizda = 3;
     }
 
 
-
     private void setupToolbar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -93,27 +81,7 @@ public static final int pizda = 3;
         final ActionBar ab = getSupportActionBar();
         ab.setHomeAsUpIndicator(R.drawable.ic_menu);
         ab.setDisplayHomeAsUpEnabled(true);
-
-//        if (toolbar != null) {
-//            setSupportActionBar(toolbar);
-//            getSupportActionBar().setTitle("Your Maps");
-//            // ...
-//        }
     }
-
-//    @Override
-//    public void onMapReady(GoogleMap googleMap) {
-//        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
-//            @Override
-//            public boolean onMarkerClick(Marker marker) {
-//                marker.showInfoWindow();
-//                return true;
-//            }
-//        });
-//
-//        MarkersFactory.initMarkers(this); // create places on mMap
-//        MarkersFactory.plotMarkers(this); // put them to the mMap
-//    }
 
     @Override
     public void onStart() {
@@ -161,7 +129,7 @@ public static final int pizda = 3;
                     fragment = MapFragment.newInstance("", "");
                     break;
                 case TAP_LISTVIEW:
-                    fragment = MapFragment.newInstance("", "");
+                    fragment = ListViewFragment.newInstance();
                     break;
 
             }

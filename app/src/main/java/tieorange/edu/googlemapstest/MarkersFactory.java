@@ -36,30 +36,14 @@ public class MarkersFactory {
     }
 
 
-    void initMarkers() {
-        // Init markers
-        MyMarker markerKinoteka = new MyMarker("Kinoteka", "icon5", parseDouble("52.2309919"), parseDouble("21.00669907"));
-        MyMarker markerBurgerKing = new MyMarker("BurgerKing", "icon3", parseDouble("52.22773123"), parseDouble("21.01449105"));
-        MyMarker markerZloteTarasy = new MyMarker("Zlote tarasy", "icon6", parseDouble("52.2294632"), parseDouble("21.0036817"));
-        MyMarker markerBasen = new MyMarker("Basen", "icon7", parseDouble("52.22837277"), parseDouble("21.00359623"));
-
-        // add markers to my array
-
-        mMyMarkersArray.add(markerBurgerKing);
-
-        mMyMarkersArray.add(markerKinoteka);
-
-        mMyMarkersArray.add(markerZloteTarasy);
-
-        mMyMarkersArray.add(markerBasen);
-        moveMapCameraTo(markerKinoteka);
-
-
+    public void initMarkers() {
+        mMyMarkersArray = MyMarker.getDummyMarkersFromDatabase();
+        moveMapCameraTo(mMyMarkersArray.get(1));
     }
 
     private void moveMapCameraTo(MyMarker markerMoveTo) {
         // Move camera
-        final int zoomLevel = 16;
+        final int zoomLevel = 15;
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(
                 markerMoveTo.getLatLng()
                 , zoomLevel);
@@ -68,11 +52,11 @@ public class MarkersFactory {
         mMap.animateCamera(cameraUpdate, durationAnimationZoomMs, null);
     }
 
-    void plotMarkers() {
+    public void plotMarkers() {
         if (mMyMarkersArray.size() > 0) { // check if is not empty
             for (MyMarker myMarker : mMyMarkersArray) {
                 // Create user marker with custom icon and other options
-                MarkerOptions markerOption = new MarkerOptions().position(new LatLng(myMarker.getmLatitude(), myMarker.getmLongitude()));
+                MarkerOptions markerOption = new MarkerOptions().position(new LatLng(myMarker.getLatitude(), myMarker.getLongitude()));
 
                 markerOption.icon(BitmapDescriptorFactory.fromResource(R.drawable.currentlocation_icon));
 
