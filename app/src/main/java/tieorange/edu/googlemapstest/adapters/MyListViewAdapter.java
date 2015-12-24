@@ -68,11 +68,11 @@ public class MyListViewAdapter extends RecyclerView.Adapter<MyListViewAdapter.Vi
         holder.txtHeader.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                remove(name);
+                //remove(name);
             }
         });
 
-        holder.txtFooter.setText("Footer: " + mDataset.get(position).getLatitude().toString());
+        holder.txtFooter.setText("100 meters from you");
 
     }
 
