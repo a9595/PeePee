@@ -3,6 +3,7 @@ package tieorange.edu.googlemapstest;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -19,10 +20,11 @@ import java.util.HashMap;
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
     public HashMap<Marker, MyMarker> mMarkersHashMap;
     static ArrayList<MyMarker> mMyMarkersArray = new ArrayList<MyMarker>();
-
-
     GoogleMap mMap; // object of a map
+
+
     private FloatingActionButton mFAB;
+    TabLayout tabLayout;
 
 
     @Override
@@ -30,23 +32,37 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
+        setupMap();
+        setupFab();
+        setupToolbar();
+        setupTablayout();
+
+    }
+
+    private void setupMap() {
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         mMap = mapFragment.getMap();
+    }
 
-        setupFab();
-        setupToolbar();
+    private void setupTablayout(){
 
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));
+        tabLayout.addTab(tabLayout.newTab().setText("Tab 2"));
+        tabLayout.addTab(tabLayout.newTab().setText("Tab 3"));
+        tabLayout.addTab(tabLayout.newTab().setText("Tab 4"));
     }
 
     private void getUserLocation() {
-        Snackbar
-                .make(findViewById(R.id.main_content),
-                        "Finding the nearest Pee Pee :)",
-                        Snackbar.LENGTH_SHORT)
-                .show(); // Do not forget to show!
+//        Snackbar
+//                .make(findViewById(R.id.main_content),
+//                        "Finding the nearest Pee Pee :)",
+//                        Snackbar.LENGTH_SHORT)
+//                .show(); // Do not forget to show!
 
         MarkersFactory.initMarkers(this); // create places on map
 

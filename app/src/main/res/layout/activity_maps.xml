@@ -13,14 +13,27 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary" />
 
-    <fragment
-        android:id="@+id/map"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:background="?attr/colorPrimary"
+        android:scrollbars="horizontal"
+        app:layout_scrollFlags="scroll|enterAlways" />
+
+
+    <fragment
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        app:borderWidth="0dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -28,5 +41,6 @@
         android:layout_marginBottom="20dp"
         android:layout_marginRight="20dp"
         android:src="@drawable/ic_action_location_found"
+        app:rippleColor="@color/colorPrimary"
         app:fabSize="normal" />
 </RelativeLayout>
