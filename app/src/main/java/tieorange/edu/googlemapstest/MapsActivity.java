@@ -53,7 +53,7 @@ public class MapsActivity extends AppCompatActivity implements MaterialTabListen
 
 
         //setupMap();
-        setupFab();
+        //setupFab();
         setupToolbar();
         setupTab();
 //        setupTablayout();

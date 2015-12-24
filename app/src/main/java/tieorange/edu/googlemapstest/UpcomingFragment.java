@@ -2,6 +2,7 @@ package tieorange.edu.googlemapstest;
 
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +23,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class UpcomingFragment extends Fragment {
 
     private SupportMapFragment mMapView;
+    private FloatingActionButton mFAB;
 
     public static UpcomingFragment newInstance(String param1, String param2) {
         UpcomingFragment fragment = new UpcomingFragment();
@@ -35,6 +37,8 @@ public class UpcomingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_upcoming, container, false);
         // Gets the MapView from the XML layout and creates it
+
+        mFAB = (FloatingActionButton) view.findViewById(R.id.fab);
 
         MapsInitializer.initialize(getActivity());
         mapView = (MapView) view.findViewById(R.id.map);
@@ -62,6 +66,28 @@ public class UpcomingFragment extends Fragment {
                 .position(sydney));
 
         return view;
+    }
+
+    private void setupFab() {
+        mFAB = (FloatingActionButton) getView().findViewById(R.id.fab);
+        mFAB.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (v.getId() == R.id.fab)
+                    getUserLocation();
+            }
+        });
+    }
+    private void getUserLocation() {
+//        Snackbar
+//                .make(findViewById(R.id.main_content),
+//                        "Finding the nearest Pee Pee :)",
+//                        Snackbar.LENGTH_SHORT)
+//                .show(); // Do not forget to show!
+
+        //MarkersFactory.initMarkers(this); // create places on map
+
+        // TODO: getUserLocation: http://hmkcode.com/material-design-app-android-design-support-library-appcompat/
+
     }
 
     @Override
