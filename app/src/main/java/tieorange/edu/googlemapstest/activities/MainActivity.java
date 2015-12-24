@@ -1,9 +1,8 @@
-package tieorange.edu.googlemapstest;
+package tieorange.edu.googlemapstest.activities;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,25 +11,18 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.Marker;
 
 import it.neokree.materialtabs.MaterialTab;
 import it.neokree.materialtabs.MaterialTabHost;
 import it.neokree.materialtabs.MaterialTabListener;
+import tieorange.edu.googlemapstest.fragments.MapFragment;
+import tieorange.edu.googlemapstest.R;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
-public class MapsActivity extends AppCompatActivity implements MaterialTabListener {
-    public HashMap<Marker, MyMarker> mMarkersHashMap;
-    static ArrayList<MyMarker> mMyMarkersArray = new ArrayList<MyMarker>();
-    GoogleMap mMap; // object of a map
-
+public class MainActivity extends AppCompatActivity implements MaterialTabListener {
+    GoogleMap mMap; // object of a mMap
+public static final int pizda = 3;
 
     private FloatingActionButton mFAB;
     TabLayout tabLayout;
@@ -39,8 +31,8 @@ public class MapsActivity extends AppCompatActivity implements MaterialTabListen
     private MaterialTabHost mTabHost;
     private ViewPager mViewPager;
     private MyPagerAdapter mMyPagerAdapter;
-    private static final int MOVIES_SEARCH_RESULTS = 0;
-    private static final int MOVIES_HITS = 1;
+    private static final int TAB_MAP = 0;
+    private static final int TAP_LISTVIEW = 1;
     private static final int MOVIES_UPCOMING = 2;
     private static final String TAG_SORT_NAME = "sortName";
     private static final String TAG_SORT_DATE = "sortDate";
@@ -49,7 +41,7 @@ public class MapsActivity extends AppCompatActivity implements MaterialTabListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps);
+        setContentView(R.layout.activity_main);
 
 
         //setupMap();
@@ -61,9 +53,9 @@ public class MapsActivity extends AppCompatActivity implements MaterialTabListen
     }
 
     private void setupMap() {
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        // Obtain the SupportMapFragment and get notified when the mMap is ready to be used.
 //        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-//                .findFragmentById(R.id.map);
+//                .findFragmentById(R.id.mMap);
 //        mapFragment.getMapAsync(this);
 //        mMap = mapFragment.getMap();
     }
@@ -92,38 +84,6 @@ public class MapsActivity extends AppCompatActivity implements MaterialTabListen
         }
     }
 
-//    private void setupTablayout() {
-//
-//        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
-//        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-//        tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));
-//        tabLayout.addTab(tabLayout.newTab().setText("Tab 2"));
-//        tabLayout.addTab(tabLayout.newTab().setText("Tab 3"));
-//        tabLayout.addTab(tabLayout.newTab().setText("Tab 4"));
-//    }
-
-    private void getUserLocation() {
-//        Snackbar
-//                .make(findViewById(R.id.main_content),
-//                        "Finding the nearest Pee Pee :)",
-//                        Snackbar.LENGTH_SHORT)
-//                .show(); // Do not forget to show!
-
-        //MarkersFactory.initMarkers(this); // create places on map
-
-        // TODO: getUserLocation: http://hmkcode.com/material-design-app-android-design-support-library-appcompat/
-
-    }
-
-    private void setupFab() {
-        mFAB = (FloatingActionButton) findViewById(R.id.fab);
-        mFAB.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if (v.getId() == R.id.fab)
-                    getUserLocation();
-            }
-        });
-    }
 
 
     private void setupToolbar() {
@@ -151,8 +111,8 @@ public class MapsActivity extends AppCompatActivity implements MaterialTabListen
 //            }
 //        });
 //
-//        MarkersFactory.initMarkers(this); // create places on map
-//        MarkersFactory.plotMarkers(this); // put them to the map
+//        MarkersFactory.initMarkers(this); // create places on mMap
+//        MarkersFactory.plotMarkers(this); // put them to the mMap
 //    }
 
     @Override
@@ -186,7 +146,7 @@ public class MapsActivity extends AppCompatActivity implements MaterialTabListen
     class MyPagerAdapter extends FragmentPagerAdapter {
 
         //String[] tabText = getResources().getStringArray(R.array.tabs);
-        int icons[] = {R.drawable.ic_action_location_found, R.drawable.ic_action_location_found, R.drawable.ic_action_location_found};
+        int icons[] = {R.drawable.ic_tab_map, R.drawable.ic_tab_listview};
         //int icons[] = {R.drawable.vector_android, R.drawable.vector_android, R.drawable.vector_android};
 
         public MyPagerAdapter(FragmentManager fm) {
@@ -197,22 +157,20 @@ public class MapsActivity extends AppCompatActivity implements MaterialTabListen
         public Fragment getItem(int i) {
             Fragment fragment = null;
             switch (i) {
-                case MOVIES_SEARCH_RESULTS:
-                    fragment = UpcomingFragment.newInstance("", "");
+                case TAB_MAP:
+                    fragment = MapFragment.newInstance("", "");
                     break;
-                case MOVIES_HITS:
-                    fragment = UpcomingFragment.newInstance("", "");
+                case TAP_LISTVIEW:
+                    fragment = MapFragment.newInstance("", "");
                     break;
-                case MOVIES_UPCOMING:
-                    fragment = UpcomingFragment.newInstance("", "");
-                    break;
+
             }
             return fragment;
         }
 
         @Override
         public int getCount() {
-            return 3;
+            return 2;
         }
 
         @Override

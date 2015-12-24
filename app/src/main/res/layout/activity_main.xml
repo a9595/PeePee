@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"--><!--xmlns:app="http://schemas.android.com/apk/res-auto"--><!--xmlns:tools="http://schemas.android.com/tools"--><!--android:id="@+id/main_content"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--tools:context="tieorange.edu.googlemapstest.MapsActivity">-->
+<?xml version="1.0" encoding="utf-8"?><!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"--><!--xmlns:app="http://schemas.android.com/apk/res-auto"--><!--xmlns:tools="http://schemas.android.com/tools"--><!--android:id="@+id/main_content"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--tools:context="tieorange.edu.googlemapstest.activities.MainActivity">-->
 
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -51,7 +51,7 @@
         <!--&lt;!&ndash;android:name="com.google.android.gms.maps.SupportMapFragment"&ndash;&gt;-->
         <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
         <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;tools:context="tieorange.edu.googlemapstest.MapsActivity" />&ndash;&gt;-->
+        <!--&lt;!&ndash;tools:context="tieorange.edu.googlemapstest.activities.MainActivity" />&ndash;&gt;-->
 
 
         <!--</FrameLayout>-->

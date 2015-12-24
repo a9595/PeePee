@@ -1,4 +1,4 @@
-package tieorange.edu.googlemapstest;
+package tieorange.edu.googlemapstest.pojo;
 
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;

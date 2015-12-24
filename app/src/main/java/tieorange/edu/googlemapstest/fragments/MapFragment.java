@@ -1,4 +1,4 @@
-package tieorange.edu.googlemapstest;
+package tieorange.edu.googlemapstest.fragments;
 
 
 import android.os.Bundle;
@@ -7,65 +7,64 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesUtil;
-import com.google.android.gms.maps.CameraUpdate;
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Marker;
 
-public class UpcomingFragment extends Fragment {
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import tieorange.edu.googlemapstest.MarkersFactory;
+import tieorange.edu.googlemapstest.R;
+import tieorange.edu.googlemapstest.pojo.MyMarker;
+
+public class MapFragment extends Fragment {
+    public HashMap<Marker, MyMarker> mMarkersHashMap;
+    static ArrayList<MyMarker> mMyMarkersArray = new ArrayList<MyMarker>();
+
 
     private SupportMapFragment mMapView;
     private FloatingActionButton mFAB;
 
-    public static UpcomingFragment newInstance(String param1, String param2) {
-        UpcomingFragment fragment = new UpcomingFragment();
+    public static MapFragment newInstance(String param1, String param2) {
+        MapFragment fragment = new MapFragment();
         return fragment;
     }
 
     MapView mapView;
-    GoogleMap map;
+    GoogleMap mMap;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_upcoming, container, false);
+        View view = inflater.inflate(R.layout.fragment_map, container, false);
         // Gets the MapView from the XML layout and creates it
 
         mFAB = (FloatingActionButton) view.findViewById(R.id.fab);
 
+        setupMap(savedInstanceState, view);
+
+
+        return view;
+    }
+
+    private void setupMap(Bundle savedInstanceState, View view) {
         MapsInitializer.initialize(getActivity());
         mapView = (MapView) view.findViewById(R.id.map);
         mapView.onCreate(savedInstanceState);
         // Gets to GoogleMap from the MapView and does initialization stuff
         if (mapView != null) {
-            map = mapView.getMap();
-            map.getUiSettings().setMyLocationButtonEnabled(false);
-            //map.setMyLocationEnabled(true);
-            CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(new LatLng(43.1, -87.9), 10);
-            map.animateCamera(cameraUpdate);
+            mMap = mapView.getMap();
+            mMap.getUiSettings().setMyLocationButtonEnabled(true);
+            //mMap.setMyLocationEnabled(true);
+
         }
 
-
-        // Updates the location and zoom of the MapView
-
-        LatLng sydney = new LatLng(-33.867, 151.206);
-
-//        map.setMyLocationEnabled(true);
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 13));
-
-        map.addMarker(new MarkerOptions()
-                .title("Sydney")
-                .snippet("The most populous city in Australia.")
-                .position(sydney));
-
-        return view;
+        MarkersFactory markersFactory = new MarkersFactory(getActivity(), mMap);
+        markersFactory.initMarkers(); // create places on mMap
+        markersFactory.plotMarkers(); // put them to the mMap
     }
 
     private void setupFab() {
@@ -84,7 +83,7 @@ public class UpcomingFragment extends Fragment {
 //                        Snackbar.LENGTH_SHORT)
 //                .show(); // Do not forget to show!
 
-        //MarkersFactory.initMarkers(this); // create places on map
+        //MarkersFactory.initMarkers(this); // create places on mMap
 
         // TODO: getUserLocation: http://hmkcode.com/material-design-app-android-design-support-library-appcompat/
 
