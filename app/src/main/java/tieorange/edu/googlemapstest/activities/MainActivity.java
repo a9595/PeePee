@@ -23,7 +23,6 @@ import tieorange.edu.googlemapstest.R;
 
 public class MainActivity extends AppCompatActivity implements MaterialTabListener {
     GoogleMap mMap; // object of a mMap
-    public static final int pizda = 3;
 
     private FloatingActionButton mFAB;
     TabLayout tabLayout;
@@ -79,8 +78,8 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
         setSupportActionBar(toolbar);
         // Show menu icon
         final ActionBar ab = getSupportActionBar();
-        ab.setHomeAsUpIndicator(R.drawable.ic_menu);
-        ab.setDisplayHomeAsUpEnabled(true);
+        //ab.setHomeAsUpIndicator(R.drawable.ic_menu);
+        ab.setDisplayHomeAsUpEnabled(false);
     }
 
     @Override

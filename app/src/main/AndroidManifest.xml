@@ -18,7 +18,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Base.Theme.HMKCodeApp">
+        android:theme="@style/Base.Theme.MyMaterial">
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

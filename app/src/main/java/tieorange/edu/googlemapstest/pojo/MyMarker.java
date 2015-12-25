@@ -15,6 +15,7 @@ public class MyMarker {
     private String mIcon;
     private Double mLatitude;
     private Double mLongitude;
+    public static ArrayList<MyMarker> markersArray = new ArrayList<>();
 
 
     public MyMarker(String label, String icon, Double latitude, Double longitude) {
@@ -33,7 +34,7 @@ public class MyMarker {
         MyMarker markerBasen = new MyMarker("Basen", "icon7", parseDouble("52.22837277"), parseDouble("21.00359623"));
 
         // add markers to my array
-        ArrayList<MyMarker> markersArray = new ArrayList<>();
+
         markersArray.add(markerBurgerKing);
         markersArray.add(markerKinoteka);
         markersArray.add(markerZloteTarasy);
@@ -79,5 +80,10 @@ public class MyMarker {
     public LatLng getLatLng()
     {
         return new LatLng(mLatitude, mLongitude);
+    }
+
+    @Override
+    public String toString() {
+        return mLabel;
     }
 }

@@ -1,8 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"--><!--xmlns:app="http://schemas.android.com/apk/res-auto"--><!--xmlns:tools="http://schemas.android.com/tools"--><!--android:id="@+id/main_content"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--tools:context="tieorange.edu.googlemapstest.activities.MainActivity">-->
-
+<?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -17,43 +15,19 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:theme="@style/Base.Theme.HMKCodeApp" />
+            android:background="@color/primary"
+            app:theme="@style/Base.Theme.MyMaterial" />
 
         <it.neokree.materialtabs.MaterialTabHost
             android:id="@+id/materialTabHost"
             android:layout_width="match_parent"
             android:layout_height="48dp"
 
-            app:accentColor="@color/colorAccent"
+            app:accentColor="@color/accent"
             app:hasIcons="true"
-            app:primaryColor="@color/colorPrimary"
+            app:primaryColor="@color/primary"
             app:textColor="#FFFFFF" />
 
-        <!--<android.support.design.widget.TabLayout-->
-        <!--android:id="@+id/tabLayout"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@+id/toolbar"-->
-        <!--android:background="?attr/colorPrimary"-->
-        <!--android:scrollbars="horizontal"-->
-        <!--app:layout_scrollFlags="scroll|enterAlways" />-->
-
-
-        <!--<FrameLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:orientation="vertical">-->
-
-        <!--&lt;!&ndash;<fragment&ndash;&gt;-->
-        <!--&lt;!&ndash;android:id="@+id/map"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:name="com.google.android.gms.maps.SupportMapFragment"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;tools:context="tieorange.edu.googlemapstest.activities.MainActivity" />&ndash;&gt;-->
-
-
-        <!--</FrameLayout>-->
 
     </android.support.design.widget.AppBarLayout>
 
