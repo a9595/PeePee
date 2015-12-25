@@ -27,17 +27,16 @@ public class MarkersFactory {
     private final GoogleMap mMap;
     private final Activity mActivity;
 
-    public MarkersFactory(Activity activity, GoogleMap map) {
+    public MarkersFactory(Activity activity, GoogleMap map, ArrayList<MyMarker> dummyMarkersFromDatabase) {
         this.mActivity = activity;
         this.mMap = map;
 
-        mMyMarkersArray = new ArrayList<>();
+        mMyMarkersArray = dummyMarkersFromDatabase;
         mMarkersHashMap = new HashMap<>();
     }
 
 
     public void initMarkers() {
-        mMyMarkersArray = MyMarker.getDummyMarkersFromDatabase();
         moveMapCameraTo(mMyMarkersArray.get(1));
     }
 

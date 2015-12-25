@@ -15,7 +15,6 @@ public class MyMarker {
     private String mIcon;
     private Double mLatitude;
     private Double mLongitude;
-    public static ArrayList<MyMarker> markersArray = new ArrayList<>();
 
 
     public MyMarker(String label, String icon, Double latitude, Double longitude) {
@@ -27,6 +26,9 @@ public class MyMarker {
 
     public static ArrayList<MyMarker> getDummyMarkersFromDatabase()
     {
+        ArrayList<MyMarker> markersArray = new ArrayList<>();
+
+
         // TODO: CSV reader from file
         MyMarker markerKinoteka = new MyMarker("Kinoteka", "icon5", parseDouble("52.2309919"), parseDouble("21.00669907"));
         MyMarker markerBurgerKing = new MyMarker("BurgerKing", "icon3", parseDouble("52.22773123"), parseDouble("21.01449105"));

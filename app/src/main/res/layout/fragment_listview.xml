@@ -6,21 +6,17 @@
     tools:context=".activities.MainActivity">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/my_recycler_view"
+        android:id="@+id/listview_my_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="?attr/actionBarSize"
         android:scrollbars="vertical" />
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="12dp"
-        android:layout_marginRight="12dp"
-        android:elevation="2dp"
-        android:src="@drawable/ic_action_location_found" />
+    <!--<com.dexafree.materialList.view.MaterialListView-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--android:id="@+id/my_material_list"-->
+        <!--app:column_count_portrait="1"-->
+        <!--app:column_count_landscape="2"/>-->
 
 </RelativeLayout>

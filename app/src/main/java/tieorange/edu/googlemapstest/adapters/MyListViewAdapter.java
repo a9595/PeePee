@@ -5,8 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import tieorange.edu.googlemapstest.R;
 import tieorange.edu.googlemapstest.pojo.MyMarker;
@@ -15,7 +17,6 @@ import tieorange.edu.googlemapstest.pojo.MyMarker;
  * Created by tieorange on 24/12/15.
  */
 public class MyListViewAdapter extends RecyclerView.Adapter<MyListViewAdapter.ViewHolder> {
-
     private ArrayList<MyMarker> mDataset;
 
     // Provide a reference to the views for each data item
@@ -28,8 +29,9 @@ public class MyListViewAdapter extends RecyclerView.Adapter<MyListViewAdapter.Vi
 
         public ViewHolder(View v) {
             super(v);
-            txtHeader = (TextView) v.findViewById(R.id.firstLine);
-            txtFooter = (TextView) v.findViewById(R.id.secondLine);
+            txtHeader = (TextView) v.findViewById(R.id.listview_item_firstLine);
+            txtFooter = (TextView) v.findViewById(R.id.listview_item_secondLine);
+            //v.setOnClickListener(this);
         }
     }
 
@@ -44,6 +46,10 @@ public class MyListViewAdapter extends RecyclerView.Adapter<MyListViewAdapter.Vi
         notifyItemRemoved(position);
     }
 
+    public MyMarker getMarkerByPosition(int position){
+        return mDataset.get(position);
+    }
+
     public MyListViewAdapter(ArrayList<MyMarker> myDataSet) {
         this.mDataset = myDataSet;
     }
@@ -52,10 +58,10 @@ public class MyListViewAdapter extends RecyclerView.Adapter<MyListViewAdapter.Vi
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.listview_item, parent, false);
-        // set the view's size, margins, paddings and layout parameters
-        ViewHolder vh = new ViewHolder(v);
-        return vh;
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.listview_item, parent, false);
+        // set the view's size, margins, padding and layout parameters
+        ViewHolder viewHolder = new ViewHolder(view);
+        return viewHolder;
     }
 
     // Replace the contents of a view (invoked by the layout manager)
@@ -65,14 +71,11 @@ public class MyListViewAdapter extends RecyclerView.Adapter<MyListViewAdapter.Vi
         // - replace the contents of the view with that element
         final MyMarker name = mDataset.get(position);
         holder.txtHeader.setText(mDataset.get(position).getLabel());
-        holder.txtHeader.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //remove(name);
-            }
-        });
 
-        holder.txtFooter.setText("100 meters from you");
+
+        Random random = new Random();
+        final int randomMeters = random.nextInt(100);
+        holder.txtFooter.setText(randomMeters + " meters from you");
 
     }
 
