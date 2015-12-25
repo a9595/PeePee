@@ -60,19 +60,13 @@ public class MarkerInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
     }
     private int manageMarkerIcon(String markerIcon) {
         if (markerIcon.equals("icon1"))
-            return R.drawable.icon1;
+            return R.drawable.ic_marker_train;
         else if (markerIcon.equals("icon2"))
-            return R.drawable.icon2;
+            return R.drawable.ic_marker_local_dining;
         else if (markerIcon.equals("icon3"))
-            return R.drawable.icon3;
+            return R.drawable.ic_marker_local_hotel;
         else if (markerIcon.equals("icon4"))
-            return R.drawable.icon4;
-        else if (markerIcon.equals("icon5"))
-            return R.drawable.icon5;
-        else if (markerIcon.equals("icon6"))
-            return R.drawable.icon6;
-        else if (markerIcon.equals("icon7"))
-            return R.drawable.icon7;
+            return R.drawable.ic_marker_local_mall;
         else
             return R.drawable.icondefault;
     }

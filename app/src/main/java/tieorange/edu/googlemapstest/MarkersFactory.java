@@ -1,10 +1,18 @@
 package tieorange.edu.googlemapstest;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.VectorDrawable;
+import android.os.Build;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -57,7 +65,12 @@ public class MarkersFactory {
                 // Create user marker with custom icon and other options
                 MarkerOptions markerOption = new MarkerOptions().position(new LatLng(myMarker.getLatitude(), myMarker.getLongitude()));
 
-                markerOption.icon(BitmapDescriptorFactory.fromResource(R.drawable.currentlocation_icon));
+
+                // TODO: bad drawable we get :(
+//                markerOption.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker_icon));
+
+                final BitmapDescriptor bitmapDescriptor = getBitmapDescriptor(R.drawable.ic_marker_icon, mActivity.getApplicationContext());
+                markerOption.icon(bitmapDescriptor);
 
                 Marker currentMarker = mMap.addMarker(markerOption);
                 mMarkersHashMap.put(currentMarker, myMarker);
@@ -66,5 +79,19 @@ public class MarkersFactory {
             mMap.setInfoWindowAdapter(new MarkerInfoWindowAdapter(mMarkersHashMap, mActivity)); // TODO: create a window for marker.click()112
 
         }
+    }
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    private BitmapDescriptor getBitmapDescriptor(int id, Context context) {
+        Drawable vectorDrawable = context.getDrawable(id);
+//        int vectorDrawableIntrinsicHeight = ((int) Utils.convertDpToPixel(42, context));
+//        int vectorDrawableIntrinsicWidth = ((int) Utils.convertDpToPixel(25, context));
+        int vectorDrawableIntrinsicHeight = vectorDrawable.getIntrinsicHeight() * 2;
+        int vectorDrawableIntrinsicWidth = vectorDrawable.getIntrinsicWidth() * 2;
+
+        vectorDrawable.setBounds(0, 0, vectorDrawableIntrinsicWidth, vectorDrawableIntrinsicHeight);
+        Bitmap bm = Bitmap.createBitmap(vectorDrawableIntrinsicWidth, vectorDrawableIntrinsicHeight, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bm);
+        vectorDrawable.draw(canvas);
+        return BitmapDescriptorFactory.fromBitmap(bm);
     }
 }

@@ -30,10 +30,10 @@ public class MyMarker {
 
 
         // TODO: CSV reader from file
-        MyMarker markerKinoteka = new MyMarker("Kinoteka", "icon5", parseDouble("52.2309919"), parseDouble("21.00669907"));
-        MyMarker markerBurgerKing = new MyMarker("BurgerKing", "icon3", parseDouble("52.22773123"), parseDouble("21.01449105"));
-        MyMarker markerZloteTarasy = new MyMarker("Zlote tarasy", "icon6", parseDouble("52.2294632"), parseDouble("21.0036817"));
-        MyMarker markerBasen = new MyMarker("Basen", "icon7", parseDouble("52.22837277"), parseDouble("21.00359623"));
+        MyMarker markerKinoteka = new MyMarker("Kinoteka", "icon1", parseDouble("52.2309919"), parseDouble("21.00669907"));
+        MyMarker markerBurgerKing = new MyMarker("BurgerKing", "icon2", parseDouble("52.22773123"), parseDouble("21.01449105"));
+        MyMarker markerZloteTarasy = new MyMarker("Zlote tarasy", "icon3", parseDouble("52.2294632"), parseDouble("21.0036817"));
+        MyMarker markerBasen = new MyMarker("Basen", "icon4", parseDouble("52.22837277"), parseDouble("21.00359623"));
 
         // add markers to my array
 
