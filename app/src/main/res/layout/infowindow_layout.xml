@@ -3,6 +3,7 @@
     android:id="@+id/marker_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:alpha="0.5"
     android:orientation="vertical">
 
     <LinearLayout
@@ -23,6 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:text="label"
+            android:textColor="@color/primary_text"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -31,8 +33,9 @@
         android:id="@+id/another_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="another label"
         android:layout_marginLeft="5dp"
+        android:text="another label"
+        android:textColor="@android:color/holo_green_light"
         android:textStyle="bold" />
 
 </LinearLayout>

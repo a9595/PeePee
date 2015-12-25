@@ -19,10 +19,10 @@ import java.util.HashMap;
 
 import tieorange.edu.googlemapstest.MarkersFactory;
 import tieorange.edu.googlemapstest.R;
+import tieorange.edu.googlemapstest.adapters.MarkerInfoWindowAdapter;
 import tieorange.edu.googlemapstest.pojo.MyMarker;
 
 public class MapFragment extends Fragment {
-    public HashMap<Marker, MyMarker> mMarkersHashMap;
     static ArrayList<MyMarker> mMyMarkersArray = new ArrayList<MyMarker>();
 
 
@@ -70,6 +70,7 @@ public class MapFragment extends Fragment {
 
         markersFactory.initMarkers(); // create places on mMap
         markersFactory.plotMarkers(); // put them to the mMap
+
     }
 
     private void setupFab() {
