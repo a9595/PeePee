@@ -1,37 +1,25 @@
 package tieorange.edu.googlemapstest.fragments;
 
 
-import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.content.ContextCompat;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
-import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import tieorange.edu.googlemapstest.MarkersFactory;
 import tieorange.edu.googlemapstest.R;
-import tieorange.edu.googlemapstest.adapters.MarkerInfoWindowAdapter;
 import tieorange.edu.googlemapstest.pojo.MyMarker;
 
-public class MapFragment extends Fragment{
+public class MapFragmentBackup extends Fragment {
     static ArrayList<MyMarker> mMyMarkersArray = new ArrayList<MyMarker>();
 
 
@@ -68,7 +56,7 @@ public class MapFragment extends Fragment{
         // Gets to GoogleMap from the MapView and does initialization stuff
         if (mapView != null) {
             mMap = mapView.getMap();
-            mMap.getUiSettings().setMyLocationButtonEnabled(true);
+            //mMap.getUiSettings().setMyLocationButtonEnabled(true);
             //mMap.setMyLocationEnabled(true);
 
         }

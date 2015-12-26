@@ -77,7 +77,7 @@ public class MyListViewAdapter extends RecyclerView.Adapter<MyListViewAdapter.Vi
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         public TextView mUiTextHeader;
         public TextView mUiTextDescripton;
@@ -86,16 +86,15 @@ public class MyListViewAdapter extends RecyclerView.Adapter<MyListViewAdapter.Vi
             super(itemView);
             mUiTextHeader = (TextView) itemView.findViewById(R.id.listview_item_firstLine);
             mUiTextDescripton = (TextView) itemView.findViewById(R.id.listview_item_secondLine);
-            itemView.setOnClickListener(this);
         }
 
-        @Override
-        public void onClick(View v) {
-            final Intent intent = new Intent(mContext, ToiletActivity.class);
-            MyMarker myMarker = new MyMarker("McDonald's", "icon1", (double) 1, (double) 2); // TODO: mock
-            intent.putExtra("name", myMarker);
-
-            mContext.startActivity(intent);
-        }
+//        @Override
+//        public void onClick(View v) {
+//            final Intent intent = new Intent(mContext, ToiletActivity.class);
+//            MyMarker myMarker = new MyMarker("McDonald's", "icon1", (double) 1, (double) 2); // TODO: mock
+//            intent.putExtra("name", myMarker);
+//
+//            mContext.startActivity(intent);
+//        }
     }
 }

@@ -27,4 +27,16 @@
         android:layout_below="@+id/toilet_name"
         android:text="Description"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <com.google.android.gms.maps.StreetViewPanoramaView
+        android:id="@+id/steet_view_panorama"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_alignParentBottom="true" />
+
+    <!--<fragment-->
+    <!--android:name="com.google.android.gms.maps.StreetViewPanoramaFragment"-->
+    <!--android:id="@+id/streetviewpanorama"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"/>-->
 </RelativeLayout>

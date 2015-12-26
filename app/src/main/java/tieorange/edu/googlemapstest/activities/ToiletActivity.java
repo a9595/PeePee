@@ -9,45 +9,114 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.OnStreetViewPanoramaReadyCallback;
+import com.google.android.gms.maps.StreetViewPanorama;
+import com.google.android.gms.maps.StreetViewPanoramaOptions;
+import com.google.android.gms.maps.StreetViewPanoramaView;
+import com.google.android.gms.maps.model.LatLng;
+
 import tieorange.edu.googlemapstest.R;
 import tieorange.edu.googlemapstest.pojo.MyMarker;
 
+import static java.lang.Double.parseDouble;
+
 public class ToiletActivity extends AppCompatActivity {
 
+    private StreetViewPanoramaView mStreetViewPanoramaView;
+    private StreetViewPanorama mPanorama;
 
     private TextView mUiTextViewName;
     private TextView mUiTextViewDescription;
+    private MyMarker myMarker;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_toilet);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        mUiTextViewName = (TextView) findViewById(R.id.toilet_name);
-        mUiTextViewDescription = (TextView) findViewById(R.id.toilet_description);
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
 
-        setupFab();
+//        mUiTextViewName = (TextView) findViewById(R.id.toilet_name);
+//        mUiTextViewDescription = (TextView) findViewById(R.id.toilet_description);
+
+        //setupFab();
 
         //intent
-        Intent intent = getIntent();
-        MyMarker myMarker = (MyMarker) intent.getSerializableExtra("name");
+//        Intent intent = getIntent();
+//        myMarker = (MyMarker) intent.getSerializableExtra("name");
 
-        mUiTextViewName.setText(myMarker.getLabel());
-        mUiTextViewDescription.setText("Opened: 8:00 - 23:00");
+//        mUiTextViewName.setText(myMarker.getLabel());
+//        mUiTextViewDescription.setText("Opened: 8:00 - 23:00");
 
-    }
 
-    private void setupFab() {
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        // STREET VIEW init
+        mStreetViewPanoramaView = (StreetViewPanoramaView) findViewById(R.id.steet_view_panorama);
+        mStreetViewPanoramaView.onCreate(savedInstanceState);
+        mStreetViewPanoramaView.getStreetViewPanoramaAsync(new OnStreetViewPanoramaReadyCallback() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onStreetViewPanoramaReady(StreetViewPanorama panorama) {
+                panorama.setPosition(new LatLng(55.758818, 37.620587));
+                mPanorama = panorama;
             }
         });
+
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mStreetViewPanoramaView.onDestroy();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mStreetViewPanoramaView.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mStreetViewPanoramaView.onPause();
+    }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        mStreetViewPanoramaView.onLowMemory();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        mStreetViewPanoramaView.onSaveInstanceState(outState);
+    }
+
+//    private void setupFab() {
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
+//    }
+
+
+//    private void showStreetView(LatLng latLng) {
+//        if (mStreetViewPanorama == null)
+//            return;
+//
+////        StreetViewPanoramaCamera.Builder builder = new StreetViewPanoramaCamera.Builder( mStreetViewPanorama.getPanoramaCamera() );
+////        builder.tilt( 0.0f );
+////        builder.zoom( 0.0f );
+////        builder.bearing( 0.0f );
+////        mStreetViewPanorama.animateTo( builder.build(), 0 );
+//
+//        mStreetViewPanorama.setPosition(latLng, 300);
+//        //mStreetViewPanorama.setStreetNamesEnabled( true );
+//    }
 }

@@ -78,8 +78,8 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
         setSupportActionBar(toolbar);
         // Show menu icon
         final ActionBar ab = getSupportActionBar();
-        //ab.setHomeAsUpIndicator(R.drawable.ic_menu);
-        ab.setDisplayHomeAsUpEnabled(false);
+        ab.setHomeAsUpIndicator(R.drawable.ic_marker_icon);
+        ab.setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
