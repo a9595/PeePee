@@ -11,4 +11,5 @@
 
     </string-array>
     <string name="title_activity_action_bar">ActionBarActivity</string>
+    <string name="title_activity_toilet">ToiletActivity</string>
 </resources>

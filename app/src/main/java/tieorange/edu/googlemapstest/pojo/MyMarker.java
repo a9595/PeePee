@@ -3,6 +3,7 @@ package tieorange.edu.googlemapstest.pojo;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import static java.lang.Double.parseDouble;
@@ -10,7 +11,7 @@ import static java.lang.Double.parseDouble;
 /**
  * Created by tieorange on 11/12/15.
  */
-public class MyMarker {
+public class MyMarker implements Serializable {
     private String mLabel;
     private String mIcon;
     private Double mLatitude;

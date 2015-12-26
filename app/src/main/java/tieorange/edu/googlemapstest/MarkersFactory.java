@@ -3,6 +3,7 @@ package tieorange.edu.googlemapstest;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.PorterDuff;
@@ -23,6 +24,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import tieorange.edu.googlemapstest.activities.ToiletActivity;
 import tieorange.edu.googlemapstest.adapters.MarkerInfoWindowAdapter;
 import tieorange.edu.googlemapstest.pojo.MyMarker;
 
@@ -76,18 +78,27 @@ public class MarkersFactory {
                 mMarkersHashMap.put(currentMarker, myMarker);
 
             }
-            mMap.setInfoWindowAdapter(new MarkerInfoWindowAdapter(mMarkersHashMap, mActivity)); // TODO: create a window for marker.click()112
-            mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
-                @Override
-                public void onInfoWindowClick(Marker marker) {
-                    Log.i("MY", String.valueOf(marker.getPosition().latitude));
-
-                    MyMarker myMarker = mMarkersHashMap.get(marker);
-                    Log.i("MY", myMarker.getLabel());
-                }
-            });
+            setupMarkerInfoWindow();
         }
     }
+
+    private void setupMarkerInfoWindow() {
+        mMap.setInfoWindowAdapter(new MarkerInfoWindowAdapter(mMarkersHashMap, mActivity)); // TODO: create a window for marker.click()112
+        mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+            @Override
+            public void onInfoWindowClick(Marker marker) {
+                Log.i("MY", String.valueOf(marker.getPosition().latitude));
+
+                MyMarker myMarker = mMarkersHashMap.get(marker);
+                Log.i("MY", myMarker.getLabel());
+
+                Intent i = new Intent(mActivity, ToiletActivity.class);
+                i.putExtra("name", myMarker);
+                mActivity.startActivity(i);
+            }
+        });
+    }
+
     @TargetApi(Build.VERSION_CODES.M)
     private BitmapDescriptor getBitmapDescriptor(int id, Context context) {
         Drawable vectorDrawable = context.getDrawable(id);

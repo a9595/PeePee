@@ -27,6 +27,7 @@
         <!--<item name="actionOverflowButtonStyle">@style/ActionButtonOverflowStyle</item>-->
         <!--<item name="drawerArrowStyle">@style/DrawerArrowStyle</item>-->
     </style>
+
     <style name="ToiletsListView" parent="Base.Theme.MyMaterial">
         <item name="android:textColor">@android:color/black</item>
     </style>
@@ -50,6 +51,10 @@
     <style name="Base.Theme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Base.Theme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Base.Theme.MyMaterial.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Base.Theme.MyMaterial.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
 </resources>
