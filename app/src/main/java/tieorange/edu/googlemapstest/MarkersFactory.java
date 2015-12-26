@@ -110,7 +110,6 @@ public class MarkersFactory {
         int vectorDrawableIntrinsicHeight = vectorDrawable.getIntrinsicHeight() * 2;
         int vectorDrawableIntrinsicWidth = vectorDrawable.getIntrinsicWidth() * 2;
 
-
         vectorDrawable.setBounds(0, 0, vectorDrawableIntrinsicWidth, vectorDrawableIntrinsicHeight);
         Bitmap bm = Bitmap.createBitmap(vectorDrawableIntrinsicWidth, vectorDrawableIntrinsicHeight, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bm);

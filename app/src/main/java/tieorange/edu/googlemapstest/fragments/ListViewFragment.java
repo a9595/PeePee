@@ -1,6 +1,7 @@
 package tieorange.edu.googlemapstest.fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import tieorange.edu.googlemapstest.R;
+import tieorange.edu.googlemapstest.activities.ToiletActivity;
 import tieorange.edu.googlemapstest.adapters.ItemClickSupport;
 import tieorange.edu.googlemapstest.adapters.MyListViewAdapter;
 import tieorange.edu.googlemapstest.pojo.MyMarker;
@@ -22,15 +24,19 @@ public class ListViewFragment extends Fragment{
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private ArrayList<MyMarker> dummyMarkersFromDatabase;
+    private View view;
 
     public static ListViewFragment newInstance() {
         ListViewFragment fragment = new ListViewFragment();
         return fragment;
     }
+    public ArrayList<MyMarker> getDummyMarkersFromDatabase(){
+        return dummyMarkersFromDatabase;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_listview, container, false);
+        view = inflater.inflate(R.layout.fragment_listview, container, false);
 
         // TODO: Get data from CSV file
         dummyMarkersFromDatabase = MyMarker.getDummyMarkersFromDatabase();
@@ -56,17 +62,19 @@ public class ListViewFragment extends Fragment{
         //mRecyclerView.addOnItemTouchList\ener(this,this);
 
         // specify an adapter (see also next example)
-        mAdapter = new MyListViewAdapter(dummyMarkersFromDatabase);
+        mAdapter = new MyListViewAdapter(view.getContext(), dummyMarkersFromDatabase);
 
         mRecyclerView.setAdapter(mAdapter);
 
         ItemClickSupport.addTo(mRecyclerView).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
-                String message = String.valueOf(recyclerView.getAdapter().getItemCount());
-                Snackbar.make(getView(),
-                        message,
-                        Snackbar.LENGTH_SHORT);
+                final MyMarker myMarker = dummyMarkersFromDatabase.get(position); // clicked marker
+
+                Intent intent = new Intent(v.getContext(), ToiletActivity.class);
+                intent.putExtra("name", myMarker);
+                v.getContext().startActivity(intent);
+
             }
         });
     }
