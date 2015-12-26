@@ -5,9 +5,11 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.VectorDrawable;
 import android.os.Build;
+import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -65,28 +67,38 @@ public class MarkersFactory {
                 // Create user marker with custom icon and other options
                 MarkerOptions markerOption = new MarkerOptions().position(new LatLng(myMarker.getLatitude(), myMarker.getLongitude()));
 
-
-                // TODO: bad drawable we get :(
-//                markerOption.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marker_icon));
-
+                //get Drawable from vector
                 final BitmapDescriptor bitmapDescriptor = getBitmapDescriptor(R.drawable.ic_marker_icon, mActivity.getApplicationContext());
                 markerOption.icon(bitmapDescriptor);
+                markerOption.alpha(0.9f);
 
                 Marker currentMarker = mMap.addMarker(markerOption);
                 mMarkersHashMap.put(currentMarker, myMarker);
 
             }
             mMap.setInfoWindowAdapter(new MarkerInfoWindowAdapter(mMarkersHashMap, mActivity)); // TODO: create a window for marker.click()112
+            mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+                @Override
+                public void onInfoWindowClick(Marker marker) {
+                    Log.i("MY", String.valueOf(marker.getPosition().latitude));
 
+                    MyMarker myMarker = mMarkersHashMap.get(marker);
+                    Log.i("MY", myMarker.getLabel());
+                }
+            });
         }
     }
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    @TargetApi(Build.VERSION_CODES.M)
     private BitmapDescriptor getBitmapDescriptor(int id, Context context) {
         Drawable vectorDrawable = context.getDrawable(id);
+        int color = context.getColor(R.color.accent);
+        vectorDrawable.setColorFilter(color, PorterDuff.Mode.SRC_IN);
+
 //        int vectorDrawableIntrinsicHeight = ((int) Utils.convertDpToPixel(42, context));
 //        int vectorDrawableIntrinsicWidth = ((int) Utils.convertDpToPixel(25, context));
         int vectorDrawableIntrinsicHeight = vectorDrawable.getIntrinsicHeight() * 2;
         int vectorDrawableIntrinsicWidth = vectorDrawable.getIntrinsicWidth() * 2;
+
 
         vectorDrawable.setBounds(0, 0, vectorDrawableIntrinsicWidth, vectorDrawableIntrinsicHeight);
         Bitmap bm = Bitmap.createBitmap(vectorDrawableIntrinsicWidth, vectorDrawableIntrinsicHeight, Bitmap.Config.ARGB_8888);

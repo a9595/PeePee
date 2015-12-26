@@ -2,7 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="?android:attr/listPreferredItemHeight"
-    android:padding="6dip"
+    android:layout_marginTop="5dp"
     android:theme="@style/ToiletsListView">
 
     <ImageView
@@ -11,7 +11,8 @@
         android:layout_height="fill_parent"
         android:layout_alignParentBottom="true"
         android:layout_alignParentTop="true"
-        android:layout_marginRight="6dip"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="20dp"
         android:contentDescription="TODO"
         android:src="@drawable/ic_tab_map" />
 
@@ -26,7 +27,7 @@
         android:ellipsize="marquee"
         android:singleLine="true"
         android:text="Description"
-        android:textColor="@color/listview_item_secondary_text"
+        android:textColor="@color/secondary_text"
         android:textSize="12sp" />
 
     <!--MAIN INFO-->
@@ -44,5 +45,13 @@
         android:textColor="@color/primary_text"
         android:textSize="16sp" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/accent">
+
+    </View>
 
 </RelativeLayout>

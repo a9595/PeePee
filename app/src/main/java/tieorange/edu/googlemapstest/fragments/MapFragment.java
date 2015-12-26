@@ -1,9 +1,13 @@
 package tieorange.edu.googlemapstest.fragments;
 
 
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +32,7 @@ public class MapFragment extends Fragment {
 
     private SupportMapFragment mMapView;
     private FloatingActionButton mFAB;
+    private View view;
 
     public static MapFragment newInstance(String param1, String param2) {
         MapFragment fragment = new MapFragment();
@@ -39,10 +44,11 @@ public class MapFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_map, container, false);
+        view = inflater.inflate(R.layout.fragment_map, container, false);
         // Gets the MapView from the XML layout and creates it
 
-        mFAB = (FloatingActionButton) view.findViewById(R.id.fab);
+        //mFAB = (FloatingActionButton) view.findViewById(R.id.fab);
+        //setupFab(view);
 
         setupMap(savedInstanceState, view);
 
@@ -71,17 +77,26 @@ public class MapFragment extends Fragment {
         markersFactory.initMarkers(); // create places on mMap
         markersFactory.plotMarkers(); // put them to the mMap
 
+
+
+
     }
 
-    private void setupFab() {
-        mFAB = (FloatingActionButton) getView().findViewById(R.id.fab);
-        mFAB.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if (v.getId() == R.id.fab)
-                    getUserLocation();
-            }
-        });
-    }
+//    private void setupFab(View view) {
+//        mFAB = (FloatingActionButton) view.findViewById(R.id.fab);
+//
+//        // ripple color fix:
+////        ColorStateList rippleColor = ContextCompat.getColorStateList(view.getContext(), R.color.fab_ripple_color);
+////        mFAB.setBackgroundTintList(rippleColor);
+//
+//        mFAB.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                if (v.getId() == R.id.fab)
+//                    getUserLocation();
+//            }
+//        });
+//    }
+
     private void getUserLocation() {
 //        Snackbar
 //                .make(findViewById(R.id.main_content),

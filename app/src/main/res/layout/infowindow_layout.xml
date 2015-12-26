@@ -7,35 +7,47 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/station_info_layout"
-        android:layout_width="205dp"
+        android:id="@+id/info_layout_station"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/marker_icon"
+            android:id="@+id/info_layout_marker_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="image of toilet" />
+            android:layout_margin="5dp"
+            android:contentDescription="image of toilet"
+            android:src="@drawable/ic_marker_local_dining" />
 
         <TextView
-            android:id="@+id/marker_label"
+            android:id="@+id/info_layout_marker_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
+            android:layout_marginTop="7dp"
             android:text="label"
             android:textColor="@color/primary_text"
             android:textStyle="bold" />
 
+        <!--TODO: onClick button with image-->
+        <!--<ImageView-->
+        <!--android:id="@+id/imageButton"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/ic_infowindow_goto" />-->
+
     </LinearLayout>
 
     <TextView
-        android:id="@+id/another_label"
+        android:id="@+id/marker_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         android:layout_marginLeft="5dp"
         android:text="another label"
-        android:textColor="@android:color/holo_green_light"
+        android:textColor="@color/secondary_text"
         android:textStyle="bold" />
+
 
 </LinearLayout>
