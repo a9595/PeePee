@@ -31,6 +31,7 @@ public class MyMarker implements Serializable {
 
 
         // TODO: CSV reader from file
+
         MyMarker markerKinoteka = new MyMarker("Kinoteka", "icon1", parseDouble("52.2309919"), parseDouble("21.00669907"));
         MyMarker markerBurgerKing = new MyMarker("BurgerKing", "icon2", parseDouble("52.22773123"), parseDouble("21.01449105"));
         MyMarker markerZloteTarasy = new MyMarker("Zlote tarasy", "icon3", parseDouble("52.2294632"), parseDouble("21.0036817"));

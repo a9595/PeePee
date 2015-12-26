@@ -3,19 +3,30 @@
     android:layout_width="fill_parent"
     android:layout_height="?android:attr/listPreferredItemHeight"
     android:layout_marginTop="5dp"
-    android:theme="@style/ToiletsListView">
+    android:background="@drawable/custom_bg"
+    android:clickable="true"
+    android:focusable="true"
+    >
 
-    <ImageView
-        android:id="@+id/listview_item_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="20dp"
-        android:contentDescription="TODO"
-        android:src="@drawable/ic_tab_map" />
 
+    <!--<com.andexert.library.RippleView-->
+        <!--android:id="@+id/listview_item_ripple_view"-->
+        <!--rv_centered="true"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_margin="5dp">-->
+
+        <ImageView
+            android:id="@+id/listview_item_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:contentDescription="TODO"
+            android:src="@drawable/ic_tab_map" />
+    <!--</com.andexert.library.RippleView>-->
     <!--SECONDARY INFO-->
     <TextView
         android:id="@+id/listview_item_secondLine"

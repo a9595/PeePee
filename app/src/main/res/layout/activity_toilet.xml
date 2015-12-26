@@ -12,24 +12,25 @@
     <com.google.android.gms.maps.StreetViewPanoramaView
         android:id="@+id/steet_view_panorama"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toilet_description" />
 
-    <!--<TextView-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
-    <!--android:text="Burger King"-->
-    <!--android:id="@+id/toilet_name"-->
-    <!--android:layout_alignParentTop="true"-->
-    <!--android:layout_alignParentStart="true" />-->
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:text="Burger King"
+    android:id="@+id/toilet_name"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentStart="true" />
 
-    <!--<TextView-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
-    <!--android:text="Opened: 8:00 - 23:00"-->
-    <!--android:id="@+id/toilet_description"-->
-    <!--android:layout_below="@+id/toilet_name"-->
-    <!--android:layout_alignParentStart="true" />-->
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:text="Opened: 8:00 - 23:00"
+    android:id="@+id/toilet_description"
+    android:layout_below="@+id/toilet_name"
+    android:layout_alignParentStart="true" />
 
 </RelativeLayout>
