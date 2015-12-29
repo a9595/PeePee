@@ -1,7 +1,11 @@
 package tieorange.edu.googlemapstest.fragments;
 
 
+import android.annotation.TargetApi;
+import android.app.ActivityOptions;
+import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,6 +16,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -28,10 +33,11 @@ import java.util.HashMap;
 
 import tieorange.edu.googlemapstest.MarkersFactory;
 import tieorange.edu.googlemapstest.R;
+import tieorange.edu.googlemapstest.activities.ToiletActivity;
 import tieorange.edu.googlemapstest.adapters.MarkerInfoWindowAdapter;
 import tieorange.edu.googlemapstest.pojo.MyMarker;
 
-public class MapFragment extends Fragment{
+public class MapFragment extends Fragment {
     static ArrayList<MyMarker> mMyMarkersArray = new ArrayList<MyMarker>();
 
 
@@ -50,6 +56,7 @@ public class MapFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_map, container, false);
+        ImageView mUiImageViewIcon = (ImageView) view.findViewById(R.id.info_layout_marker_icon);
         // Gets the MapView from the XML layout and creates it
 
         //mFAB = (FloatingActionButton) view.findViewById(R.id.fab);
@@ -61,7 +68,7 @@ public class MapFragment extends Fragment{
         return view;
     }
 
-    private void setupMap(Bundle savedInstanceState, View view) {
+    private void setupMap(Bundle savedInstanceState, final View view) {
         MapsInitializer.initialize(getActivity());
         mapView = (MapView) view.findViewById(R.id.map);
         mapView.onCreate(savedInstanceState);
@@ -80,6 +87,29 @@ public class MapFragment extends Fragment{
 
         markersFactory.initMarkers(); // create places on mMap
         markersFactory.plotMarkers(); // put them to the mMap
+
+
+//        // TODO: infowindow
+//        mMap.setInfoWindowAdapter(new MarkerInfoWindowAdapter(mMarkersHashMap, getActivity())); // TODO: create a window for marker.click()112
+//        mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+//            @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+//            @Override
+//            public void onInfoWindowClick(Marker marker) {
+//                Log.i("MY", String.valueOf(marker.getPosition().latitude));
+//
+//                MyMarker myMarker = mMarkersHashMap.get(marker);
+//                Log.i("MY", myMarker.getLabel());
+//
+//                Intent i = new Intent(getActivity(), ToiletActivity.class);
+//                i.putExtra("name", myMarker);
+//
+//                final ImageView UiMarkerIcon = (ImageView) view.findViewById(R.id.info_layout_marker_icon);
+//                ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(getActivity(),
+//                        UiMarkerIcon, getString(R.string.transition_name_list_view));
+//
+//                getActivity().startActivity(i, activityOptions.toBundle());
+//            }
+//        });
 
     }
 

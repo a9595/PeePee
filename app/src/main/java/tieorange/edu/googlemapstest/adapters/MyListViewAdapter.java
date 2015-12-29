@@ -47,7 +47,7 @@ public class MyListViewAdapter extends RecyclerView.Adapter<MyListViewAdapter.Vi
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.listview_item, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.listview_item, parent, false);
         // set the view's size, margins, padding and layout parameters
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
@@ -70,7 +70,7 @@ public class MyListViewAdapter extends RecyclerView.Adapter<MyListViewAdapter.Vi
 
     @Override
     public int getItemCount() {
-        return mDataset.size();
+        return mDataset == null ? 0 : mDataset.size();
     }
 
 

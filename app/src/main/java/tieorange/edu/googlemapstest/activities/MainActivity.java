@@ -11,6 +11,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Window;
 
 import com.google.android.gms.maps.GoogleMap;
 
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -78,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
         setSupportActionBar(toolbar);
         // Show menu icon
         final ActionBar ab = getSupportActionBar();
-        ab.setHomeAsUpIndicator(R.drawable.ic_marker_icon);
+        ab.setHomeAsUpIndicator(R.drawable.ic_app_icon);
         ab.setDisplayHomeAsUpEnabled(true);
     }
 

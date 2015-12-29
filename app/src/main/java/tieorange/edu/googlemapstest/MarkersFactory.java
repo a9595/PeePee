@@ -2,6 +2,7 @@ package tieorange.edu.googlemapstest;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -11,6 +12,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.VectorDrawable;
 import android.os.Build;
 import android.util.Log;
+import android.widget.ImageView;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -63,7 +65,7 @@ public class MarkersFactory {
         mMap.animateCamera(cameraUpdate, durationAnimationZoomMs, null);
     }
 
-    public void plotMarkers() {
+    public HashMap<Marker, MyMarker> plotMarkers() {
         if (mMyMarkersArray.size() > 0) { // check if is not empty
             for (MyMarker myMarker : mMyMarkersArray) {
                 // Create user marker with custom icon and other options
@@ -80,11 +82,14 @@ public class MarkersFactory {
             }
             setupMarkerInfoWindow();
         }
+        return mMarkersHashMap;
     }
 
-    private void setupMarkerInfoWindow() {
-        mMap.setInfoWindowAdapter(new MarkerInfoWindowAdapter(mMarkersHashMap, mActivity)); // TODO: create a window for marker.click()112
+    public void setupMarkerInfoWindow() {
+        final MarkerInfoWindowAdapter infoWindowAdapter = new MarkerInfoWindowAdapter(mMarkersHashMap, mActivity);
+        mMap.setInfoWindowAdapter(infoWindowAdapter); // TODO: create a window for marker.click()112
         mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+            @TargetApi(Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onInfoWindowClick(Marker marker) {
                 Log.i("MY", String.valueOf(marker.getPosition().latitude));
@@ -94,7 +99,15 @@ public class MarkersFactory {
 
                 Intent i = new Intent(mActivity, ToiletActivity.class);
                 i.putExtra("name", myMarker);
+
+                // Shared element transition
+                //final ImageView markerIconImageView = infoWindowAdapter.getMarkerIconImageView();
+//                ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(mActivity,
+//                        markerIconImageView, mActivity.getString(R.string.transition_name_list_view));
+
+
                 mActivity.startActivity(i);
+//                mActivity.startActivity(i, activityOptions.toBundle());
             }
         });
     }

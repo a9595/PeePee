@@ -1,7 +1,10 @@
 package tieorange.edu.googlemapstest.fragments;
 
 
+import android.annotation.TargetApi;
+import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -10,6 +13,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 
 import java.util.ArrayList;
 
@@ -19,7 +23,7 @@ import tieorange.edu.googlemapstest.adapters.ItemClickSupport;
 import tieorange.edu.googlemapstest.adapters.MyListViewAdapter;
 import tieorange.edu.googlemapstest.pojo.MyMarker;
 
-public class ListViewFragment extends Fragment{
+public class ListViewFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -30,7 +34,8 @@ public class ListViewFragment extends Fragment{
         ListViewFragment fragment = new ListViewFragment();
         return fragment;
     }
-    public ArrayList<MyMarker> getDummyMarkersFromDatabase(){
+
+    public ArrayList<MyMarker> getDummyMarkersFromDatabase() {
         return dummyMarkersFromDatabase;
     }
 
@@ -67,13 +72,23 @@ public class ListViewFragment extends Fragment{
         mRecyclerView.setAdapter(mAdapter);
 
         ItemClickSupport.addTo(mRecyclerView).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
+            @TargetApi(Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
                 final MyMarker myMarker = dummyMarkersFromDatabase.get(position); // clicked marker
 
+//                final View UiTextFirstLine = v.findViewById(R.id.listview_item_firstLine);
+                final View UiImageIcon = v.findViewById(R.id.listview_item_icon);
+
                 Intent intent = new Intent(v.getContext(), ToiletActivity.class);
                 intent.putExtra("name", myMarker);
-                v.getContext().startActivity(intent);
+//                ActivityOptions.makeSceneTransitionAnimation(this).toBundle();
+
+                ActivityOptions activityOptions =
+                        ActivityOptions.makeSceneTransitionAnimation(getActivity(), UiImageIcon,
+                                getString(R.string.transition_name_list_view));
+
+                v.getContext().startActivity(intent, activityOptions.toBundle());
 
             }
         });

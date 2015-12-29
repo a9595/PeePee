@@ -1,12 +1,16 @@
 package tieorange.edu.googlemapstest.activities;
 
+import android.animation.Animator;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.OnStreetViewPanoramaReadyCallback;
@@ -18,6 +22,7 @@ import com.google.android.gms.maps.model.LatLng;
 import tieorange.edu.googlemapstest.R;
 import tieorange.edu.googlemapstest.pojo.MyMarker;
 
+import static java.lang.Double.POSITIVE_INFINITY;
 import static java.lang.Double.parseDouble;
 
 public class ToiletActivity extends AppCompatActivity {
@@ -38,17 +43,16 @@ public class ToiletActivity extends AppCompatActivity {
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
 
-//        mUiTextViewName = (TextView) findViewById(R.id.toilet_name);
-//        mUiTextViewDescription = (TextView) findViewById(R.id.toilet_description);
+        mUiTextViewName = (TextView) findViewById(R.id.toilet_name);
+        mUiTextViewDescription = (TextView) findViewById(R.id.toilet_description);
 
         //setupFab();
 
-        //intent
-//        Intent intent = getIntent();
-//        myMarker = (MyMarker) intent.getSerializableExtra("name");
+        Intent intent = getIntent();
+        myMarker = (MyMarker) intent.getSerializableExtra("name");
 
-//        mUiTextViewName.setText(myMarker.getLabel());
-//        mUiTextViewDescription.setText("Opened: 8:00 - 23:00");
+        mUiTextViewName.setText(myMarker.getLabel());
+        mUiTextViewDescription.setText("Opened: 8:00 - 23:00");
 
 
         // STREET VIEW init
@@ -57,11 +61,37 @@ public class ToiletActivity extends AppCompatActivity {
         mStreetViewPanoramaView.getStreetViewPanoramaAsync(new OnStreetViewPanoramaReadyCallback() {
             @Override
             public void onStreetViewPanoramaReady(StreetViewPanorama panorama) {
+                revealPanorama(mStreetViewPanoramaView);
                 panorama.setPosition(new LatLng(55.758818, 37.620587));
                 mPanorama = panorama;
             }
         });
 
+    }
+
+    public void revealPanorama(View view) {
+        if (view.getVisibility() == View.VISIBLE) return;
+        int center_x = view.getWidth() / 2;
+        int center_y = view.getHeight() / 2;
+        // Get the center of the figure:
+
+        // Get the final radius for the clipping circle
+        int finalRadius = Math.max(view.getWidth(), view.getHeight());
+
+        // Create the animator for the view
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+
+            try {
+                Animator animator = ViewAnimationUtils.createCircularReveal(view, center_x, center_y, 0, finalRadius);
+                animator.start();
+
+            }catch (Exception e)
+            {
+
+            }
+
+            view.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override

@@ -1,10 +1,12 @@
 package tieorange.edu.googlemapstest.adapters;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.balysv.materialripple.MaterialRippleLayout;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.Marker;
 
@@ -58,6 +60,11 @@ public class MarkerInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
 
         return infoWindowView;
     }
+
+//    public ImageView getMarkerIconImageView() {
+//        return markerIcon;
+//    }
+
     private int manageMarkerIcon(String markerIcon) {
         if (markerIcon.equals("icon1"))
             return R.drawable.ic_marker_train;

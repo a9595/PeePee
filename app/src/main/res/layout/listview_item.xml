@@ -5,27 +5,27 @@
     android:layout_marginTop="5dp"
     android:background="@drawable/custom_bg"
     android:clickable="true"
-    android:focusable="true"
-    >
+    android:focusable="true">
 
 
     <!--<com.andexert.library.RippleView-->
-        <!--android:id="@+id/listview_item_ripple_view"-->
-        <!--rv_centered="true"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_margin="5dp">-->
+    <!--android:id="@+id/listview_item_ripple_view"-->
+    <!--rv_centered="true"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_margin="5dp">-->
 
-        <ImageView
-            android:id="@+id/listview_item_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="20dp"
-            android:contentDescription="TODO"
-            android:src="@drawable/ic_tab_map" />
+    <ImageView
+        android:id="@+id/listview_item_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="20dp"
+        android:contentDescription="TODO"
+        android:src="@drawable/ic_marker_local_dining"
+        android:transitionName="@string/transition_name_list_view" />
     <!--</com.andexert.library.RippleView>-->
     <!--SECONDARY INFO-->
     <TextView
@@ -37,7 +37,7 @@
         android:layout_toRightOf="@id/listview_item_icon"
         android:ellipsize="marquee"
         android:singleLine="true"
-        android:text="Description"
+        android:text="Opened 8:00-23:00"
         android:textColor="@color/secondary_text"
         android:textSize="12sp" />
 
@@ -52,7 +52,7 @@
         android:layout_alignWithParentIfMissing="true"
         android:layout_toRightOf="@id/listview_item_icon"
         android:gravity="center_vertical"
-        android:text="Example application"
+        android:text="Burger king"
         android:textColor="@color/primary_text"
         android:textSize="16sp" />
 
@@ -61,7 +61,7 @@
         android:layout_height="1dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:background="@color/accent">
+        android:background="@color/secondary_text">
 
     </View>
 
