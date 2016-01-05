@@ -1,9 +1,14 @@
 package tieorange.edu.googlemapstest.pojo;
 
+import android.content.Context;
+
+import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+
+import tieorange.edu.googlemapstest.R;
 
 import static java.lang.Double.parseDouble;
 
@@ -33,6 +38,7 @@ public class MyMarker implements Serializable {
         this.Longitude = longitude;
         this.Type = type;
     }
+
 
     public static ArrayList<MyMarker> getDummyMarkersFromDatabase() {
         ArrayList<MyMarker> markersArray = new ArrayList<>();
@@ -77,6 +83,26 @@ public class MyMarker implements Serializable {
         return markersArray;
     }
 
+    public int getIconBlackWhite() {
+        int icon_marker_result = R.drawable.ic_marker_icon;
+
+        switch (getType()) {
+            case MyMarker.MARKER_TYPE_RESTAURANT:
+                icon_marker_result = R.drawable.ic_marker_restaurant_black_white;
+                break;
+            case MyMarker.MARKER_TYPE_TOI_TOI:
+                icon_marker_result = R.drawable.ic_marker_toi_toi_black_white;
+                break;
+            case MyMarker.MARKER_TYPE_OTHER:
+                icon_marker_result = R.drawable.ic_marker_other_black_white;
+                break;
+            default:
+                break;
+        }
+
+
+        return icon_marker_result;
+    }
 
     public String getLabel() {
         return Label;
