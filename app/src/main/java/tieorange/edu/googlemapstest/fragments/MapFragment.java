@@ -45,7 +45,6 @@ public class MapFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_map, container, false);
-        ImageView mUiImageViewIcon = (ImageView) view.findViewById(R.id.info_layout_marker_icon);
         // Gets the MapView from the XML layout and creates it
 
         //mFAB = (FloatingActionButton) view.findViewById(R.id.fab);
