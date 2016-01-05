@@ -38,7 +38,7 @@
         android:textColor="@color/secondary_text" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/toilet_imageView_icon"
         android:layout_width="100dp"
         android:layout_height="match_parent"
         android:layout_alignBottom="@+id/toilet_description"

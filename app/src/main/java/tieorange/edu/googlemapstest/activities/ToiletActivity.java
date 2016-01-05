@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewAnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.OnStreetViewPanoramaReadyCallback;
@@ -28,6 +29,7 @@ public class ToiletActivity extends AppCompatActivity {
     private TextView mUiTextViewDescription;
     private MyMarker myMarker;
     private Toolbar mUiToolbar;
+    private ImageView mUiImageIcon;
 
 
     @Override
@@ -35,23 +37,24 @@ public class ToiletActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_toilet);
 
-
-//        mUiToolbar = (Toolbar) findViewById(R.id.toilet_toolbar);
-        mUiTextViewName = (TextView) findViewById(R.id.toilet_name);
-        mUiTextViewDescription = (TextView) findViewById(R.id.toilet_description);
-
-        //setupFab();
-
         Intent intent = getIntent();
         myMarker = (MyMarker) intent.getSerializableExtra("name");
+        findViews();
+
 
         mUiTextViewName.setText(myMarker.getLabel());
         mUiTextViewDescription.setText("Opened: 8:00 - 23:00");
+        mUiImageIcon.setImageResource(myMarker.getIconBlackWhite());
 
         setupStreetViewPanorama(savedInstanceState);
-        //setupToolbar();
 
+    }
 
+    private void findViews() {
+        //        mUiToolbar = (Toolbar) findViewById(R.id.toilet_toolbar);
+        mUiTextViewName = (TextView) findViewById(R.id.toilet_name);
+        mUiTextViewDescription = (TextView) findViewById(R.id.toilet_description);
+        mUiImageIcon = (ImageView) findViewById(R.id.toilet_imageView_icon);
     }
 
     private void setupStreetViewPanorama(Bundle savedInstanceState) {

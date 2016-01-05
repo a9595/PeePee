@@ -1,5 +1,6 @@
 package tieorange.edu.googlemapstest.activities;
 
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,6 +14,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
 
     private GoogleMap mMap;
     private MarkersFactory mMarkersFactory;
+    private TextView mUiToolbarTitle;
 
     public MarkersFactory getMarkersFactory() {
         return mMarkersFactory;
@@ -111,6 +114,11 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
 
     private void setupToolbar() {
         mUiToolbar = (Toolbar) findViewById(R.id.main_toolbar);
+        mUiToolbarTitle = (TextView) findViewById(R.id.main_toolbar_title);
+
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/Nautilus.otf");
+
+        mUiToolbarTitle.setTypeface(custom_font);
         setSupportActionBar(mUiToolbar);
         // Show menu icon
         final ActionBar ab = getSupportActionBar();
