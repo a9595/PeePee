@@ -1,52 +1,41 @@
 package tieorange.edu.googlemapstest.fragments;
 
 
-import android.annotation.TargetApi;
-import android.app.ActivityOptions;
-import android.content.Intent;
-import android.content.res.ColorStateList;
-import android.os.Build;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.content.ContextCompat;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
-import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import tieorange.edu.googlemapstest.MarkersFactory;
 import tieorange.edu.googlemapstest.R;
-import tieorange.edu.googlemapstest.activities.ToiletActivity;
-import tieorange.edu.googlemapstest.adapters.MarkerInfoWindowAdapter;
+import tieorange.edu.googlemapstest.activities.MainActivity;
 import tieorange.edu.googlemapstest.pojo.MyMarker;
 
 public class MapFragment extends Fragment {
     static ArrayList<MyMarker> mMyMarkersArray = new ArrayList<MyMarker>();
 
-
     private SupportMapFragment mMapView;
     private FloatingActionButton mFAB;
     private View view;
+    private MainActivity mainActivity;
+    public MarkersFactory markersFactory;
 
-    public static MapFragmentBackup newInstance(String param1, String param2) {
-        MapFragmentBackup fragment = new MapFragmentBackup();
+    public MapFragment() {
+    }
+
+    public static MapFragment newInstance(String param1, String param2) {
+        MapFragment fragment = new MapFragment();
         return fragment;
     }
 
@@ -62,6 +51,7 @@ public class MapFragment extends Fragment {
         //mFAB = (FloatingActionButton) view.findViewById(R.id.fab);
         //setupFab(view);
 
+        mainActivity = (MainActivity) getActivity(); // to get GoogleMap object and share it
         setupMap(savedInstanceState, view);
 
 
@@ -74,19 +64,28 @@ public class MapFragment extends Fragment {
         mapView.onCreate(savedInstanceState);
         // Gets to GoogleMap from the MapView and does initialization stuff
         if (mapView != null) {
-            mMap = mapView.getMap();
+//            mMap = mapView.getMap();
+            mainActivity.setMap(mapView.getMap());
+            mMap = mainActivity.getMap();
+
             mMap.getUiSettings().setMyLocationButtonEnabled(true);
+
+
             //mMap.setMyLocationEnabled(true);
+
 
         }
 
-        // TODO: get markers from CSV
+//        // TODO: get markers from CSV
         ArrayList<MyMarker> dummyMarkersFromDatabase = MyMarker.getDummyMarkersFromDatabase();
 
-        MarkersFactory markersFactory = new MarkersFactory(getActivity(), mMap, dummyMarkersFromDatabase);
+        markersFactory = new MarkersFactory(getActivity(), mMap, dummyMarkersFromDatabase);
 
         markersFactory.initMarkers(); // create places on mMap
         markersFactory.plotMarkers(); // put them to the mMap
+
+//        mainActivity.getMarkersFactory().initMarkers(); // create places on mMap
+//        mainActivity.getMarkersFactory().plotMarkers(); // put them to the mMap
 
 
 //        // TODO: infowindow
@@ -113,20 +112,6 @@ public class MapFragment extends Fragment {
 
     }
 
-//    private void setupFab(View view) {
-//        mFAB = (FloatingActionButton) view.findViewById(R.id.fab);
-//
-//        // ripple color fix:
-////        ColorStateList rippleColor = ContextCompat.getColorStateList(view.getContext(), R.color.fab_ripple_color);
-////        mFAB.setBackgroundTintList(rippleColor);
-//
-//        mFAB.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                if (v.getId() == R.id.fab)
-//                    getUserLocation();
-//            }
-//        });
-//    }
 
     private void getUserLocation() {
 //        Snackbar
@@ -157,5 +142,10 @@ public class MapFragment extends Fragment {
     public void onLowMemory() {
         super.onLowMemory();
         mapView.onLowMemory();
+    }
+
+
+    public GoogleMap getMap() {
+        return mMap;
     }
 }

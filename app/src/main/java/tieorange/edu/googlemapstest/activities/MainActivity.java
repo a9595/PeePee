@@ -2,8 +2,6 @@ package tieorange.edu.googlemapstest.activities;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -11,33 +9,59 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.Window;
+import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.android.gms.maps.GoogleMap;
+
+import java.util.ArrayList;
 
 import it.neokree.materialtabs.MaterialTab;
 import it.neokree.materialtabs.MaterialTabHost;
 import it.neokree.materialtabs.MaterialTabListener;
+import tieorange.edu.googlemapstest.MarkersFactory;
 import tieorange.edu.googlemapstest.fragments.ListViewFragment;
 import tieorange.edu.googlemapstest.fragments.MapFragment;
 import tieorange.edu.googlemapstest.R;
+import tieorange.edu.googlemapstest.pojo.MyMarker;
 
 public class MainActivity extends AppCompatActivity implements MaterialTabListener {
-    GoogleMap mMap; // object of a mMap
 
-    private FloatingActionButton mFAB;
-    TabLayout tabLayout;
-    private Toolbar toolbar;
+    MapFragment mapFragment;
 
-    private MaterialTabHost mTabHost;
+    private Toolbar mUiToolbar;
+
+    private MaterialTabHost mUiTabHost;
     private ViewPager mViewPager;
     private MyPagerAdapter mMyPagerAdapter;
     private static final int TAB_MAP = 0;
     private static final int TAP_LISTVIEW = 1;
-    private static final int MOVIES_UPCOMING = 2;
-    private static final String TAG_SORT_NAME = "sortName";
-    private static final String TAG_SORT_DATE = "sortDate";
-    private static final String TAG_SORT_RATINGS = "sortRatings";
+    private MapFragment fragment_map;
+    private ListViewFragment fragment_list_view;
+
+    private GoogleMap mMap;
+    private MarkersFactory mMarkersFactory;
+
+    public MarkersFactory getMarkersFactory() {
+        return mMarkersFactory;
+    }
+
+    public void setMarkersFactory(MarkersFactory mMarkersFactory) {
+        this.mMarkersFactory = mMarkersFactory;
+    }
+
+    public GoogleMap getMap() {
+        return mMap;
+    }
+
+    public void setMap(GoogleMap mMap) {
+        this.mMap = mMap;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,13 +69,23 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mapFragment = MapFragment.newInstance("", "");
         setupToolbar();
         setupTab();
+        setupDatabase();
+
     }
 
+    private void setupDatabase() {
+        // TODO: get markers from CSV
+        ArrayList<MyMarker> dummyMarkersFromDatabase = MyMarker.getDummyMarkersFromDatabase();
+
+        mMarkersFactory = new MarkersFactory(this, mMap, dummyMarkersFromDatabase);
+
+    }
 
     private void setupTab() {
-        mTabHost = (MaterialTabHost) findViewById(R.id.materialTabHost);
+        mUiTabHost = (MaterialTabHost) findViewById(R.id.materialTabHost);
         mViewPager = (ViewPager) findViewById(R.id.viewPager);
 
         mMyPagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
@@ -59,15 +93,15 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
         mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
                                                @Override
                                                public void onPageSelected(int position) {
-                                                   mTabHost.setSelectedNavigationItem(position);
+                                                   mUiTabHost.setSelectedNavigationItem(position);
                                                }
                                            }
         );
 
         // insert all tabs from pageAdapter data
         for (int i = 0; i < mMyPagerAdapter.getCount(); i++) {
-            mTabHost.addTab(
-                    mTabHost.newTab()
+            mUiTabHost.addTab(
+                    mUiTabHost.newTab()
                             .setIcon(mMyPagerAdapter.getIcon(i))
                             .setTabListener(this)
             );
@@ -76,8 +110,8 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
 
 
     private void setupToolbar() {
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        mUiToolbar = (Toolbar) findViewById(R.id.main_toolbar);
+        setSupportActionBar(mUiToolbar);
         // Show menu icon
         final ActionBar ab = getSupportActionBar();
         ab.setHomeAsUpIndicator(R.drawable.ic_app_icon);
@@ -107,16 +141,77 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+//        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        if (id == R.id.action_map_view_change) {
+            Toast.makeText(this, "Map view change", Toast.LENGTH_SHORT);
+            Log.i("MY", ",map viw");
+            switchMapView();
+        }
+        if (id == R.id.action_filter) {
+            Toast.makeText(this, "Fitler action", Toast.LENGTH_SHORT);
+            Log.i("MY", ",filter");
+            showFilterDialog();
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void switchMapView() {
+        if (mMap.getMapType() == GoogleMap.MAP_TYPE_NORMAL)
+            mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+        else if (mMap.getMapType() == GoogleMap.MAP_TYPE_SATELLITE)
+            mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+    }
+
+    @Override
     public void onTabUnselected(MaterialTab tab) {
 
+    }
+
+    public void showFilterDialog() {
+        new MaterialDialog.Builder(this)
+                .title(R.string.filter_dialog_title)
+                .items(R.array.filter_dialog_items)
+                .itemsCallbackMultiChoice(null, new MaterialDialog.ListCallbackMultiChoice() {
+                    @Override
+                    public boolean onSelection(MaterialDialog dialog, Integer[] which, CharSequence[] text) {
+                        /**
+                         * If you use alwaysCallMultiChoiceCallback(), which is discussed below,
+                         * returning false here won't allow the newly selected check box to actually be selected.
+                         * See the limited multi choice dialog example in the sample project for details.
+                         **/
+//                        ArticleFragment articleFrag = (ArticleFragment)
+//                                getSupportFragmentManager().findFragmentById(R.id.article_fragment);
+
+                        mapFragment.markersFactory.plotMarkersWithOtherIcons();
+                        return true;
+                    }
+                })
+                .positiveText(R.string.filter_dialog_positive_text)
+                .show();
     }
 
 
     class MyPagerAdapter extends FragmentPagerAdapter {
 
-        //String[] tabText = getResources().getStringArray(R.array.tabs);
-        int icons[] = {R.drawable.ic_tab_map, R.drawable.ic_tab_listview};
-        //int icons[] = {R.drawable.vector_android, R.drawable.vector_android, R.drawable.vector_android};
+        int iconsArray[] = {R.drawable.ic_tab_map, R.drawable.ic_tab_listview};
 
         public MyPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -125,12 +220,16 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
         @Override
         public Fragment getItem(int i) {
             Fragment fragment = null;
+            fragment_map = null;
             switch (i) {
                 case TAB_MAP:
-                    fragment = MapFragment.newInstance("", "");
+                    fragment_map = MapFragment.newInstance("", "");
+//                    fragment = MapFragment.newInstance("", "");
+                    fragment = mapFragment;
                     break;
                 case TAP_LISTVIEW:
                     fragment = ListViewFragment.newInstance();
+                    fragment_list_view = ListViewFragment.newInstance();
                     break;
 
             }
@@ -139,7 +238,7 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
 
         @Override
         public int getCount() {
-            return 2;
+            return iconsArray.length;
         }
 
         @Override
@@ -148,7 +247,7 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
         }
 
         private Drawable getIcon(int position) {
-            return getResources().getDrawable(icons[position]);
+            return getDrawable(iconsArray[position]);
         }
     }
 }

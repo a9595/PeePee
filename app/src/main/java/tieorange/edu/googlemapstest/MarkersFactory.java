@@ -61,11 +61,33 @@ public class MarkersFactory {
                 markerMoveTo.getLatLng()
                 , zoomLevel);
 
-        final int durationAnimationZoomMs = 3000;
+        final int durationAnimationZoomMs = 1000;
         mMap.animateCamera(cameraUpdate, durationAnimationZoomMs, null);
     }
 
     public HashMap<Marker, MyMarker> plotMarkers() {
+        if (mMyMarkersArray.size() > 0) { // check if is not empty
+            for (MyMarker myMarker : mMyMarkersArray) {
+                // Create user marker with custom icon and other options
+                MarkerOptions markerOption = new MarkerOptions().position(new LatLng(myMarker.getLatitude(), myMarker.getLongitude()));
+
+                //get Drawable from vector
+                final BitmapDescriptor bitmapDescriptor = getBitmapDescriptor(R.drawable.ic_basia, mActivity.getApplicationContext());
+                markerOption.icon(bitmapDescriptor);
+                markerOption.alpha(0.9f);
+
+                Marker currentMarker = mMap.addMarker(markerOption);
+                mMarkersHashMap.put(currentMarker, myMarker);
+
+            }
+            setupMarkerInfoWindow();
+        }
+        return mMarkersHashMap;
+    }
+
+    // TODO: mock
+    public HashMap<Marker, MyMarker> plotMarkersWithOtherIcons() {
+        mMap.clear();
         if (mMyMarkersArray.size() > 0) { // check if is not empty
             for (MyMarker myMarker : mMyMarkersArray) {
                 // Create user marker with custom icon and other options
@@ -84,6 +106,7 @@ public class MarkersFactory {
         }
         return mMarkersHashMap;
     }
+
 
     public void setupMarkerInfoWindow() {
         final MarkerInfoWindowAdapter infoWindowAdapter = new MarkerInfoWindowAdapter(mMarkersHashMap, mActivity);
@@ -116,7 +139,7 @@ public class MarkersFactory {
     private BitmapDescriptor getBitmapDescriptor(int id, Context context) {
         Drawable vectorDrawable = context.getDrawable(id);
         int color = context.getColor(R.color.accent);
-        vectorDrawable.setColorFilter(color, PorterDuff.Mode.SRC_IN);
+        //vectorDrawable.setColorFilter(color, PorterDuff.Mode.SRC_IN);
 
 //        int vectorDrawableIntrinsicHeight = ((int) Utils.convertDpToPixel(42, context));
 //        int vectorDrawableIntrinsicWidth = ((int) Utils.convertDpToPixel(25, context));

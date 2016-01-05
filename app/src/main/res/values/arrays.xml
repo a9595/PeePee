@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="filter_dialog_items">
+        <item>Free</item>
+        <item>Payed</item>
+        <item>Invalid</item>
+        <item>For mothers</item>
+    </string-array>
+</resources>

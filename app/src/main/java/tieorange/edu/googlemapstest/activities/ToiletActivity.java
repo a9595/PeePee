@@ -4,9 +4,7 @@ import android.animation.Animator;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.SystemClock;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -15,15 +13,11 @@ import android.widget.TextView;
 
 import com.google.android.gms.maps.OnStreetViewPanoramaReadyCallback;
 import com.google.android.gms.maps.StreetViewPanorama;
-import com.google.android.gms.maps.StreetViewPanoramaOptions;
 import com.google.android.gms.maps.StreetViewPanoramaView;
 import com.google.android.gms.maps.model.LatLng;
 
 import tieorange.edu.googlemapstest.R;
 import tieorange.edu.googlemapstest.pojo.MyMarker;
-
-import static java.lang.Double.POSITIVE_INFINITY;
-import static java.lang.Double.parseDouble;
 
 public class ToiletActivity extends AppCompatActivity {
 
@@ -33,6 +27,7 @@ public class ToiletActivity extends AppCompatActivity {
     private TextView mUiTextViewName;
     private TextView mUiTextViewDescription;
     private MyMarker myMarker;
+    private Toolbar mUiToolbar;
 
 
     @Override
@@ -40,9 +35,8 @@ public class ToiletActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_toilet);
 
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
 
+//        mUiToolbar = (Toolbar) findViewById(R.id.toilet_toolbar);
         mUiTextViewName = (TextView) findViewById(R.id.toilet_name);
         mUiTextViewDescription = (TextView) findViewById(R.id.toilet_description);
 
@@ -54,7 +48,13 @@ public class ToiletActivity extends AppCompatActivity {
         mUiTextViewName.setText(myMarker.getLabel());
         mUiTextViewDescription.setText("Opened: 8:00 - 23:00");
 
+        setupStreetViewPanorama(savedInstanceState);
+        //setupToolbar();
 
+
+    }
+
+    private void setupStreetViewPanorama(Bundle savedInstanceState) {
         // STREET VIEW init
         mStreetViewPanoramaView = (StreetViewPanoramaView) findViewById(R.id.steet_view_panorama);
         mStreetViewPanoramaView.onCreate(savedInstanceState);
@@ -66,7 +66,14 @@ public class ToiletActivity extends AppCompatActivity {
                 mPanorama = panorama;
             }
         });
+    }
 
+    private void setupToolbar() {
+        setSupportActionBar(mUiToolbar);
+        // Show menu icon
+        final ActionBar ab = getSupportActionBar();
+        ab.setHomeAsUpIndicator(R.drawable.ic_app_icon);
+        ab.setDisplayHomeAsUpEnabled(true);
     }
 
     public void revealPanorama(View view) {
@@ -85,8 +92,7 @@ public class ToiletActivity extends AppCompatActivity {
                 Animator animator = ViewAnimationUtils.createCircularReveal(view, center_x, center_y, 0, finalRadius);
                 animator.start();
 
-            }catch (Exception e)
-            {
+            } catch (Exception e) {
 
             }
 

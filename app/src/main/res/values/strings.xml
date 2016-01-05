@@ -14,4 +14,8 @@
     <string name="title_activity_toilet">Pee Pee</string>
     <string name="google_app_id">peepee-1171</string>
     <string name="transition_name_list_view">list_view_transition_first_line</string>
+    <string name="settings">settings</string>
+    <string name="map_view">Map view</string>
+    <string name="filter_dialog_title">Filter</string>
+    <string name="filter_dialog_positive_text">OK</string>
 </resources>

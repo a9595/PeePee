@@ -1,8 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
-    android:layout_height="?android:attr/listPreferredItemHeight"
-    android:layout_marginTop="5dp"
+    android:layout_height="72dp"
     android:background="@drawable/custom_bg"
     android:clickable="true"
     android:focusable="true">
@@ -15,53 +14,54 @@
     <!--android:layout_height="match_parent"-->
     <!--android:layout_margin="5dp">-->
 
-    <ImageView
+    <ImageView android:layout_marginLeft="16dp"
         android:id="@+id/listview_item_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="false"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="20dp"
+        android:layout_alignWithParentIfMissing="false"
         android:contentDescription="TODO"
         android:src="@drawable/ic_marker_local_dining"
         android:transitionName="@string/transition_name_list_view" />
-    <!--</com.andexert.library.RippleView>-->
-    <!--SECONDARY INFO-->
+
+    <!--FIRST LINE-->
+    <TextView
+        android:id="@+id/listview_item_firstLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignWithParentIfMissing="true"
+        android:paddingLeft="72dp"
+        android:paddingTop="15dp"
+        android:text="Burger king"
+        android:textColor="@color/primary_text"
+        android:textSize="16sp"
+        android:typeface="normal" />
+
+    <!--SECOND LINE-->
     <TextView
         android:id="@+id/listview_item_secondLine"
-        android:layout_width="fill_parent"
-        android:layout_height="26dip"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_toRightOf="@id/listview_item_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/listview_item_firstLine"
         android:ellipsize="marquee"
+        android:paddingBottom="15dp"
+        android:paddingLeft="72dp"
         android:singleLine="true"
         android:text="Opened 8:00-23:00"
         android:textColor="@color/secondary_text"
-        android:textSize="12sp" />
+        android:textSize="14sp" />
 
-    <!--MAIN INFO-->
-    <TextView
-        android:id="@+id/listview_item_firstLine"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/listview_item_secondLine"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignWithParentIfMissing="true"
-        android:layout_toRightOf="@id/listview_item_icon"
-        android:gravity="center_vertical"
-        android:text="Burger king"
-        android:textColor="@color/primary_text"
-        android:textSize="16sp" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:background="@color/secondary_text">
+        android:background="#EEE">
 
     </View>
 
