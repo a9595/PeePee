@@ -47,13 +47,13 @@ public class MarkerInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
 
         MyMarker myMarker = mMarkersHashMap.get(marker);
 
-        ImageView markerIcon = (ImageView) infoWindowView.findViewById(R.id.info_layout_marker_icon);
+        //ImageView markerIcon = (ImageView) infoWindowView.findViewById(R.id.info_layout_marker_icon);
 
         TextView markerLabel = (TextView) infoWindowView.findViewById(R.id.info_layout_marker_title);
 
         TextView anotherLabel = (TextView) infoWindowView.findViewById(R.id.marker_description);
 
-        markerIcon.setImageResource(manageMarkerIcon(myMarker.getIcon()));
+        //markerIcon.setImageResource(manageMarkerIcon(myMarker.getIcon()));
 
         markerLabel.setText(myMarker.getLabel());
         anotherLabel.setText("Opened: \n8:00 - 23:00");

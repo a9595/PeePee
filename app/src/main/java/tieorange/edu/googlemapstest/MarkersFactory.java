@@ -73,6 +73,8 @@ public class MarkersFactory {
 
                 //get Drawable from vector
                 final BitmapDescriptor bitmapDescriptor = getBitmapDescriptor(R.drawable.ic_basia, mActivity.getApplicationContext());
+                final BitmapDescriptor bitmapDescriptor2 = getIconByMarkerType(myMarker);
+
                 markerOption.icon(bitmapDescriptor);
                 markerOption.alpha(0.9f);
 
@@ -83,6 +85,33 @@ public class MarkersFactory {
             setupMarkerInfoWindow();
         }
         return mMarkersHashMap;
+    }
+
+    private BitmapDescriptor getIconByMarkerType(MyMarker myMarker) {
+        BitmapDescriptor icon_marker_result = getBitmapDescriptor(R.drawable.ic_basia, mActivity.getApplicationContext());
+
+        switch (myMarker.getType()) {
+            case MyMarker.MARKER_TYPE_RESTAURANT:
+                if (myMarker.isFree())
+                    icon_marker_result = getBitmapDescriptor(R.drawable.ic_basia, mActivity.getApplicationContext());
+                else
+                    icon_marker_result = getBitmapDescriptor(R.drawable.ic_basia, mActivity.getApplicationContext());
+                break;
+            case MyMarker.MARKER_TYPE_TOI_TOI:
+                icon_marker_result = getBitmapDescriptor(R.drawable.ic_basia, mActivity.getApplicationContext());
+                break;
+            case MyMarker.MARKER_TYPE_OTHER:
+                if (myMarker.isFree())
+                    icon_marker_result = getBitmapDescriptor(R.drawable.ic_basia, mActivity.getApplicationContext());
+                else
+                    icon_marker_result = getBitmapDescriptor(R.drawable.ic_basia, mActivity.getApplicationContext());
+                break;
+            default:
+                break;
+        }
+
+
+        return icon_marker;
     }
 
     // TODO: mock
