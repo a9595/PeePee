@@ -10,21 +10,22 @@
     tools:context=".activities.ToiletActivity">
 
     <com.google.android.gms.maps.StreetViewPanoramaView
-        android:id="@+id/steet_view_panorama"
+        android:id="@+id/toilet_street_view_panorama"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="false"
         android:layout_alignParentStart="false"
-        android:visibility="invisible" />
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/toilet_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/toilet_text_view_find_with_panorama"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:text="Burger King"
+        android:text="Burger KingBurger KingBurger KingBurger KingBurger KingBurger KingBurger KingBurger King"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -46,17 +47,19 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="20dp"
+        android:layout_toEndOf="@+id/toilet_name"
         android:contentDescription="TODO"
         android:src="@drawable/ic_marker_local_dining"
         android:transitionName="@string/transition_name_list_view" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/toilet_text_view_find_with_panorama"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/steet_view_panorama"
         android:layout_alignParentStart="true"
-        android:layout_margin="6dp"
+        android:layout_below="@+id/toilet_description"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
         android:text="Find the toilet faster with Panorama:"
         android:textColor="@android:color/black" />
 

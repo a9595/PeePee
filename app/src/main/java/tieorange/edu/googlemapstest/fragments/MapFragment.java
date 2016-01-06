@@ -23,10 +23,6 @@ import tieorange.edu.googlemapstest.activities.MainActivity;
 import tieorange.edu.googlemapstest.pojo.MyMarker;
 
 public class MapFragment extends Fragment {
-    static ArrayList<MyMarker> mMyMarkersArray = new ArrayList<MyMarker>();
-
-    private SupportMapFragment mMapView;
-    private FloatingActionButton mFAB;
     private View view;
     private MainActivity mainActivity;
     public MarkersFactory markersFactory;
@@ -45,10 +41,7 @@ public class MapFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_map, container, false);
-        // Gets the MapView from the XML layout and creates it
 
-        //mFAB = (FloatingActionButton) view.findViewById(R.id.fab);
-        //setupFab(view);
 
         mainActivity = (MainActivity) getActivity(); // to get GoogleMap object and share it
         setupMap(savedInstanceState, view);

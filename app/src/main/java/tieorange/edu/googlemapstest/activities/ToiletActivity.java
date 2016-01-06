@@ -22,7 +22,7 @@ import tieorange.edu.googlemapstest.pojo.MyMarker;
 
 public class ToiletActivity extends AppCompatActivity {
 
-    private StreetViewPanoramaView mStreetViewPanoramaView;
+//    private StreetViewPanoramaView mStreetViewPanoramaView;
     private StreetViewPanorama mPanorama;
 
     private TextView mUiTextViewName;
@@ -46,7 +46,7 @@ public class ToiletActivity extends AppCompatActivity {
         mUiTextViewDescription.setText("Opened: 8:00 - 23:00");
         mUiImageIcon.setImageResource(myMarker.getIconBlackWhite());
 
-        setupStreetViewPanorama(savedInstanceState);
+        //setupStreetViewPanorama(savedInstanceState);
 
     }
 
@@ -57,19 +57,19 @@ public class ToiletActivity extends AppCompatActivity {
         mUiImageIcon = (ImageView) findViewById(R.id.toilet_imageView_icon);
     }
 
-    private void setupStreetViewPanorama(Bundle savedInstanceState) {
-        // STREET VIEW init
-        mStreetViewPanoramaView = (StreetViewPanoramaView) findViewById(R.id.steet_view_panorama);
-        mStreetViewPanoramaView.onCreate(savedInstanceState);
-        mStreetViewPanoramaView.getStreetViewPanoramaAsync(new OnStreetViewPanoramaReadyCallback() {
-            @Override
-            public void onStreetViewPanoramaReady(StreetViewPanorama panorama) {
-                revealPanorama(mStreetViewPanoramaView);
-                panorama.setPosition(new LatLng(55.758818, 37.620587));
-                mPanorama = panorama;
-            }
-        });
-    }
+//    private void setupStreetViewPanorama(Bundle savedInstanceState) {
+//        // STREET VIEW init
+//        mStreetViewPanoramaView = (StreetViewPanoramaView) findViewById(R.id.toilet_street_view_panorama);
+//        mStreetViewPanoramaView.onCreate(savedInstanceState);
+//        mStreetViewPanoramaView.getStreetViewPanoramaAsync(new OnStreetViewPanoramaReadyCallback() {
+//            @Override
+//            public void onStreetViewPanoramaReady(StreetViewPanorama panorama) {
+//                revealPanorama(mStreetViewPanoramaView);
+//                panorama.setPosition(new LatLng(55.758818, 37.620587));
+//                mPanorama = panorama;
+//            }
+//        });
+//    }
 
     private void setupToolbar() {
         setSupportActionBar(mUiToolbar);
@@ -106,31 +106,31 @@ public class ToiletActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mStreetViewPanoramaView.onDestroy();
+        //mStreetViewPanoramaView.onDestroy();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        mStreetViewPanoramaView.onResume();
+        //mStreetViewPanoramaView.onResume();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        mStreetViewPanoramaView.onPause();
+        //mStreetViewPanoramaView.onPause();
     }
 
     @Override
     public void onLowMemory() {
         super.onLowMemory();
-        mStreetViewPanoramaView.onLowMemory();
+        //mStreetViewPanoramaView.onLowMemory();
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        mStreetViewPanoramaView.onSaveInstanceState(outState);
+//        mStreetViewPanoramaView.onSaveInstanceState(outState);
     }
 
 //    private void setupFab() {
