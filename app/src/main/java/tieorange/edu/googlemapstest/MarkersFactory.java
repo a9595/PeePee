@@ -171,8 +171,9 @@ public class MarkersFactory {
 
 //        int vectorDrawableIntrinsicHeight = ((int) Utils.convertDpToPixel(42, context));
 //        int vectorDrawableIntrinsicWidth = ((int) Utils.convertDpToPixel(25, context));
-        int vectorDrawableIntrinsicHeight = vectorDrawable.getIntrinsicHeight() * 2;
-        int vectorDrawableIntrinsicWidth = vectorDrawable.getIntrinsicWidth() * 2;
+        final int icon_resize_const = 50;
+        int vectorDrawableIntrinsicHeight = vectorDrawable.getIntrinsicHeight() + icon_resize_const;
+        int vectorDrawableIntrinsicWidth = vectorDrawable.getIntrinsicWidth() + icon_resize_const;
 
         vectorDrawable.setBounds(0, 0, vectorDrawableIntrinsicWidth, vectorDrawableIntrinsicHeight);
         Bitmap bm = Bitmap.createBitmap(vectorDrawableIntrinsicWidth, vectorDrawableIntrinsicHeight, Bitmap.Config.ARGB_8888);
