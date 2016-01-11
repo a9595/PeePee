@@ -20,16 +20,12 @@ import android.widget.Toast;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.android.gms.maps.GoogleMap;
 
-import java.util.ArrayList;
-
 import it.neokree.materialtabs.MaterialTab;
 import it.neokree.materialtabs.MaterialTabHost;
 import it.neokree.materialtabs.MaterialTabListener;
-import tieorange.edu.googlemapstest.MarkersFactory;
 import tieorange.edu.googlemapstest.fragments.ListViewFragment;
 import tieorange.edu.googlemapstest.fragments.MapFragment;
 import tieorange.edu.googlemapstest.R;
-import tieorange.edu.googlemapstest.pojo.MyMarker;
 
 public class MainActivity extends AppCompatActivity implements MaterialTabListener {
 
@@ -41,12 +37,14 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
     private ViewPager mViewPager;
     private MyPagerAdapter mMyPagerAdapter;
     private static final int TAB_MAP = 0;
-    private static final int TAP_LISTVIEW = 1;
+    private static final int TAB_LISTVIEW = 1;
     private MapFragment fragment_map;
     private ListViewFragment fragment_list_view;
 
     private GoogleMap mMap;
     private TextView mUiToolbarTitle;
+    public Menu mMenu;
+    private MenuItem mMenuItemMapViewChange;
 
     public GoogleMap getMap() {
         return mMap;
@@ -81,10 +79,24 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
 
         mMyPagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mMyPagerAdapter);
+
         mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
                                                @Override
                                                public void onPageSelected(int position) {
                                                    mUiTabHost.setSelectedNavigationItem(position);
+                                                   switch (position) {
+                                                       case TAB_MAP:
+                                                           if (mMenu != null) {
+                                                               mMenuItemMapViewChange.setVisible(true);
+                                                           }
+                                                           break;
+                                                       case TAB_LISTVIEW:
+                                                           if (mMenu != null) {
+                                                               mMenuItemMapViewChange.setVisible(false);
+                                                           }
+                                                           break;
+                                                   }
+
                                                }
                                            }
         );
@@ -94,6 +106,7 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
             mUiTabHost.addTab(
                     mUiTabHost.newTab()
                             .setIcon(mMyPagerAdapter.getIcon(i))
+                            .setText("Map")
                             .setTabListener(this)
             );
         }
@@ -130,6 +143,7 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
     @Override
     public void onTabSelected(MaterialTab tab) {
         mViewPager.setCurrentItem(tab.getPosition());
+
     }
 
     @Override
@@ -140,6 +154,8 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        mMenu = menu;
+        mMenuItemMapViewChange = mMenu.findItem(R.id.action_map_view_change);
         return true;
 //        return super.onCreateOptionsMenu(menu);
     }
@@ -224,10 +240,11 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
 //                    fragment = MapFragment.newInstance("", "");
                     fragment = mapFragment;
                     break;
-                case TAP_LISTVIEW:
+                case TAB_LISTVIEW:
                     fragment = ListViewFragment.newInstance();
                     fragment_list_view = ListViewFragment.newInstance();
                     break;
+
 
             }
             return fragment;
