@@ -7,6 +7,10 @@ import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 import java.util.List;
 
+import tieorange.edu.googlemapstest.pojo.MyMarker;
+
+import static java.lang.Double.parseDouble;
+
 public class SwimmingPool {
 
     @SerializedName("geometry")
@@ -25,11 +29,17 @@ public class SwimmingPool {
         return "Basen";
     }
 
-    public String getLong() {
-        return geometry.coordinates.lon;
+    public Double getLong() {
+        return parseDouble(geometry.coordinates.lon);
     }
 
-    public String getLat() {
-        return geometry.coordinates.lat;
+    public Double getLat() {
+        return parseDouble(geometry.coordinates.lat);
+    }
+
+    public MyMarker getMyMarker() {
+        MyMarker myMarker = new MyMarker(MyMarker.MARKER_TYPE_SWIMMING_POOL,
+                getLong(), getLat(), getName());
+        return myMarker;
     }
 }

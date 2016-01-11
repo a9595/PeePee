@@ -6,14 +6,12 @@ import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 
 import java.util.ArrayList;
 
@@ -40,7 +38,7 @@ public class ListViewFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_listview, container, false);
 
         // TODO: Get data from CSV file
-        dummyMarkersFromDatabase = MyMarker.getDummyMarkersFromDatabase(getActivity());
+        dummyMarkersFromDatabase = MyMarker.getMarkersFromDatabase(getActivity());
 
         setupRecycleListView(view);
 

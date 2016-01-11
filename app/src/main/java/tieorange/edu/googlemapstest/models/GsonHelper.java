@@ -20,17 +20,17 @@ public class GsonHelper {
         return hotelsList;
     }
 
-    private MetroStationsList getMetroStations(Context context) {
+    public static MetroStationsList getMetroStations(Context context) {
         MetroStationsList metroStationsList = gson.fromJson(loadJSONFromAsset(context, "metroStations.json"), MetroStationsList.class);
         return metroStationsList;
     }
 
-    private SwimmingPoolsList getSwimmingPools(Context context) {
+    public static SwimmingPoolsList getSwimmingPools(Context context) {
         SwimmingPoolsList swimmingPoolsList = gson.fromJson(loadJSONFromAsset(context, "swimmingPools.json"), SwimmingPoolsList.class);
         return swimmingPoolsList;
     }
 
-    public static String loadJSONFromAsset(Context context, String fileName) {
+    private static String loadJSONFromAsset(Context context, String fileName) {
         String json = null;
         try {
 

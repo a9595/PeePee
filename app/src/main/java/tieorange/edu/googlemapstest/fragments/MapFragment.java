@@ -1,19 +1,15 @@
 package tieorange.edu.googlemapstest.fragments;
 
 
-import android.content.Context;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
-import com.google.android.gms.maps.SupportMapFragment;
 
 import java.util.ArrayList;
 
@@ -69,7 +65,7 @@ public class MapFragment extends Fragment {
         }
 
 //        // TODO: get markers from CSV
-        ArrayList<MyMarker> dummyMarkersFromDatabase = MyMarker.getDummyMarkersFromDatabase(getActivity());
+        ArrayList<MyMarker> dummyMarkersFromDatabase = MyMarker.getMarkersFromDatabase(getActivity());
 
         markersFactory = new MarkersFactory(getActivity(), mMap, dummyMarkersFromDatabase);
 

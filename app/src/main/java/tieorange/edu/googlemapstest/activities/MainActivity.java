@@ -20,6 +20,9 @@ import android.widget.Toast;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.android.gms.maps.GoogleMap;
 
+import java.util.Arrays;
+import java.util.List;
+
 import it.neokree.materialtabs.MaterialTab;
 import it.neokree.materialtabs.MaterialTabHost;
 import it.neokree.materialtabs.MaterialTabListener;
@@ -45,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
     private TextView mUiToolbarTitle;
     public Menu mMenu;
     private MenuItem mMenuItemMapViewChange;
+    private MaterialDialog materialDialogFilterMap;
 
     public GoogleMap getMap() {
         return mMap;
@@ -65,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
         setupToolbar();
         setupTab();
         setupDatabase();
+        setupFilterDialog();
 
     }
 
@@ -106,7 +111,6 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
             mUiTabHost.addTab(
                     mUiTabHost.newTab()
                             .setIcon(mMyPagerAdapter.getIcon(i))
-                            .setText("Map")
                             .setTabListener(this)
             );
         }
@@ -122,10 +126,10 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
         mUiToolbarTitle.setTypeface(custom_font);
         setSupportActionBar(mUiToolbar);
         // Show menu icon
-        final ActionBar ab = getSupportActionBar();
-        ab.setHomeAsUpIndicator(R.drawable.ic_toobar_white_drop);
-        ab.setDisplayHomeAsUpEnabled(true);
-        ab.setDisplayShowTitleEnabled(false);
+        final ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_toobar_white_drop);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowTitleEnabled(false);
     }
 
     @Override
@@ -166,11 +170,11 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+//
+//        //noinspection SimplifiableIfStatement
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
         if (id == R.id.action_map_view_change) {
             Toast.makeText(this, "Map view change", Toast.LENGTH_SHORT);
             Log.i("MY", ",map viw");
@@ -199,7 +203,11 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
     }
 
     public void showFilterDialog() {
-        new MaterialDialog.Builder(this)
+        materialDialogFilterMap.show();
+    }
+
+    public void setupFilterDialog() {
+        materialDialogFilterMap = new MaterialDialog.Builder(this)
                 .title(R.string.filter_dialog_title)
                 .items(R.array.filter_dialog_items)
                 .itemsCallbackMultiChoice(null, new MaterialDialog.ListCallbackMultiChoice() {
@@ -213,12 +221,14 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
 //                        ArticleFragment articleFrag = (ArticleFragment)
 //                                getSupportFragmentManager().findFragmentById(R.id.article_fragment);
 
-                        mapFragment.markersFactory.plotMarkersWithOtherIcons();
+                        List<Integer> selected_Filter_options = Arrays.asList(which);
+                        mapFragment.markersFactory.plotMarkersWithOtherIcons(selected_Filter_options);
                         return true;
                     }
                 })
-                .positiveText(R.string.filter_dialog_positive_text)
-                .show();
+                .positiveText(R.string.filter_dialog_positive_text).build();
+
+        materialDialogFilterMap.setSelectedIndices();
     }
 
 
@@ -236,16 +246,13 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
             fragment_map = null;
             switch (i) {
                 case TAB_MAP:
-                    fragment_map = MapFragment.newInstance("", "");
-//                    fragment = MapFragment.newInstance("", "");
                     fragment = mapFragment;
+                    fragment_map = MapFragment.newInstance("", "");
                     break;
                 case TAB_LISTVIEW:
                     fragment = ListViewFragment.newInstance();
                     fragment_list_view = ListViewFragment.newInstance();
                     break;
-
-
             }
             return fragment;
         }

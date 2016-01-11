@@ -12,6 +12,10 @@ import tieorange.edu.googlemapstest.R;
 import tieorange.edu.googlemapstest.models.GsonHelper;
 import tieorange.edu.googlemapstest.models.Hotel.Hotel;
 import tieorange.edu.googlemapstest.models.Hotel.HotelsList;
+import tieorange.edu.googlemapstest.models.Metro.Metro;
+import tieorange.edu.googlemapstest.models.Metro.MetroStationsList;
+import tieorange.edu.googlemapstest.models.SwimmingPool.SwimmingPool;
+import tieorange.edu.googlemapstest.models.SwimmingPool.SwimmingPoolsList;
 
 import static java.lang.Double.parseDouble;
 
@@ -21,7 +25,11 @@ import static java.lang.Double.parseDouble;
 public class MyMarker implements Serializable {
     public static final int MARKER_TYPE_RESTAURANT = 0;
     public static final int MARKER_TYPE_TOI_TOI = 1;
-    public static final int MARKER_TYPE_OTHER = 2;
+    public static final int MARKER_TYPE_METRO = 2;
+    public static final int MARKER_TYPE_HOTEL = 3;
+    public static final int MARKER_TYPE_SWIMMING_POOL = 4;
+    public static final int MARKER_TYPE_OTHER = 5;
+
 
     private String Label;
     private String Icon;
@@ -47,52 +55,32 @@ public class MyMarker implements Serializable {
         Longitude = longitude;
         Latitude = latitude;
         Label = label;
+        isWorkingNow = true;
+        isFree = true;
     }
 
-    public static ArrayList<MyMarker> getDummyMarkersFromDatabase(Context context) {
+    public static ArrayList<MyMarker> getMarkersFromDatabase(Context context) {
         ArrayList<MyMarker> markersArray = new ArrayList<>();
-
-        // TODO: CSV reader from file
-
-        // other: {free, payed}
-        MyMarker markerKinoteka = new MyMarker("Kinoteka free", MyMarker.MARKER_TYPE_OTHER, true, true,
-                parseDouble("52.2309919"), parseDouble("21.00669907"));
-        MyMarker markerZloteTarasy = new MyMarker("Metro Ratusz Arsenał", MARKER_TYPE_OTHER, false, true,
-                parseDouble("52.24501384"), parseDouble("21.00135326"));
-        MyMarker markerOtherNotWorking = new MyMarker("Rondo Dmowskiego - podziemia", MARKER_TYPE_OTHER, true, false,
-                parseDouble("52.2301036"), parseDouble("21.0116003"));
-
-        // restaurant: {free, payed}
-        MyMarker markerBurgerKing = new MyMarker("BurgerKing", MyMarker.MARKER_TYPE_RESTAURANT, true, true,
-                parseDouble("52.22773123"), parseDouble("21.01449105"));
-        MyMarker markerRestaurantPayed = new MyMarker("Dworzec Centralny - McDonald's", MyMarker.MARKER_TYPE_RESTAURANT, true, true,
-                parseDouble("52.228777"), parseDouble("21.003318"));
-        MyMarker markerRestaurantNotWorking = new MyMarker("markerRestaurantNotWorking", MyMarker.MARKER_TYPE_RESTAURANT, true, false,
-                parseDouble("52.23773123"), parseDouble("21.01449105"));
-
-        // toi toi {free}
-        MyMarker markerBasen = new MyMarker("Toi-Toi", MARKER_TYPE_TOI_TOI, true, true,
-                parseDouble("52.22837277"), parseDouble("21.02359623"));
-        MyMarker markerToiToiNotWorking = new MyMarker("Toi-Toi not working", MARKER_TYPE_TOI_TOI, true, true,
-                parseDouble("52.23837277"), parseDouble("21.00359623"));
-
-
-        // add markers to my array
-
-        markersArray.add(markerBurgerKing);
-        markersArray.add(markerKinoteka);
-        markersArray.add(markerZloteTarasy);
-        markersArray.add(markerBasen);
-        markersArray.add(markerOtherNotWorking);
-        markersArray.add(markerRestaurantPayed);
-        markersArray.add(markerRestaurantNotWorking);
-        markersArray.add(markerToiToiNotWorking);
 
         // Hotels
         final HotelsList hotels = GsonHelper.getHotels(context);
         for (Hotel hotel : hotels.data) {
             MyMarker hotelMarker = hotel.getMyMarker();
             markersArray.add(hotelMarker);
+        }
+
+        // Metro
+        final MetroStationsList metroStationsList = GsonHelper.getMetroStations(context);
+        for (Metro metro : metroStationsList.metroStationsList) {
+            MyMarker metroMarker = metro.getMyMarker();
+            markersArray.add(metroMarker);
+        }
+
+        // SwimmingPools
+        final SwimmingPoolsList swimmingPoolsList = GsonHelper.getSwimmingPools(context);
+        for (SwimmingPool swimmingPool: swimmingPoolsList.data) {
+            MyMarker metroMarker = swimmingPool.getMyMarker();
+            markersArray.add(metroMarker);
         }
 
         return markersArray;

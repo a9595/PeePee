@@ -25,6 +25,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import tieorange.edu.googlemapstest.activities.ToiletActivity;
 import tieorange.edu.googlemapstest.adapters.MarkerInfoWindowAdapter;
@@ -86,6 +87,30 @@ public class MarkersFactory {
         return mMarkersHashMap;
     }
 
+
+    // TODO: mock
+    public HashMap<Marker, MyMarker> plotMarkersWithOtherIcons(List<Integer> filter_selected_items) {
+        mMap.clear();
+
+        if (mMyMarkersArray.size() > 0) { // check if is not empty
+            for (MyMarker myMarker : mMyMarkersArray) {
+                if (filter_selected_items.contains(myMarker.getType())) {
+                    // Create user marker with custom icon and other options
+                    MarkerOptions markerOption = new MarkerOptions().position(new LatLng(myMarker.getLatitude(), myMarker.getLongitude()));
+
+                    //get Drawable from vector
+                    final BitmapDescriptor markerIcon = getIconByMarkerType(myMarker);
+                    markerOption.icon(markerIcon);
+
+                    Marker currentMarker = mMap.addMarker(markerOption);
+                    mMarkersHashMap.put(currentMarker, myMarker);
+                }
+            }
+            setupMarkerInfoWindow();
+        }
+        return mMarkersHashMap;
+    }
+
     private BitmapDescriptor getIconByMarkerType(MyMarker myMarker) {
         BitmapDescriptor icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_icon, mActivity.getApplicationContext());
 
@@ -105,34 +130,23 @@ public class MarkersFactory {
                 else
                     icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_other_payed, mActivity.getApplicationContext());
                 break;
+            case MyMarker.MARKER_TYPE_METRO:
+                icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_other_not_working, mActivity.getApplicationContext());
+
+                break;
+            case MyMarker.MARKER_TYPE_HOTEL:
+                icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_other_payed, mActivity.getApplicationContext());
+                break;
+
+            case MyMarker.MARKER_TYPE_SWIMMING_POOL:
+                icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_restaurant_not_working, mActivity.getApplicationContext());
+                break;
             default:
                 break;
         }
 
 
         return icon_marker_result;
-    }
-
-    // TODO: mock
-    public HashMap<Marker, MyMarker> plotMarkersWithOtherIcons() {
-        mMap.clear();
-        if (mMyMarkersArray.size() > 0) { // check if is not empty
-            for (MyMarker myMarker : mMyMarkersArray) {
-                // Create user marker with custom icon and other options
-                MarkerOptions markerOption = new MarkerOptions().position(new LatLng(myMarker.getLatitude(), myMarker.getLongitude()));
-
-                //get Drawable from vector
-                final BitmapDescriptor bitmapDescriptor = getBitmapDescriptor(R.drawable.ic_marker_icon, mActivity.getApplicationContext());
-                markerOption.icon(bitmapDescriptor);
-                markerOption.alpha(0.9f);
-
-                Marker currentMarker = mMap.addMarker(markerOption);
-                mMarkersHashMap.put(currentMarker, myMarker);
-
-            }
-            setupMarkerInfoWindow();
-        }
-        return mMarkersHashMap;
     }
 
 

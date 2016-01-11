@@ -39,7 +39,7 @@ public class Hotel {
     }
 
     public MyMarker getMyMarker() {
-        MyMarker myMarker = new MyMarker(MyMarker.MARKER_TYPE_RESTAURANT,
+        MyMarker myMarker = new MyMarker(MyMarker.MARKER_TYPE_HOTEL,
                 getLong(), getLat(), getName());
         return myMarker;
     }
