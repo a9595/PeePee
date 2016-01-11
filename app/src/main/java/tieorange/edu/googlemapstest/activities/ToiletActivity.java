@@ -1,9 +1,13 @@
 package tieorange.edu.googlemapstest.activities;
 
+import android.Manifest;
 import android.animation.Animator;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -12,8 +16,19 @@ import android.view.ViewAnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.StreetViewPanorama;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
+
+import tieorange.edu.googlemapstest.MarkersFactory;
 import tieorange.edu.googlemapstest.R;
 import tieorange.edu.googlemapstest.pojo.MyMarker;
 
@@ -27,6 +42,8 @@ public class ToiletActivity extends AppCompatActivity {
     private TextView mUiTextViewDescription;
     private MyMarker mMyMarker;
     private ImageView mUiImageIcon;
+    private MapView mapView;
+    private GoogleMap mMap;
 
 
     @Override
@@ -43,8 +60,68 @@ public class ToiletActivity extends AppCompatActivity {
         mUiTextViewDescription.setText("Opened: 8:00 - 23:00");
         mUiImageIcon.setImageResource(mMyMarker.getIconBlackWhite());
 
+        setupMap(savedInstanceState, this);
         //setupStreetViewPanorama(savedInstanceState);
 
+
+        //image map:
+        String url = "http://maps.google.com/maps/api/staticmap?center=" + mMyMarker.getLatitude() + "," + mMyMarker.getLongitude() + "&zoom=15&size=200x200&sensor=false";
+
+    }
+
+    private void setupMap(Bundle savedInstanceState, Context context) {
+        MapsInitializer.initialize(this);
+        mapView = (MapView) findViewById(R.id.toilet_map);
+        mapView.onCreate(savedInstanceState);
+        // Gets to GoogleMap from the MapView and does initialization stuff
+        if (mapView != null) {
+
+            mMap = mapView.getMap();
+
+//            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+//                // TODO: Consider calling
+//                //    ActivityCompat#requestPermissions
+//                // here to request the missing permissions, and then overriding
+//                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+//                //                                          int[] grantResults)
+//                // to handle the case where the user grants the permission. See the documentation
+//                // for ActivityCompat#requestPermissions for more details.
+//                return;
+//            }
+//            mMap.setMyLocationEnabled(true);
+            mMap.getUiSettings().setMyLocationButtonEnabled(true);
+
+
+            //mMap.setMyLocationEnabled(true);
+
+            MarkerOptions markerOption = new MarkerOptions().position(new LatLng(this.mMyMarker.getLatitude(),
+                    mMyMarker.getLongitude()));
+
+            mMap.addMarker(markerOption);
+
+            mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+
+                public boolean onMarkerClick(Marker marker) {
+//                    mMap.onMapClick(marker.getPosition());
+                    return false;
+                }
+            });
+        }
+
+        moveMapCameraTo(mMyMarker);
+
+
+    }
+
+    private void moveMapCameraTo(MyMarker markerMoveTo) {
+        // Move camera
+        final int zoomLevel = 15;
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(
+                markerMoveTo.getLatLng()
+                , zoomLevel);
+
+        final int durationAnimationZoomMs = 1000;
+        mMap.animateCamera(cameraUpdate, durationAnimationZoomMs, null);
     }
 
     private void findViews() {
@@ -67,7 +144,6 @@ public class ToiletActivity extends AppCompatActivity {
 //            }
 //        });
 //    }
-
 
 
     public void revealPanorama(View view) {
@@ -97,12 +173,14 @@ public class ToiletActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        mapView.onDestroy();
         //mStreetViewPanoramaView.onDestroy();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        mapView.onResume();
         //mStreetViewPanoramaView.onResume();
     }
 
@@ -115,6 +193,7 @@ public class ToiletActivity extends AppCompatActivity {
     @Override
     public void onLowMemory() {
         super.onLowMemory();
+        mapView.onLowMemory();
         //mStreetViewPanoramaView.onLowMemory();
     }
 
@@ -123,8 +202,6 @@ public class ToiletActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
 //        mStreetViewPanoramaView.onSaveInstanceState(outState);
     }
-
-
 
 
 //    private void showStreetView(LatLng latLng) {

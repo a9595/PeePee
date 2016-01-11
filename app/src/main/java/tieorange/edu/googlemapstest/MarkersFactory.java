@@ -62,8 +62,9 @@ public class MarkersFactory {
                 markerMoveTo.getLatLng()
                 , zoomLevel);
 
-        final int durationAnimationZoomMs = 1000;
-        mMap.animateCamera(cameraUpdate, durationAnimationZoomMs, null);
+//        final int durationAnimationZoomMs = 0;
+//        mMap.animateCamera(cameraUpdate, durationAnimationZoomMs, null);
+        mMap.animateCamera(cameraUpdate);
     }
 
     public HashMap<Marker, MyMarker> plotMarkers() {
