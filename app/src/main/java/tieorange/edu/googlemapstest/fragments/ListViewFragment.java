@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import tieorange.edu.googlemapstest.R;
+import tieorange.edu.googlemapstest.activities.MainActivity;
 import tieorange.edu.googlemapstest.activities.ToiletActivity;
 import tieorange.edu.googlemapstest.adapters.ItemClickSupport;
 import tieorange.edu.googlemapstest.adapters.MyListViewAdapter;
@@ -27,6 +28,7 @@ public class ListViewFragment extends Fragment {
     private RecyclerView.LayoutManager mLayoutManager;
     private ArrayList<MyMarker> dummyMarkersFromDatabase;
     private View view;
+    private MainActivity mainActivity;
 
     public static ListViewFragment newInstance() {
         ListViewFragment fragment = new ListViewFragment();
@@ -36,10 +38,11 @@ public class ListViewFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_listview, container, false);
+        mainActivity = (MainActivity) getActivity(); // to get GoogleMap object and share it
+
 
         // TODO: Get data from CSV file
-        dummyMarkersFromDatabase = MyMarker.getMarkersFromDatabase(getActivity());
-
+        dummyMarkersFromDatabase = mainActivity.markersFromDatabase;
         setupRecycleListView(view);
 
 

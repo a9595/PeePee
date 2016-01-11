@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.android.gms.maps.GoogleMap;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -29,6 +30,7 @@ import it.neokree.materialtabs.MaterialTabListener;
 import tieorange.edu.googlemapstest.fragments.ListViewFragment;
 import tieorange.edu.googlemapstest.fragments.MapFragment;
 import tieorange.edu.googlemapstest.R;
+import tieorange.edu.googlemapstest.pojo.MyMarker;
 
 public class MainActivity extends AppCompatActivity implements MaterialTabListener {
 
@@ -49,6 +51,8 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
     public Menu mMenu;
     private MenuItem mMenuItemMapViewChange;
     private MaterialDialog materialDialogFilterMap;
+    public ArrayList<MyMarker> markersFromDatabase;
+
 
     public GoogleMap getMap() {
         return mMap;
@@ -70,6 +74,8 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
         setupTab();
         setupDatabase();
         setupFilterDialog();
+
+        markersFromDatabase = MyMarker.getMarkersAllMarkersList(this);
 
     }
 
@@ -221,7 +227,9 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
 //                        ArticleFragment articleFrag = (ArticleFragment)
 //                                getSupportFragmentManager().findFragmentById(R.id.article_fragment);
 
+                        // TODO: 
                         List<Integer> selected_Filter_options = Arrays.asList(which);
+                        filterMarkers(selected_Filter_options);
                         mapFragment.markersFactory.plotMarkersWithOtherIcons(selected_Filter_options);
                         return true;
                     }
@@ -230,6 +238,21 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
 
     }
 
+
+    public void filterMarkers(List<Integer> listFilterSelected) {
+        markersFromDatabase.clear();
+        if (listFilterSelected.contains(MyMarker.MARKER_TYPE_HOTEL))
+            MyMarker.getHotelsMarkers(this);
+        if (listFilterSelected.contains(MyMarker.MARKER_TYPE_METRO))
+            MyMarker.getMetroStationsMarkers(this);
+        if (listFilterSelected.contains(MyMarker.MARKER_TYPE_SWIMMING_POOL))
+            MyMarker.getSwimmingPoolsMarkers(this);
+//
+//        for (MyMarker marker : markersFromDatabase) {
+//
+//        }
+
+    }
 
     class MyPagerAdapter extends FragmentPagerAdapter {
 

@@ -22,6 +22,7 @@ public class MapFragment extends Fragment {
     private View view;
     private MainActivity mainActivity;
     public MarkersFactory markersFactory;
+    public ArrayList<MyMarker> markersFromDatabase;
 
     public MapFragment() {
     }
@@ -65,13 +66,14 @@ public class MapFragment extends Fragment {
         }
 
 //        // TODO: get markers from CSV
-        ArrayList<MyMarker> dummyMarkersFromDatabase = MyMarker.getMarkersFromDatabase(getActivity());
+//        markersFromDatabase = MyMarker.getMarkersAllMarkersList(getActivity());
+        markersFromDatabase = mainActivity.markersFromDatabase;
 
-        markersFactory = new MarkersFactory(getActivity(), mMap, dummyMarkersFromDatabase);
+
+        markersFactory = new MarkersFactory(getActivity(), mMap, markersFromDatabase);
 
         markersFactory.initMarkers(); // create places on mMap
         markersFactory.plotMarkers(); // put them to the mMap
-
 
 
 //        // TODO: infowindow

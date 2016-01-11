@@ -94,7 +94,7 @@ public class MarkersFactory {
 
         if (mMyMarkersArray.size() > 0) { // check if is not empty
             for (MyMarker myMarker : mMyMarkersArray) {
-                if (filter_selected_items.contains(myMarker.getType())) {
+//                if (filter_selected_items.contains(myMarker.getType())) {
                     // Create user marker with custom icon and other options
                     MarkerOptions markerOption = new MarkerOptions().position(new LatLng(myMarker.getLatitude(), myMarker.getLongitude()));
 
@@ -104,7 +104,7 @@ public class MarkersFactory {
 
                     Marker currentMarker = mMap.addMarker(markerOption);
                     mMarkersHashMap.put(currentMarker, myMarker);
-                }
+//                }
             }
             setupMarkerInfoWindow();
         }
@@ -131,15 +131,15 @@ public class MarkersFactory {
                     icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_other_payed, mActivity.getApplicationContext());
                 break;
             case MyMarker.MARKER_TYPE_METRO:
-                icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_other_not_working, mActivity.getApplicationContext());
+                icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_other_working, mActivity.getApplicationContext());
 
                 break;
             case MyMarker.MARKER_TYPE_HOTEL:
-                icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_other_payed, mActivity.getApplicationContext());
+                icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_other_working, mActivity.getApplicationContext());
                 break;
 
             case MyMarker.MARKER_TYPE_SWIMMING_POOL:
-                icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_restaurant_not_working, mActivity.getApplicationContext());
+                icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_other_working, mActivity.getApplicationContext());
                 break;
             default:
                 break;

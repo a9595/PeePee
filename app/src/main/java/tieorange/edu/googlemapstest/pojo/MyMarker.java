@@ -2,7 +2,6 @@ package tieorange.edu.googlemapstest.pojo;
 
 import android.content.Context;
 
-import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.io.Serializable;
@@ -16,8 +15,6 @@ import tieorange.edu.googlemapstest.models.Metro.Metro;
 import tieorange.edu.googlemapstest.models.Metro.MetroStationsList;
 import tieorange.edu.googlemapstest.models.SwimmingPool.SwimmingPool;
 import tieorange.edu.googlemapstest.models.SwimmingPool.SwimmingPoolsList;
-
-import static java.lang.Double.parseDouble;
 
 /**
  * Created by tieorange on 11/12/15.
@@ -39,6 +36,7 @@ public class MyMarker implements Serializable {
     private Double Longitude;
 
     private int Type;
+    private static ArrayList<MyMarker> markersList;
 
 
     public MyMarker(String label, int type, boolean isFree, boolean isWorkingNow, Double latitude, Double longitude) {
@@ -59,31 +57,40 @@ public class MyMarker implements Serializable {
         isFree = true;
     }
 
-    public static ArrayList<MyMarker> getMarkersFromDatabase(Context context) {
-        ArrayList<MyMarker> markersArray = new ArrayList<>();
+    public static ArrayList<MyMarker> getMarkersAllMarkersList(Context context) {
+        markersList = new ArrayList<>();
+        getHotelsMarkers(context);
+        getMetroStationsMarkers(context);
+        getSwimmingPoolsMarkers(context);
+        return markersList;
+    }
 
-        // Hotels
-        final HotelsList hotels = GsonHelper.getHotels(context);
-        for (Hotel hotel : hotels.data) {
-            MyMarker hotelMarker = hotel.getMyMarker();
-            markersArray.add(hotelMarker);
-        }
-
-        // Metro
-        final MetroStationsList metroStationsList = GsonHelper.getMetroStations(context);
-        for (Metro metro : metroStationsList.metroStationsList) {
-            MyMarker metroMarker = metro.getMyMarker();
-            markersArray.add(metroMarker);
-        }
-
+    public static void getSwimmingPoolsMarkers(Context context) {
         // SwimmingPools
         final SwimmingPoolsList swimmingPoolsList = GsonHelper.getSwimmingPools(context);
         for (SwimmingPool swimmingPool: swimmingPoolsList.data) {
             MyMarker metroMarker = swimmingPool.getMyMarker();
-            markersArray.add(metroMarker);
+            markersList.add(metroMarker);
         }
+    }
 
-        return markersArray;
+
+    public static void getMetroStationsMarkers(Context context) {
+        // Metro
+        final MetroStationsList metroStationsList = GsonHelper.getMetroStations(context);
+        for (Metro metro : metroStationsList.metroStationsList) {
+            MyMarker metroMarker = metro.getMyMarker();
+            markersList.add(metroMarker);
+        }
+    }
+
+    public static void getHotelsMarkers(Context context) {
+        // Hotels
+        final HotelsList hotels = GsonHelper.getHotels(context);
+        for (Hotel hotel : hotels.data) {
+            MyMarker hotelMarker = hotel.getMyMarker();
+            markersList.add(hotelMarker);
+        }
     }
 
     public int getIconBlackWhite() {
