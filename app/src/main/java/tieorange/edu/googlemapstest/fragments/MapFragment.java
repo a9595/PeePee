@@ -60,12 +60,12 @@ public class MapFragment extends Fragment {
 
             mMap.getUiSettings().setMyLocationButtonEnabled(true);
 
-            mMap.snapshot(new GoogleMap.SnapshotReadyCallback() {
-                @Override
-                public void onSnapshotReady(Bitmap bitmap) {
-
-                }
-            });
+//            mMap.snapshot(new GoogleMap.SnapshotReadyCallback() {
+//                @Override
+//                public void onSnapshotReady(Bitmap bitmap) {
+//
+//                }
+//            });
 
             //mMap.setMyLocationEnabled(true);
 
