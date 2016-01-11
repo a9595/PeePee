@@ -1,12 +1,9 @@
 package tieorange.edu.googlemapstest.adapters;
 
 import android.app.Activity;
-import android.graphics.Color;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.balysv.materialripple.MaterialRippleLayout;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.Marker;
 
@@ -29,6 +26,8 @@ import tieorange.edu.googlemapstest.pojo.MyMarker;
 public class MarkerInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
     private Activity mainActivity;
     private HashMap<Marker, MyMarker> mMarkersHashMap;
+    private TextView mUiMarkerTitle;
+    private TextView mUiMarkerDescription;
 
 
     public MarkerInfoWindowAdapter(HashMap<Marker, MyMarker> markersHashMap, Activity activity) {
@@ -47,36 +46,15 @@ public class MarkerInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
 
         MyMarker myMarker = mMarkersHashMap.get(marker);
 
-        //ImageView markerIcon = (ImageView) infoWindowView.findViewById(R.id.info_layout_marker_icon);
+        mUiMarkerTitle = (TextView) infoWindowView.findViewById(R.id.info_layout_marker_title);
 
-        TextView markerLabel = (TextView) infoWindowView.findViewById(R.id.info_layout_marker_title);
+        mUiMarkerDescription = (TextView) infoWindowView.findViewById(R.id.marker_description);
 
-        TextView anotherLabel = (TextView) infoWindowView.findViewById(R.id.marker_description);
 
-        //markerIcon.setImageResource(manageMarkerIcon(myMarker.getIcon()));
-
-        markerLabel.setText(myMarker.getLabel());
-
-//        if(myMarker.isFree())
-        //anotherLabel.setText("Opened: \n8:00 - 24:00");
+        mUiMarkerTitle.setText(myMarker.getLabel());
 
         return infoWindowView;
     }
 
-//    public ImageView getMarkerIconImageView() {
-//        return markerIcon;
-//    }
 
-    private int manageMarkerIcon(String markerIcon) {
-        if (markerIcon.equals("icon1"))
-            return R.drawable.ic_marker_train;
-        else if (markerIcon.equals("icon2"))
-            return R.drawable.ic_marker_local_dining;
-        else if (markerIcon.equals("icon3"))
-            return R.drawable.ic_marker_local_hotel;
-        else if (markerIcon.equals("icon4"))
-            return R.drawable.ic_marker_local_mall;
-        else
-            return R.drawable.icondefault;
-    }
 }

@@ -9,6 +9,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import tieorange.edu.googlemapstest.R;
+import tieorange.edu.googlemapstest.models.GsonHelper;
+import tieorange.edu.googlemapstest.models.Hotel.Hotel;
+import tieorange.edu.googlemapstest.models.Hotel.HotelsList;
 
 import static java.lang.Double.parseDouble;
 
@@ -39,10 +42,15 @@ public class MyMarker implements Serializable {
         this.Type = type;
     }
 
+    public MyMarker(int type, Double longitude, Double latitude, String label) {
+        Type = type;
+        Longitude = longitude;
+        Latitude = latitude;
+        Label = label;
+    }
 
-    public static ArrayList<MyMarker> getDummyMarkersFromDatabase() {
+    public static ArrayList<MyMarker> getDummyMarkersFromDatabase(Context context) {
         ArrayList<MyMarker> markersArray = new ArrayList<>();
-
 
         // TODO: CSV reader from file
 
@@ -79,6 +87,13 @@ public class MyMarker implements Serializable {
         markersArray.add(markerRestaurantPayed);
         markersArray.add(markerRestaurantNotWorking);
         markersArray.add(markerToiToiNotWorking);
+
+        // Hotels
+        final HotelsList hotels = GsonHelper.getHotels(context);
+        for (Hotel hotel : hotels.data) {
+            MyMarker hotelMarker = hotel.getMyMarker();
+            markersArray.add(hotelMarker);
+        }
 
         return markersArray;
     }

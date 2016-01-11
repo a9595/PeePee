@@ -69,15 +69,13 @@ public class MapFragment extends Fragment {
         }
 
 //        // TODO: get markers from CSV
-        ArrayList<MyMarker> dummyMarkersFromDatabase = MyMarker.getDummyMarkersFromDatabase();
+        ArrayList<MyMarker> dummyMarkersFromDatabase = MyMarker.getDummyMarkersFromDatabase(getActivity());
 
         markersFactory = new MarkersFactory(getActivity(), mMap, dummyMarkersFromDatabase);
 
         markersFactory.initMarkers(); // create places on mMap
         markersFactory.plotMarkers(); // put them to the mMap
 
-//        mainActivity.getMarkersFactory().initMarkers(); // create places on mMap
-//        mainActivity.getMarkersFactory().plotMarkers(); // put them to the mMap
 
 
 //        // TODO: infowindow

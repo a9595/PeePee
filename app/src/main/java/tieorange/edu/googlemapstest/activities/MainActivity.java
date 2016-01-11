@@ -46,16 +46,7 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
     private ListViewFragment fragment_list_view;
 
     private GoogleMap mMap;
-    private MarkersFactory mMarkersFactory;
     private TextView mUiToolbarTitle;
-
-    public MarkersFactory getMarkersFactory() {
-        return mMarkersFactory;
-    }
-
-    public void setMarkersFactory(MarkersFactory mMarkersFactory) {
-        this.mMarkersFactory = mMarkersFactory;
-    }
 
     public GoogleMap getMap() {
         return mMap;
@@ -81,9 +72,6 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
 
     private void setupDatabase() {
         // TODO: get markers from CSV
-        ArrayList<MyMarker> dummyMarkersFromDatabase = MyMarker.getDummyMarkersFromDatabase();
-
-        mMarkersFactory = new MarkersFactory(this, mMap, dummyMarkersFromDatabase);
 
     }
 

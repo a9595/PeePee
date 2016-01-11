@@ -1,0 +1,654 @@
+{
+  "data": [
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.269673",
+          "lon": "20.983348"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "1"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.269517",
+          "lon": "20.983471"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "2"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.269288",
+          "lon": "20.985518"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "3"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.268834",
+          "lon": "20.985149"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "4"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.269271",
+          "lon": "20.985170"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "5"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.269193",
+          "lon": "20.985113"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "6"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.258002",
+          "lon": "20.994567"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "7"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.257880",
+          "lon": "20.994119"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "8"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.257767",
+          "lon": "20.994230"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "9"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.257653",
+          "lon": "20.994733"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "10"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.245205",
+          "lon": "21.000661"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "11"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.245308",
+          "lon": "21.001151"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "12"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.244714",
+          "lon": "21.001055"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "13"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.244605",
+          "lon": "21.001774"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "14"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.244475",
+          "lon": "21.001882"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "15"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.244163",
+          "lon": "21.001759"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "16"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.236289",
+          "lon": "21.006840"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "17"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.235541",
+          "lon": "21.007883"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "18"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.232363",
+          "lon": "21.009891"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "19"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.232092",
+          "lon": "21.010054"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "20"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.231958",
+          "lon": "21.009837"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "21"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.230515",
+          "lon": "21.010829"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "22"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.230441",
+          "lon": "21.010607"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "23"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.232437",
+          "lon": "21.010466"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "24"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.232266",
+          "lon": "21.010568"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "25"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.219640",
+          "lon": "21.015861"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "26"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.219384",
+          "lon": "21.015270"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "27"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.219342",
+          "lon": "21.015837"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "28"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.217578",
+          "lon": "21.014381"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "29"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.217889",
+          "lon": "21.015621"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "30"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.209716",
+          "lon": "21.006995"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "31"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.209351",
+          "lon": "21.007142"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "32"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.209370",
+          "lon": "21.007369"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "33"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.209447",
+          "lon": "21.007971"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "34"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.208031",
+          "lon": "21.007574"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "35"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.208136",
+          "lon": "21.008395"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "36"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.207664",
+          "lon": "21.007729"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "37"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.199791",
+          "lon": "21.011534"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "38"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.199794",
+          "lon": "21.012013"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "39"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.199423",
+          "lon": "21.011718"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "40"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.198162",
+          "lon": "21.012339"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "41"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.198243",
+          "lon": "21.012788"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "42"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.197921",
+          "lon": "21.012939"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "43"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.197876",
+          "lon": "21.012448"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "44"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.189348",
+          "lon": "21.017296"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "45"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.188923",
+          "lon": "21.016599"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "46"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.188934",
+          "lon": "21.016817"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "47"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.188970",
+          "lon": "21.017597"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "48"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.190750",
+          "lon": "21.016020"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "49"
+      }
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.190486",
+          "lon": "21.016153"
+        }
+      },
+      "properties": {
+        "key": "OBJECTID",
+        "value": "50"
+      }
+    }
+  ]
+}

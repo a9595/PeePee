@@ -35,16 +35,12 @@ public class ListViewFragment extends Fragment {
         return fragment;
     }
 
-    public ArrayList<MyMarker> getDummyMarkersFromDatabase() {
-        return dummyMarkersFromDatabase;
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_listview, container, false);
 
         // TODO: Get data from CSV file
-        dummyMarkersFromDatabase = MyMarker.getDummyMarkersFromDatabase();
+        dummyMarkersFromDatabase = MyMarker.getDummyMarkersFromDatabase(getActivity());
 
         setupRecycleListView(view);
 
@@ -63,9 +59,6 @@ public class ListViewFragment extends Fragment {
         mLayoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        // set click listener
-        //mRecyclerView.addOnItemTouchList\ener(this,this);
-
         // specify an adapter (see also next example)
         mAdapter = new MyListViewAdapter(view.getContext(), dummyMarkersFromDatabase);
 
@@ -81,8 +74,7 @@ public class ListViewFragment extends Fragment {
                 final View UiImageIcon = v.findViewById(R.id.listview_item_icon);
 
                 Intent intent = new Intent(v.getContext(), ToiletActivity.class);
-                intent.putExtra("name", myMarker);
-//                ActivityOptions.makeSceneTransitionAnimation(this).toBundle();
+                intent.putExtra(ToiletActivity.EXTRA_MY_MARKER, myMarker);
 
                 ActivityOptions activityOptions =
                         ActivityOptions.makeSceneTransitionAnimation(getActivity(), UiImageIcon,

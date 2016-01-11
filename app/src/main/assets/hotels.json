@@ -1,0 +1,3318 @@
+{
+  "data": [
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.254128",
+          "lon": "20.998813"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "437"
+        },
+        {
+          "key": "ULICA",
+          "value": "Muranowska"
+        },
+        {
+          "key": "NUMER",
+          "value": "2"
+        },
+        {
+          "key": "KOD",
+          "value": "00-209"
+        },
+        {
+          "key": "OPIS",
+          "value": "Ibis Warszawa Stare Miasto Hotel"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "* *"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "666"
+        },
+        {
+          "key": "POKOJE",
+          "value": "333"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Śródmieście"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 310 10 00 / 22 310 10 10"
+        },
+        {
+          "key": "WWW",
+          "value": "http://ibishotel.ibis.com/pl/hotel-3714-ibis-warszawa-stare-miasto-old-town/index.shtml"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:h3714@accor.com"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.207845",
+          "lon": "21.187320"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "370"
+        },
+        {
+          "key": "ULICA",
+          "value": "Obiegowa"
+        },
+        {
+          "key": "NUMER",
+          "value": "3"
+        },
+        {
+          "key": "KOD",
+          "value": "04-739"
+        },
+        {
+          "key": "OPIS",
+          "value": "Dobry Sen - Pokoje Gościnne"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "brak"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "11"
+        },
+        {
+          "key": "POKOJE",
+          "value": "7"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Wawer"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 815 60 74 /brak"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.pokoje-kwatery.waw.pl/"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:dobrysen@pokoje-kwatery.waw.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.215138",
+          "lon": "20.973204"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "408"
+        },
+        {
+          "key": "ULICA",
+          "value": "Rokosowska"
+        },
+        {
+          "key": "NUMER",
+          "value": "10"
+        },
+        {
+          "key": "KOD",
+          "value": "02-348"
+        },
+        {
+          "key": "OPIS",
+          "value": "Ośrodek Sportu i Rekreacji Dzielnicy Ochota - Pokoje Gościnne"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "brak"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "15"
+        },
+        {
+          "key": "POKOJE",
+          "value": "5"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Ochota"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 572 90 70 / "
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.osir-ochota.home.pl/?page_id=139"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:osir@osirochota.waw.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.181808",
+          "lon": "20.948980"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "391"
+        },
+        {
+          "key": "ULICA",
+          "value": "Aleja Krakowska"
+        },
+        {
+          "key": "NUMER",
+          "value": "157A"
+        },
+        {
+          "key": "KOD",
+          "value": "02-180"
+        },
+        {
+          "key": "OPIS",
+          "value": "Gordon Hotel"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "* *"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "72"
+        },
+        {
+          "key": "POKOJE",
+          "value": "34"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Włochy"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 868 46 50 / "
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.hotelgordon.pl/"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:hotel@hotelgordon.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.226492",
+          "lon": "21.041716"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "359"
+        },
+        {
+          "key": "ULICA",
+          "value": "Zagórna"
+        },
+        {
+          "key": "NUMER",
+          "value": "1"
+        },
+        {
+          "key": "KOD",
+          "value": "00-441"
+        },
+        {
+          "key": "OPIS",
+          "value": "Etap Warszawa Centrum Hotel"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "*"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "352"
+        },
+        {
+          "key": "POKOJE",
+          "value": "176"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Śródmieście"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 745 36 60 / 22 622 55 01"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.accorhotels.com/pl/hotel-6401-ibis-budget-warszawa-centrum-przedtem-etap-hotel/index.shtml"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:h6401@accor.com"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.122708",
+          "lon": "21.096320"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "327"
+        },
+        {
+          "key": "ULICA",
+          "value": "Przekorna"
+        },
+        {
+          "key": "NUMER",
+          "value": "33"
+        },
+        {
+          "key": "KOD",
+          "value": "02- 971"
+        },
+        {
+          "key": "OPIS",
+          "value": "Mrówka Centrum Konferencyjno-Apartamentowe"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "brak"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "50"
+        },
+        {
+          "key": "POKOJE",
+          "value": "25"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Wilanów"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 894 64 15 / 22 894 64 14 "
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.cka-mrowka.pl"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:recepcja@cka-mrowka.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.188477",
+          "lon": "20.957104"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "343"
+        },
+        {
+          "key": "ULICA",
+          "value": "Aleja Krakowska"
+        },
+        {
+          "key": "NUMER",
+          "value": "236"
+        },
+        {
+          "key": "KOD",
+          "value": "02-219"
+        },
+        {
+          "key": "OPIS",
+          "value": "Noclegi Okęcie"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "brak"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "&lt;Null&gt;"
+        },
+        {
+          "key": "POKOJE",
+          "value": "&lt;Null&gt;"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Włochy"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 866 00 88 / 22 868 06 32"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.noclegiokecie.pl/"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:recepcja@noclegiokecie.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.241102",
+          "lon": "21.118297"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "364"
+        },
+        {
+          "key": "ULICA",
+          "value": "Liwiecka"
+        },
+        {
+          "key": "NUMER",
+          "value": "12"
+        },
+        {
+          "key": "KOD",
+          "value": "04-284"
+        },
+        {
+          "key": "OPIS",
+          "value": "Elżbieta Wakulińska Pokoje Gościnne"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "brak"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "?"
+        },
+        {
+          "key": "POKOJE",
+          "value": "?"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Praga Południe"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 610 33 60 / brak"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.pokojegoscinne.cba.pl/"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:elawakul@wp.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.227647",
+          "lon": "21.004790"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "425"
+        },
+        {
+          "key": "ULICA",
+          "value": "Aleje Jerozolimskie"
+        },
+        {
+          "key": "NUMER",
+          "value": "65/79"
+        },
+        {
+          "key": "KOD",
+          "value": "00-697"
+        },
+        {
+          "key": "OPIS",
+          "value": "Marriott Hotel"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "* * * * *"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "1036"
+        },
+        {
+          "key": "POKOJE",
+          "value": "518"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Śródmieście"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 630 63 06 / 22 830 03 11"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.warsawmarriott.pl"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:mail@marriotthotel.com"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.233106",
+          "lon": "21.119706"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "443"
+        },
+        {
+          "key": "ULICA",
+          "value": "Ostrobramska"
+        },
+        {
+          "key": "NUMER",
+          "value": "36"
+        },
+        {
+          "key": "KOD",
+          "value": "04-118"
+        },
+        {
+          "key": "OPIS",
+          "value": "Ibis Warszawa Ostrobramska Hotel"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "* *"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "274"
+        },
+        {
+          "key": "POKOJE",
+          "value": "137"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Praga-Południe"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 515 78 00 / 22 515 78 88"
+        },
+        {
+          "key": "WWW",
+          "value": "http://ibishotel.ibis.com/pl/hotel-3129-ibis-warszawa-ostrobramska/index.shtml"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:h3129@accor.com"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.227970",
+          "lon": "21.024988"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "402"
+        },
+        {
+          "key": "ULICA",
+          "value": "B. Prusa"
+        },
+        {
+          "key": "NUMER",
+          "value": "2"
+        },
+        {
+          "key": "KOD",
+          "value": "00-493"
+        },
+        {
+          "key": "OPIS",
+          "value": "Sheraton Warsaw Hotel"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "* * * * *"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "700"
+        },
+        {
+          "key": "POKOJE",
+          "value": "350"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Śródmieście"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 450 61 00 / 22 450 62 00"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.sheraton.pl/"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:reservation.warsaw@starwoodhotels.com"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.232392",
+          "lon": "21.002511"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "445"
+        },
+        {
+          "key": "ULICA",
+          "value": "E. Plater"
+        },
+        {
+          "key": "NUMER",
+          "value": "49"
+        },
+        {
+          "key": "KOD",
+          "value": "00-125"
+        },
+        {
+          "key": "OPIS",
+          "value": "InterContinental Hotel"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "* * * * *"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "600"
+        },
+        {
+          "key": "POKOJE",
+          "value": "401"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Śródmieście"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 328 88 88 / 22 328 88 89"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.warsaw.intercontinental.com/"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:warsaw@ihg.com"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.220556",
+          "lon": "21.035114"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "348"
+        },
+        {
+          "key": "ULICA",
+          "value": "Myśliwiecka"
+        },
+        {
+          "key": "NUMER",
+          "value": "9"
+        },
+        {
+          "key": "KOD",
+          "value": "00-459"
+        },
+        {
+          "key": "OPIS",
+          "value": "Agrykola"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "brak"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "37"
+        },
+        {
+          "key": "POKOJE",
+          "value": "26"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Śródmieście"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 622 91 10 / 22 622 91 05"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.agrykola-noclegi.pl/"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:recepcja@agrykola-noclegi.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.188950",
+          "lon": "20.958463"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "384"
+        },
+        {
+          "key": "ULICA",
+          "value": "Sabały"
+        },
+        {
+          "key": "NUMER",
+          "value": "32"
+        },
+        {
+          "key": "KOD",
+          "value": "02-174"
+        },
+        {
+          "key": "OPIS",
+          "value": "Marylex "
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "brak"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "54"
+        },
+        {
+          "key": "POKOJE",
+          "value": "23"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Włochy"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 868 13 05 / 22 868 13 04 "
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.motelmarylex.pl"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:informacja@motelmarylex.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.297367",
+          "lon": "21.016122"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "323"
+        },
+        {
+          "key": "ULICA",
+          "value": "Marywilska"
+        },
+        {
+          "key": "NUMER",
+          "value": "16"
+        },
+        {
+          "key": "KOD",
+          "value": "03-228"
+        },
+        {
+          "key": "OPIS",
+          "value": "Partner Hotel"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "* * *"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "166"
+        },
+        {
+          "key": "POKOJE",
+          "value": "103"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Białołęka"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 814 23 00 / 22 814 50 15"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.partnerhotel.pl"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:recepcja@partnerhotel.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.213439",
+          "lon": "20.962696"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "449"
+        },
+        {
+          "key": "ULICA",
+          "value": "Bitwy Warszawskiej 1920 Roku"
+        },
+        {
+          "key": "NUMER",
+          "value": "15/17"
+        },
+        {
+          "key": "KOD",
+          "value": "02-366"
+        },
+        {
+          "key": "OPIS",
+          "value": "Majawa Zajazd i Domki Campingowe"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "brak"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "30"
+        },
+        {
+          "key": "POKOJE",
+          "value": "9"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Ochota"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 822 91 21 / 22 823 72 44"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.majawa.pl/"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:hotel@majawa.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.186447",
+          "lon": "21.048459"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "341"
+        },
+        {
+          "key": "ULICA",
+          "value": "Mangalia"
+        },
+        {
+          "key": "NUMER",
+          "value": "3B"
+        },
+        {
+          "key": "KOD",
+          "value": "02-758"
+        },
+        {
+          "key": "OPIS",
+          "value": "Start Hotel Aramis"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "*"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "600"
+        },
+        {
+          "key": "POKOJE",
+          "value": "232"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Mokotów"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 207 80 00 / 22 463 63 62 "
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.starthotel.pl"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:aramis@starthotel.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.226128",
+          "lon": "20.988816"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "331"
+        },
+        {
+          "key": "ULICA",
+          "value": "Towarowa"
+        },
+        {
+          "key": "NUMER",
+          "value": "2"
+        },
+        {
+          "key": "KOD",
+          "value": "00-811"
+        },
+        {
+          "key": "OPIS",
+          "value": "Campanile - Hotel"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "* *"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "388"
+        },
+        {
+          "key": "POKOJE",
+          "value": "192"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Wola"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 582 72 00  / "
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.campanile.com.pl"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:warszawa@campanile.com.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.205482",
+          "lon": "21.194089"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "410"
+        },
+        {
+          "key": "ULICA",
+          "value": "Aleja Dzieci Polskich"
+        },
+        {
+          "key": "NUMER",
+          "value": "20"
+        },
+        {
+          "key": "KOD",
+          "value": "04-730"
+        },
+        {
+          "key": "OPIS",
+          "value": "Patron - Obiekt Hotelarski"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "brak"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "495"
+        },
+        {
+          "key": "POKOJE",
+          "value": "220"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Wawer"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 815 24 51 / 22 815 26 37"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.patron.waw.pl"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:rezerwacje@patron.waw.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.344055",
+          "lon": "20.960753"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "375"
+        },
+        {
+          "key": "ULICA",
+          "value": "Czeremchowa"
+        },
+        {
+          "key": "NUMER",
+          "value": "38A"
+        },
+        {
+          "key": "KOD",
+          "value": "03-159"
+        },
+        {
+          "key": "OPIS",
+          "value": "Pod Lasem Hotel"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "brak"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "135"
+        },
+        {
+          "key": "POKOJE",
+          "value": "37"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Białołęka"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 614 91 24 / 22 614 91 27"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.hotelpodlasem.oit.pl/"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:hotelpodlasem@oit.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.177000",
+          "lon": "21.179515"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "457"
+        },
+        {
+          "key": "ULICA",
+          "value": "Hortensji"
+        },
+        {
+          "key": "NUMER",
+          "value": "14"
+        },
+        {
+          "key": "KOD",
+          "value": "04-880"
+        },
+        {
+          "key": "OPIS",
+          "value": "Stokrotka - Kwatery Prywatne"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "brak"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "bd"
+        },
+        {
+          "key": "POKOJE",
+          "value": "bd"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Wawer"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 872 05 90"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.181194",
+          "lon": "20.948435"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "351"
+        },
+        {
+          "key": "ULICA",
+          "value": "Aleja Krakowska"
+        },
+        {
+          "key": "NUMER",
+          "value": "151"
+        },
+        {
+          "key": "KOD",
+          "value": "02-180"
+        },
+        {
+          "key": "OPIS",
+          "value": "Subaru Motel"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "brak"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "46"
+        },
+        {
+          "key": "POKOJE",
+          "value": "30"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Włochy"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 886 60 74 / 22 886 60 79"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.motelsubaru.home.pl"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:recepcja@motelsubaru.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.176886",
+          "lon": "21.008447"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "361"
+        },
+        {
+          "key": "ULICA",
+          "value": "Aleja Lotników"
+        },
+        {
+          "key": "NUMER",
+          "value": "32/46"
+        },
+        {
+          "key": "KOD",
+          "value": "02-668"
+        },
+        {
+          "key": "OPIS",
+          "value": "Instytut Fizyki PAN - Pokoje Gościnne"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "brak"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "45"
+        },
+        {
+          "key": "POKOJE",
+          "value": "25"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Mokotów"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 843 24 24 / brak"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:hotel@ifpan.edu.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.233602",
+          "lon": "20.986218"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "379"
+        },
+        {
+          "key": "ULICA",
+          "value": "Grzybowska"
+        },
+        {
+          "key": "NUMER",
+          "value": "63"
+        },
+        {
+          "key": "KOD",
+          "value": "00-844"
+        },
+        {
+          "key": "OPIS",
+          "value": "Hilton Warsaw Hotel And Convention Centre"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "* * * *"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "640"
+        },
+        {
+          "key": "POKOJE",
+          "value": "314"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Wola"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 356 55 55 / "
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.hiltonwarsaw.pl/"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:reservation.warsaw@hilton.com"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.248280",
+          "lon": "21.013881"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "436"
+        },
+        {
+          "key": "ULICA",
+          "value": "Świętojańska"
+        },
+        {
+          "key": "NUMER",
+          "value": "2"
+        },
+        {
+          "key": "KOD",
+          "value": "00-288"
+        },
+        {
+          "key": "OPIS",
+          "value": "Castle Inn"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "brak"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "44"
+        },
+        {
+          "key": "POKOJE",
+          "value": "21"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Śródmieście"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 425 01 00 / 22 635 04 25"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.castleinn.pl/"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:castleinn@castleinn.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.178931",
+          "lon": "20.946660"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "450"
+        },
+        {
+          "key": "ULICA",
+          "value": "Aleja Krakowska"
+        },
+        {
+          "key": "NUMER",
+          "value": "131"
+        },
+        {
+          "key": "KOD",
+          "value": "02-180"
+        },
+        {
+          "key": "OPIS",
+          "value": "Witkowski Hotel"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "* * *"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "78"
+        },
+        {
+          "key": "POKOJE",
+          "value": "42"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Włochy"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 846 70 70 / 22 886 62 36"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.hotelwitkowski.pl"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:recepcja@hotelwitkowski.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.229392",
+          "lon": "21.012723"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "321"
+        },
+        {
+          "key": "ULICA",
+          "value": "Marszałkowska"
+        },
+        {
+          "key": "NUMER",
+          "value": "94/98"
+        },
+        {
+          "key": "KOD",
+          "value": "00-510"
+        },
+        {
+          "key": "OPIS",
+          "value": "Novotel Warszawa Centrum Hotel"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "* * * *"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "1418"
+        },
+        {
+          "key": "POKOJE",
+          "value": "733"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Śródmieście"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 596 00 00 / 22 596 06 47"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.novotel.com/gb/hotel-3383-novotel-warszawa-centrum/index.shtml"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:h3383@accor.com"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.203814",
+          "lon": "21.180210"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "352"
+        },
+        {
+          "key": "ULICA",
+          "value": "Świebodzińska"
+        },
+        {
+          "key": "NUMER",
+          "value": "11"
+        },
+        {
+          "key": "KOD",
+          "value": "04-722"
+        },
+        {
+          "key": "OPIS",
+          "value": "Prawiehotel - Pokoje Gościnne"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "brak"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "208"
+        },
+        {
+          "key": "POKOJE",
+          "value": "104"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Wawer"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 396 05 65 / "
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.prawiehotel.pl/"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:recepcja@prawiehotel.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.185788",
+          "lon": "21.069424"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "420"
+        },
+        {
+          "key": "ULICA",
+          "value": "C. Godebskiego"
+        },
+        {
+          "key": "NUMER",
+          "value": "4A"
+        },
+        {
+          "key": "KOD",
+          "value": "02-912"
+        },
+        {
+          "key": "OPIS",
+          "value": "Abracadabra - Pokoje Gościnne"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "brak"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "18"
+        },
+        {
+          "key": "POKOJE",
+          "value": "7"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Mokotów"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "+48 781 581 359 / brak"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.abracadabra.waw.pl/"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:abracadabra@abracadabra.waw.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.230709",
+          "lon": "21.139452"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "334"
+        },
+        {
+          "key": "ULICA",
+          "value": "Edisona"
+        },
+        {
+          "key": "NUMER",
+          "value": "2"
+        },
+        {
+          "key": "KOD",
+          "value": "04-510"
+        },
+        {
+          "key": "OPIS",
+          "value": "CS Szkolenie i Doradztwo"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "brak"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "138"
+        },
+        {
+          "key": "POKOJE",
+          "value": "72"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Wawer"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 612 13 57/ 22 473 10 17"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.csid.pl/"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:wok.warszawa@csid.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.239989",
+          "lon": "21.013425"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "403"
+        },
+        {
+          "key": "ULICA",
+          "value": "Królewska"
+        },
+        {
+          "key": "NUMER",
+          "value": "11"
+        },
+        {
+          "key": "KOD",
+          "value": "00-065"
+        },
+        {
+          "key": "OPIS",
+          "value": "Sofitel Victoria Hotel"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "* * * * *"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "686"
+        },
+        {
+          "key": "POKOJE",
+          "value": "343"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Śródmieście"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 657 80 11 / 22 657 80 57"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.sofitel.com/gb/hotel-3378-sofitel-warsaw-victoria/index.shtml"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:H3378@sofitel.com"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.244469",
+          "lon": "21.049495"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "429"
+        },
+        {
+          "key": "ULICA",
+          "value": "Aleja Zieleniecka"
+        },
+        {
+          "key": "NUMER",
+          "value": "6/8"
+        },
+        {
+          "key": "KOD",
+          "value": "03-727"
+        },
+        {
+          "key": "OPIS",
+          "value": "Dedek Park"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "brak"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "33"
+        },
+        {
+          "key": "POKOJE",
+          "value": "24"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Praga-Południe"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 619 77 81 / 22 863 31 54"
+        },
+        {
+          "key": "WWW",
+          "value": "http://dedek.pl/dedekpark/"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:parkhotel@dedek.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.214449",
+          "lon": "20.968317"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "398"
+        },
+        {
+          "key": "ULICA",
+          "value": "Bitwy Warszawskiej 1920 r."
+        },
+        {
+          "key": "NUMER",
+          "value": "16"
+        },
+        {
+          "key": "KOD",
+          "value": "02-366"
+        },
+        {
+          "key": "OPIS",
+          "value": "Ibis Reduta"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "* *"
+        },
+        {
+          "key": "POKOJE",
+          "value": "170"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Ochota"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 572 25 00 / 22 572 25 55"
+        },
+        {
+          "key": "WWW",
+          "value": "http://ibishotel.ibis.com/pl/hotel-7125-ibis-warszawa-reduta/index.shtml"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:h7125@accor.com"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.252343",
+          "lon": "21.035991"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "380"
+        },
+        {
+          "key": "ULICA",
+          "value": "Kłopotowskiego"
+        },
+        {
+          "key": "NUMER",
+          "value": "33"
+        },
+        {
+          "key": "KOD",
+          "value": "03-720"
+        },
+        {
+          "key": "OPIS",
+          "value": "Hit Hotel"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "* *"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "102"
+        },
+        {
+          "key": "POKOJE",
+          "value": "54"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Praga-Północ"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 618 94 70 / 22 619 57 44"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.hithotel.pl/"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:rezerwacja@hithotel.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.176129",
+          "lon": "21.073646"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "340"
+        },
+        {
+          "key": "ULICA",
+          "value": "Rumiana"
+        },
+        {
+          "key": "NUMER",
+          "value": "87"
+        },
+        {
+          "key": "KOD",
+          "value": "02-956"
+        },
+        {
+          "key": "OPIS",
+          "value": "Wilanowskie Pokoje Gościnne"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "brak"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "32"
+        },
+        {
+          "key": "POKOJE",
+          "value": "14"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Wilanów"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 642 90 68 / "
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:dsalezy@poczta.onet.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.214616",
+          "lon": "20.967830"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "397"
+        },
+        {
+          "key": "ULICA",
+          "value": "Bitwy Warszawskiej 1920 r."
+        },
+        {
+          "key": "NUMER",
+          "value": "16a"
+        },
+        {
+          "key": "KOD",
+          "value": "02-366 "
+        },
+        {
+          "key": "OPIS",
+          "value": "Ibis Budget Warszawa Reduta"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "*"
+        },
+        {
+          "key": "POKOJE",
+          "value": "163"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Ochota"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 824 05 40 / 22 824 06 65"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.accorhotels.com/pl/hotel-7148-ibis-budget-warszawa-reduta/index.shtml"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:h7148@accor.com"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.217973",
+          "lon": "20.908888"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "383"
+        },
+        {
+          "key": "ULICA",
+          "value": "Połczyńska"
+        },
+        {
+          "key": "NUMER",
+          "value": "55"
+        },
+        {
+          "key": "KOD",
+          "value": "01-336"
+        },
+        {
+          "key": "OPIS",
+          "value": "Marko Hotel"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "*"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "60"
+        },
+        {
+          "key": "POKOJE",
+          "value": "?"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Bemowo"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 664 63 52 / brak"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.hotel-marko.ibz.pl/"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.178962",
+          "lon": "21.148490"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "335"
+        },
+        {
+          "key": "ULICA",
+          "value": "Odrębna"
+        },
+        {
+          "key": "NUMER",
+          "value": "4"
+        },
+        {
+          "key": "KOD",
+          "value": "04-867"
+        },
+        {
+          "key": "OPIS",
+          "value": "Centrum Szkoleniowo-Konferencyjne KZRS &quot;SCh&quot;"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "brak"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "200"
+        },
+        {
+          "key": "POKOJE",
+          "value": "90"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Wawer"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 872 00 31 / "
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.csk.oit.pl/"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:recepcja@centrumsk.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.229213",
+          "lon": "21.010208"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "451"
+        },
+        {
+          "key": "ULICA",
+          "value": "Aleje Jerozolimskie"
+        },
+        {
+          "key": "NUMER",
+          "value": "45"
+        },
+        {
+          "key": "KOD",
+          "value": "00-692"
+        },
+        {
+          "key": "OPIS",
+          "value": "Polonia Palace Hotel"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "* * * *"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "390"
+        },
+        {
+          "key": "POKOJE",
+          "value": "206"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Śródmieście"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 318 28 00 / 22 318 28 01"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.poloniapalace.com/"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:poloniapalace@syrena.com.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.207664",
+          "lon": "21.029478"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "424"
+        },
+        {
+          "key": "ULICA",
+          "value": "Belwederska"
+        },
+        {
+          "key": "NUMER",
+          "value": "23"
+        },
+        {
+          "key": "KOD",
+          "value": "00-761"
+        },
+        {
+          "key": "OPIS",
+          "value": "Regent Warsaw Polska"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "* * * * *"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "492"
+        },
+        {
+          "key": "POKOJE",
+          "value": "246"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Śródmieście"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 558 12 34 / 22 558 12 35"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:reservations@cosmar.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.229165",
+          "lon": "21.010876"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "421"
+        },
+        {
+          "key": "ULICA",
+          "value": "Marszałkowska"
+        },
+        {
+          "key": "NUMER",
+          "value": "99A"
+        },
+        {
+          "key": "KOD",
+          "value": "00-693"
+        },
+        {
+          "key": "OPIS",
+          "value": "Metropol Hotel"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "* * *"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "249"
+        },
+        {
+          "key": "POKOJE",
+          "value": "191"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Śródmieście"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 325 31 00 / 22 628 66 22"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.hotelmetropol.com.pl/"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:hotel.metropol@syrena.com.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.121623",
+          "lon": "21.014950"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "417"
+        },
+        {
+          "key": "ULICA",
+          "value": "Baletowa"
+        },
+        {
+          "key": "NUMER",
+          "value": "3"
+        },
+        {
+          "key": "KOD",
+          "value": "02-867"
+        },
+        {
+          "key": "OPIS",
+          "value": "American House"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "brak"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "?"
+        },
+        {
+          "key": "POKOJE",
+          "value": "12"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Ursynów"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 857 81 90 / 22 857 81 90"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.americanhouse.pl/"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:office@americanhouse.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.210616",
+          "lon": "21.028166"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "329"
+        },
+        {
+          "key": "ULICA",
+          "value": "Belwederska"
+        },
+        {
+          "key": "NUMER",
+          "value": "46/50"
+        },
+        {
+          "key": "KOD",
+          "value": "00-594"
+        },
+        {
+          "key": "OPIS",
+          "value": "Parkowa Hotel"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "brak"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "65"
+        },
+        {
+          "key": "POKOJE",
+          "value": "44"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Śródmieście"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 694 80 00 / 22 694 84 44"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.hotelparkowa.pl/"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:poczta@hotelparkowa.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.203307",
+          "lon": "20.927793"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "412"
+        },
+        {
+          "key": "ULICA",
+          "value": "Mikołajska"
+        },
+        {
+          "key": "NUMER",
+          "value": "2"
+        },
+        {
+          "key": "KOD",
+          "value": "02-455"
+        },
+        {
+          "key": "OPIS",
+          "value": "Roko Hotel"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "* *"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "48"
+        },
+        {
+          "key": "POKOJE",
+          "value": "23"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Włochy"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 863 85 43 / 22 863 30 59"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.hotelroko.pl"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:hotel@hotelroko.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.151326",
+          "lon": "21.018241"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "357"
+        },
+        {
+          "key": "ULICA",
+          "value": "Puławska"
+        },
+        {
+          "key": "NUMER",
+          "value": "361"
+        },
+        {
+          "key": "KOD",
+          "value": "02-801"
+        },
+        {
+          "key": "OPIS",
+          "value": "Puławska Residence Hotel"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "* * *"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "394"
+        },
+        {
+          "key": "POKOJE",
+          "value": "197"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Ursynów"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 241 75 00 / 22 241 75 99"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.pulawskaresidence.com.pl/"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:rezerwacje@pulawskaresidence.com.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.223913",
+          "lon": "21.160323"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "405"
+        },
+        {
+          "key": "ULICA",
+          "value": "Rzeźbiarska"
+        },
+        {
+          "key": "NUMER",
+          "value": "80"
+        },
+        {
+          "key": "KOD",
+          "value": "04-620"
+        },
+        {
+          "key": "OPIS",
+          "value": "UFO Hotel"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "brak"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "21"
+        },
+        {
+          "key": "POKOJE",
+          "value": "9"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Wawer"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 815 22 00 / 22 815 62 98"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.noclegufo.pl"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:ufo@noclegufo.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.194571",
+          "lon": "20.928113"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "467"
+        },
+        {
+          "key": "ULICA",
+          "value": "Jutrzenki"
+        },
+        {
+          "key": "NUMER",
+          "value": "119"
+        },
+        {
+          "key": "KOD",
+          "value": "02-231"
+        },
+        {
+          "key": "OPIS",
+          "value": "Czerniewski"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "* * *"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "86"
+        },
+        {
+          "key": "POKOJE",
+          "value": "44"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Włochy"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "+48 788 840 003"
+        },
+        {
+          "key": "WWW",
+          "value": "http://hotelczerniewski.pl/"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:recepcja@hotelczerniewski.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.253764",
+          "lon": "21.007529"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "446"
+        },
+        {
+          "key": "ULICA",
+          "value": "Kościelna"
+        },
+        {
+          "key": "NUMER",
+          "value": "12"
+        },
+        {
+          "key": "KOD",
+          "value": "00-218"
+        },
+        {
+          "key": "OPIS",
+          "value": "Mamaison Hotel Le Regina Warsaw"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "* * * * *"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "130"
+        },
+        {
+          "key": "POKOJE",
+          "value": "61"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Śródmieście"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 531 60 00 / 22 531 60 01"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.mamaison.com/leregina"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:reservations.leregina@mamaison.com"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.171384",
+          "lon": "21.072999"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "358"
+        },
+        {
+          "key": "ULICA",
+          "value": "Kubickiego"
+        },
+        {
+          "key": "NUMER",
+          "value": "3"
+        },
+        {
+          "key": "KOD",
+          "value": "02-954"
+        },
+        {
+          "key": "OPIS",
+          "value": "Wilanów Warszawa by Desilva"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "* * *"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "129"
+        },
+        {
+          "key": "POKOJE",
+          "value": "73"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Wilanów"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 550 61 00 / 22 642 23 89 "
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.desilva.pl/Wilanow/"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:wilanow@desilva.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.324799",
+          "lon": "20.977247"
+        }
+      },
+      "properties": [
+        {
+          "key": "OBJECTID",
+          "value": "345"
+        },
+        {
+          "key": "ULICA",
+          "value": "Żywiczna"
+        },
+        {
+          "key": "NUMER",
+          "value": "57"
+        },
+        {
+          "key": "KOD",
+          "value": "03-179"
+        },
+        {
+          "key": "OPIS",
+          "value": "Twins Centrum Szkoleniowe"
+        },
+        {
+          "key": "GWIAZDKI",
+          "value": "brak"
+        },
+        {
+          "key": "POJEMNOSC",
+          "value": "84"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Białołęka"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 889 55 05 / 22 889 55 10"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.hoteltwins.pl/"
+        },
+        {
+          "key": "MAIL",
+          "value": "mailto:biuro@cstwins.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "lipiec 2014"
+        }
+      ]
+    }
+  ]
+}

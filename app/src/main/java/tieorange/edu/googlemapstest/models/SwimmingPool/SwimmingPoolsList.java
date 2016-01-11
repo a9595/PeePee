@@ -1,0 +1,16 @@
+
+package tieorange.edu.googlemapstest.models.SwimmingPool;
+
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class SwimmingPoolsList {
+
+    @SerializedName("data")
+    @Expose
+    public List<SwimmingPool> data = new ArrayList<SwimmingPool>();
+
+}

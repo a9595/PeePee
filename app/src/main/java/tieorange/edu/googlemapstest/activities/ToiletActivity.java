@@ -12,23 +12,20 @@ import android.view.ViewAnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.gms.maps.OnStreetViewPanoramaReadyCallback;
 import com.google.android.gms.maps.StreetViewPanorama;
-import com.google.android.gms.maps.StreetViewPanoramaView;
-import com.google.android.gms.maps.model.LatLng;
 
 import tieorange.edu.googlemapstest.R;
 import tieorange.edu.googlemapstest.pojo.MyMarker;
 
 public class ToiletActivity extends AppCompatActivity {
 
-//    private StreetViewPanoramaView mStreetViewPanoramaView;
+    public static final String EXTRA_MY_MARKER = "my_marker";
+    //    private StreetViewPanoramaView mStreetViewPanoramaView;
     private StreetViewPanorama mPanorama;
 
     private TextView mUiTextViewName;
     private TextView mUiTextViewDescription;
-    private MyMarker myMarker;
-    private Toolbar mUiToolbar;
+    private MyMarker mMyMarker;
     private ImageView mUiImageIcon;
 
 
@@ -38,13 +35,13 @@ public class ToiletActivity extends AppCompatActivity {
         setContentView(R.layout.activity_toilet);
 
         Intent intent = getIntent();
-        myMarker = (MyMarker) intent.getSerializableExtra("name");
+        mMyMarker = (MyMarker) intent.getSerializableExtra(EXTRA_MY_MARKER);
         findViews();
 
 
-        mUiTextViewName.setText(myMarker.getLabel());
+        mUiTextViewName.setText(mMyMarker.getLabel());
         mUiTextViewDescription.setText("Opened: 8:00 - 23:00");
-        mUiImageIcon.setImageResource(myMarker.getIconBlackWhite());
+        mUiImageIcon.setImageResource(mMyMarker.getIconBlackWhite());
 
         //setupStreetViewPanorama(savedInstanceState);
 
@@ -71,13 +68,7 @@ public class ToiletActivity extends AppCompatActivity {
 //        });
 //    }
 
-    private void setupToolbar() {
-        setSupportActionBar(mUiToolbar);
-        // Show menu icon
-        final ActionBar ab = getSupportActionBar();
-        ab.setHomeAsUpIndicator(R.drawable.ic_app_icon);
-        ab.setDisplayHomeAsUpEnabled(true);
-    }
+
 
     public void revealPanorama(View view) {
         if (view.getVisibility() == View.VISIBLE) return;
@@ -133,16 +124,7 @@ public class ToiletActivity extends AppCompatActivity {
 //        mStreetViewPanoramaView.onSaveInstanceState(outState);
     }
 
-//    private void setupFab() {
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
-//    }
+
 
 
 //    private void showStreetView(LatLng latLng) {

@@ -149,7 +149,7 @@ public class MarkersFactory {
                 Log.i("MY", myMarker.getLabel());
 
                 Intent i = new Intent(mActivity, ToiletActivity.class);
-                i.putExtra("name", myMarker);
+                i.putExtra(ToiletActivity.EXTRA_MY_MARKER, myMarker);
 
                 // Shared element transition
                 //final ImageView markerIconImageView = infoWindowAdapter.getMarkerIconImageView();

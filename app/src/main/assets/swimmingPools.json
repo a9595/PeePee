@@ -1,0 +1,514 @@
+{
+  "data": [
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.249991",
+          "lon": "21.035679"
+        }
+      },
+      "properties": [
+        {
+          "key": "ULICA",
+          "value": "Jagiellońska"
+        },
+        {
+          "key": "NUMER",
+          "value": "7"
+        },
+        {
+          "key": "OPIS",
+          "value": "DOSiR Praga Północ - Pływalnia Prawy brzeg"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Praga Północ"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 619 81 38 / brak"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.dosir.waw.pl/"
+        },
+        {
+          "key": "MAIL1",
+          "value": "mailto:sekretariat.jagiellonska@dosir.waw.pl"
+        },
+        {
+          "key": "MAIL2",
+          "value": " "
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "Sierpień 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.194128",
+          "lon": "20.874439"
+        }
+      },
+      "properties": [
+        {
+          "key": "ULICA",
+          "value": "Orląt Lwowskich"
+        },
+        {
+          "key": "NUMER",
+          "value": "1"
+        },
+        {
+          "key": "OPIS",
+          "value": "OSiR Ursus - Pływalnia &quot;Albatros&quot;"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Ursus"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 817 51 94 / 22 499 73 58"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.osirursus.pl/"
+        },
+        {
+          "key": "MAIL1",
+          "value": "mailto:osir@osirursus.pl"
+        },
+        {
+          "key": "MAIL2",
+          "value": " "
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "Sierpień 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.228622",
+          "lon": "20.977213"
+        }
+      },
+      "properties": [
+        {
+          "key": "ULICA",
+          "value": "M. Kasprzaka"
+        },
+        {
+          "key": "NUMER",
+          "value": "1/3"
+        },
+        {
+          "key": "OPIS",
+          "value": "Pływalnia Delfin (OSiR Wola)"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Wola"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 631 48 65 / 22 631 48 67"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.osir-wola.pl/"
+        },
+        {
+          "key": "MAIL1",
+          "value": "mailto:delfin@osir-wola.pl"
+        },
+        {
+          "key": "MAIL2",
+          "value": " "
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "Sierpień 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.276745",
+          "lon": "20.984993"
+        }
+      },
+      "properties": [
+        {
+          "key": "ULICA",
+          "value": "Potocka"
+        },
+        {
+          "key": "NUMER",
+          "value": "1"
+        },
+        {
+          "key": "OPIS",
+          "value": "OSiR Żoliborz"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Żoliborz"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 832 46 00 / 22 832 45 55"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.osir-zoliborz.waw.pl"
+        },
+        {
+          "key": "MAIL1",
+          "value": "mailto:osirzoliborz@osir-zoliborz.waw.pl"
+        },
+        {
+          "key": "MAIL2",
+          "value": " "
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "Sierpień 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.211035",
+          "lon": "20.984086"
+        }
+      },
+      "properties": [
+        {
+          "key": "ULICA",
+          "value": "S. Banacha"
+        },
+        {
+          "key": "NUMER",
+          "value": "2A"
+        },
+        {
+          "key": "OPIS",
+          "value": "Centrum Sportu i Rekreacji Uniwersytetu Warszawskiego"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Ochota"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 554 08 65 / 22 554 08 67"
+        },
+        {
+          "key": "WWW",
+          "value": "http://portalinformacyjny.uw.edu.pl/miejsca-ogolnodostepne/"
+        },
+        {
+          "key": "MAIL1",
+          "value": " "
+        },
+        {
+          "key": "MAIL2",
+          "value": " "
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "Sierpień 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.176829",
+          "lon": "21.055367"
+        }
+      },
+      "properties": [
+        {
+          "key": "ULICA",
+          "value": "Barcelońska"
+        },
+        {
+          "key": "NUMER",
+          "value": "8"
+        },
+        {
+          "key": "OPIS",
+          "value": "SP nr 307 im. Jana III Sobieskiego"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Mokotów"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 842 42 61 / 22 842 42 61"
+        },
+        {
+          "key": "WWW",
+          "value": "http://sp307wawa.edupage.org/"
+        },
+        {
+          "key": "MAIL1",
+          "value": "mailto:sp307wawa@wp.pl"
+        },
+        {
+          "key": "MAIL2",
+          "value": "mailto:sp307@edu.um.warszawa.pl"
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "Sierpień 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.181140",
+          "lon": "20.996048"
+        }
+      },
+      "properties": [
+        {
+          "key": "ULICA",
+          "value": "Postępu"
+        },
+        {
+          "key": "NUMER",
+          "value": "17A"
+        },
+        {
+          "key": "OPIS",
+          "value": "Calypso Fitness Club - Adgar Plaza (właściciel prywatny)"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Mokotów"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 323 80 80 / brak"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.calypso.com.pl/klub/calypso-warszawa-adgar-plaza"
+        },
+        {
+          "key": "MAIL1",
+          "value": " "
+        },
+        {
+          "key": "MAIL2",
+          "value": " "
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "Sierpień 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.205218",
+          "lon": "20.953652"
+        }
+      },
+      "properties": [
+        {
+          "key": "ULICA",
+          "value": "Drawska"
+        },
+        {
+          "key": "NUMER",
+          "value": "14"
+        },
+        {
+          "key": "OPIS",
+          "value": "Global Fitness Ochota (właściciel prywatny)"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Ochota"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 405 99 14 / brak"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.globalfitness.pl/"
+        },
+        {
+          "key": "MAIL1",
+          "value": "mailto:recepcja@globalfitness.pl"
+        },
+        {
+          "key": "MAIL2",
+          "value": " "
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "Sierpień 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.251704",
+          "lon": "20.983990"
+        }
+      },
+      "properties": [
+        {
+          "key": "ULICA",
+          "value": "Aleja Jana Pawła Ii"
+        },
+        {
+          "key": "NUMER",
+          "value": "69"
+        },
+        {
+          "key": "OPIS",
+          "value": "Zespół Szkół Samochodowych i Licealnych nr 2"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Wola"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 838 70 21 / 22 838 04 61"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.zssam2.waw.pl/"
+        },
+        {
+          "key": "MAIL1",
+          "value": "mailto:zssl2@edu.um.warszawa.pl"
+        },
+        {
+          "key": "MAIL2",
+          "value": " "
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "Sierpień 2014"
+        }
+      ]
+    },
+    {
+      "geometry": {
+        "type": "ShapePoint",
+        "coordinates": {
+          "lat": "52.203544",
+          "lon": "21.046539"
+        }
+      },
+      "properties": [
+        {
+          "key": "ULICA",
+          "value": "Czerska"
+        },
+        {
+          "key": "NUMER",
+          "value": "8/10"
+        },
+        {
+          "key": "OPIS",
+          "value": "Fitness Park Agora (właściciel prywatny)"
+        },
+        {
+          "key": "DZIELNICA",
+          "value": "Mokotów"
+        },
+        {
+          "key": "JEDN_ADM",
+          "value": "Warszawa"
+        },
+        {
+          "key": "TEL_FAX",
+          "value": "22 555 58 41 / brak"
+        },
+        {
+          "key": "WWW",
+          "value": "http://www.fitnesspark.pl/"
+        },
+        {
+          "key": "MAIL1",
+          "value": "mailto:biuro.fitnesspark@gmail.com"
+        },
+        {
+          "key": "MAIL2",
+          "value": " "
+        },
+        {
+          "key": "AKTU_DAN",
+          "value": "Sierpień 2014"
+        }
+      ]
+    }
+  ]
+}
