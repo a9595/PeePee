@@ -228,7 +228,6 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
                 })
                 .positiveText(R.string.filter_dialog_positive_text).build();
 
-        materialDialogFilterMap.setSelectedIndices();
     }
 
 
