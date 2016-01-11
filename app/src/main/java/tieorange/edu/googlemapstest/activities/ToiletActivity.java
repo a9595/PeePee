@@ -88,6 +88,10 @@ public class ToiletActivity extends AppCompatActivity {
 
             mMap.addMarker(markerOption);
 
+
+//Disable Map Toolbar:
+            mMap.getUiSettings().setMapToolbarEnabled(false);
+
             mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
 
                 public boolean onMarkerClick(Marker marker) {
