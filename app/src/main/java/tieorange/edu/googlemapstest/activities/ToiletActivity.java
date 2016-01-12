@@ -5,6 +5,7 @@ import android.animation.Animator;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
@@ -68,11 +69,14 @@ public class ToiletActivity extends AppCompatActivity {
         String url = "http://maps.google.com/maps/api/staticmap?center=" + mMyMarker.getLatitude() + "," + mMyMarker.getLongitude() + "&zoom=15&size=200x200&sensor=false";
 
         Toolbar mUiToolbar = (Toolbar) findViewById(R.id.toilet_toolbar);
+        mUiToolbar.setBackgroundColor(Color.TRANSPARENT);
+        mUiToolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_app_icon, null));
+
         setSupportActionBar(mUiToolbar);
 
         final ActionBar supportActionBar = getSupportActionBar();
-        supportActionBar.setHomeAsUpIndicator(R.drawable.ic_toobar_white_drop);
         supportActionBar.setDisplayHomeAsUpEnabled(true);
+        supportActionBar.setDisplayShowHomeEnabled(true);
 
         supportActionBar.setDisplayShowTitleEnabled(false);
 
@@ -81,11 +85,16 @@ public class ToiletActivity extends AppCompatActivity {
     private void setupMap(Bundle savedInstanceState, Context context) {
         MapsInitializer.initialize(this);
         mapView = (MapView) findViewById(R.id.toilet_map);
+
+        mapView.setClickable(false);
+
         mapView.onCreate(savedInstanceState);
         // Gets to GoogleMap from the MapView and does initialization stuff
         if (mapView != null) {
 
             mMap = mapView.getMap();
+
+
 
             mMap.getUiSettings().setMyLocationButtonEnabled(true);
 
@@ -95,7 +104,7 @@ public class ToiletActivity extends AppCompatActivity {
             MarkerOptions markerOption = new MarkerOptions().position(new LatLng(this.mMyMarker.getLatitude(),
                     mMyMarker.getLongitude()));
 
-            mMap.addMarker(markerOption);
+            final Marker marker = mMap.addMarker(markerOption);
 
 
 //Disable Map Toolbar:
@@ -105,9 +114,10 @@ public class ToiletActivity extends AppCompatActivity {
 
                 public boolean onMarkerClick(Marker marker) {
 //                    mMap.onMapClick(marker.getPosition());
-                    return false;
+                    return true;
                 }
             });
+
 
         }
 
