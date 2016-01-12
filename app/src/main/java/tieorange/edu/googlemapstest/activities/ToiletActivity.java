@@ -107,9 +107,9 @@ public class ToiletActivity extends AppCompatActivity {
 //                "&markers=color:blue%7Clabel:" + mMyMarker.getLatitude() + ","
 //                + mMyMarker.getLongitude();
 
-        setupUniversalImageLoader();
 
         setupToolbar(this);
+        setupUniversalImageLoader();
 
     }
 
@@ -198,6 +198,8 @@ public class ToiletActivity extends AppCompatActivity {
 
             }
         });
+
+
     }
 
     private void setupMap(Bundle savedInstanceState, Context context) {
