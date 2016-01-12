@@ -135,6 +135,7 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
         final ActionBar actionBar = getSupportActionBar();
         actionBar.setHomeAsUpIndicator(R.drawable.ic_toobar_white_drop);
         actionBar.setDisplayHomeAsUpEnabled(true);
+
         actionBar.setDisplayShowTitleEnabled(false);
     }
 

@@ -67,6 +67,15 @@ public class ToiletActivity extends AppCompatActivity {
         //image map:
         String url = "http://maps.google.com/maps/api/staticmap?center=" + mMyMarker.getLatitude() + "," + mMyMarker.getLongitude() + "&zoom=15&size=200x200&sensor=false";
 
+        Toolbar mUiToolbar = (Toolbar) findViewById(R.id.toilet_toolbar);
+        setSupportActionBar(mUiToolbar);
+
+        final ActionBar supportActionBar = getSupportActionBar();
+        supportActionBar.setHomeAsUpIndicator(R.drawable.ic_toobar_white_drop);
+        supportActionBar.setDisplayHomeAsUpEnabled(true);
+
+        supportActionBar.setDisplayShowTitleEnabled(false);
+
     }
 
     private void setupMap(Bundle savedInstanceState, Context context) {
@@ -99,6 +108,7 @@ public class ToiletActivity extends AppCompatActivity {
                     return false;
                 }
             });
+
         }
 
         moveMapCameraTo(mMyMarker);
