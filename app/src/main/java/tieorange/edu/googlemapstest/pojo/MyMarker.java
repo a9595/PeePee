@@ -106,6 +106,18 @@ public class MyMarker implements Serializable {
             case MyMarker.MARKER_TYPE_OTHER:
                 icon_marker_result = R.drawable.ic_marker_other_black_white;
                 break;
+
+            case MyMarker.MARKER_TYPE_METRO:
+                icon_marker_result = R.drawable.ic_marker_other_black_white;
+                break;
+
+            case MyMarker.MARKER_TYPE_SWIMMING_POOL:
+                icon_marker_result = R.drawable.ic_marker_toi_toi_black_white;
+                break;
+
+            case MyMarker.MARKER_TYPE_HOTEL:
+                icon_marker_result = R.drawable.ic_marker_restaurant_black_white;
+                break;
             default:
                 break;
         }

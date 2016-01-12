@@ -1,17 +1,17 @@
 package tieorange.edu.googlemapstest.activities;
 
-import android.Manifest;
 import android.animation.Animator;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.widget.ImageView;
@@ -32,9 +32,8 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
-import java.util.ArrayList;
+import java.util.Locale;
 
-import tieorange.edu.googlemapstest.MarkersFactory;
 import tieorange.edu.googlemapstest.R;
 import tieorange.edu.googlemapstest.pojo.MyMarker;
 
@@ -67,14 +66,42 @@ public class ToiletActivity extends AppCompatActivity {
         mUiTextViewDescription.setText("Opened: 8:00 - 23:00");
         mUiImageIcon.setImageResource(mMyMarker.getIconBlackWhite());
 
+        FloatingActionButton floatingActionButton =
+                (FloatingActionButton) findViewById(R.id.toilet_fab);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String uri = String.format(Locale.ENGLISH, "http://maps.google.com/maps?daddr=%f,%f (%s)",
+                        mMyMarker.getLatitude(), mMyMarker.getLongitude(), "Where the party is at");
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
+                try {
+                    startActivity(intent);
+                } catch (ActivityNotFoundException ex) {
+                    try {
+                        Intent unrestrictedIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                        startActivity(unrestrictedIntent);
+                    } catch (ActivityNotFoundException innerEx) {
+                        Toast.makeText(getApplicationContext(), "Please install a maps application", Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
+        });
+
         //setupMap(savedInstanceState, this);
         //setupStreetViewPanorama(savedInstanceState);
 
 
         //image map:
-        String url = "http://maps.google.com/maps/api/staticmap?center=" + mMyMarker.getLatitude() + "," + mMyMarker.getLongitude() + "&zoom=15&size=200x200&sensor=false";
 
-        setupUniversalImageLoader(url);
+
+//        String url = "http://maps.google.com/maps/api/staticmap?center="
+//                + mMyMarker.getLatitude() + "," + mMyMarker.getLongitude()
+//                + "&zoom=15&size=400x400&sensor=false&scale=1&maptype=hybrid" +
+//                "&markers=color:blue%7Clabel:" + mMyMarker.getLatitude() + ","
+//                + mMyMarker.getLongitude();
+
+        setupUniversalImageLoader();
 
         setupToolbar(this);
 
@@ -95,10 +122,31 @@ public class ToiletActivity extends AppCompatActivity {
         supportActionBar.setDisplayHomeAsUpEnabled(true);
         supportActionBar.setDisplayShowHomeEnabled(true);
         supportActionBar.setDisplayShowTitleEnabled(false);
-
     }
 
-    private void setupUniversalImageLoader(String image_url) {
+
+//    public void buildUrl() {
+////        https://www.myawesomesite.com/turtles/types?type=1&sort=relevance#section-name
+//        Uri.Builder builder = new Uri.Builder();
+//        builder.scheme("https")
+//                .authority("http://maps.google.com")
+//                .appendPath("maps/api/staticmap")
+//                .appendQueryParameter("center", mMyMarker.getLatitude() + "," + mMyMarker.getLongitude())
+//                .appendQueryParameter("sort", "relevance");
+//        String myUrl = builder.build().toString();
+//    }
+
+    private void setupUniversalImageLoader() {
+        String uri = String.format(Locale.ENGLISH, "http://maps.google.com/maps?daddr=%f,%f (%s)",
+                mMyMarker.getLatitude(), mMyMarker.getLongitude(), "Where the party is at");
+
+
+        String url = "http://maps.google.com/maps/api/staticmap?center="
+                + mMyMarker.getLatitude() + "," + mMyMarker.getLongitude()
+                + "&zoom=15&size=400x400&sensor=false&scale=1" +
+                "&markers=color:blue%7Clabel:" + mMyMarker.getLatitude() + ","
+                + mMyMarker.getLongitude();
+
         ImageView imageView = (ImageView) findViewById(R.id.toilet_image_view);
 
         ImageLoaderConfiguration imageLoaderConfiguration
@@ -112,7 +160,7 @@ public class ToiletActivity extends AppCompatActivity {
         ImageLoader.getInstance().init(imageLoaderConfiguration);
 
         ImageLoader imageLoader = ImageLoader.getInstance();
-        imageLoader.displayImage(image_url, imageView);
+        imageLoader.displayImage(url, imageView);
     }
 
     private void setupMap(Bundle savedInstanceState, Context context) {
@@ -250,6 +298,16 @@ public class ToiletActivity extends AppCompatActivity {
 //        mStreetViewPanoramaView.onSaveInstanceState(outState);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 
 //    private void showStreetView(LatLng latLng) {
 //        if (mStreetViewPanorama == null)
