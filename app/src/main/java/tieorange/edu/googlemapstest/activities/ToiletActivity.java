@@ -4,12 +4,15 @@ import android.animation.Animator;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,7 +33,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
+import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 
 import java.util.Locale;
 
@@ -50,6 +55,7 @@ public class ToiletActivity extends AppCompatActivity {
     private MapView mapView;
     private GoogleMap mMap;
     private Toolbar mUiToolbar;
+    private CollapsingToolbarLayout mUiCollapsingToolbar;
 
 
     @Override
@@ -109,6 +115,7 @@ public class ToiletActivity extends AppCompatActivity {
 
     private void setupToolbar(final Context context) {
         mUiToolbar = (Toolbar) findViewById(R.id.toilet_toolbar);
+        mUiCollapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.toilet_collapsing_toolbar);
         mUiToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -162,7 +169,35 @@ public class ToiletActivity extends AppCompatActivity {
         ImageLoader.getInstance().init(imageLoaderConfiguration);
 
         ImageLoader imageLoader = ImageLoader.getInstance();
-        imageLoader.displayImage(url, imageView);
+        imageLoader.displayImage(url, imageView, new ImageLoadingListener() {
+            @Override
+            public void onLoadingStarted(String imageUri, View view) {
+
+            }
+
+            @Override
+            public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
+
+            }
+
+            @Override
+            public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
+                Palette.from(loadedImage).generate(new Palette.PaletteAsyncListener() {
+                    @Override
+                    public void onGenerated(Palette palette) {
+                        int primaryDark = getResources().getColor(R.color.primary_dark);
+                        int primary = getResources().getColor(R.color.primary);
+                        mUiCollapsingToolbar.setContentScrimColor(palette.getMutedColor(primary));
+                        mUiCollapsingToolbar.setStatusBarScrimColor(palette.getDarkVibrantColor(primaryDark));
+                    }
+                });
+            }
+
+            @Override
+            public void onLoadingCancelled(String imageUri, View view) {
+
+            }
+        });
     }
 
     private void setupMap(Bundle savedInstanceState, Context context) {
