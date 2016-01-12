@@ -140,11 +140,13 @@ public class ToiletActivity extends AppCompatActivity {
         String uri = String.format(Locale.ENGLISH, "http://maps.google.com/maps?daddr=%f,%f (%s)",
                 mMyMarker.getLatitude(), mMyMarker.getLongitude(), "Where the party is at");
 
+//        http://maps.google.com/maps/api/staticmap?center=52.229676,21.012229&zoom=13&markers=color:purple|52.229676,21.012229&size=400x300&sensor=TRUE_OR_FALSE
+
 
         String url = "http://maps.google.com/maps/api/staticmap?center="
                 + mMyMarker.getLatitude() + "," + mMyMarker.getLongitude()
-                + "&zoom=15&size=400x400&sensor=false&scale=1" +
-                "&markers=color:blue%7Clabel:" + mMyMarker.getLatitude() + ","
+                + "&zoom=15&size=400x300&sensor=false&scale=1" +
+                "&markers=color:blue|" + mMyMarker.getLatitude() + ","
                 + mMyMarker.getLongitude();
 
         ImageView imageView = (ImageView) findViewById(R.id.toilet_image_view);
