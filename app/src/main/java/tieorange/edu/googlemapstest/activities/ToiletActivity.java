@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -26,6 +27,10 @@ import com.google.android.gms.maps.StreetViewPanorama;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
 import java.util.ArrayList;
 
@@ -45,6 +50,7 @@ public class ToiletActivity extends AppCompatActivity {
     private ImageView mUiImageIcon;
     private MapView mapView;
     private GoogleMap mMap;
+    private Toolbar mUiToolbar;
 
 
     @Override
@@ -61,30 +67,57 @@ public class ToiletActivity extends AppCompatActivity {
         mUiTextViewDescription.setText("Opened: 8:00 - 23:00");
         mUiImageIcon.setImageResource(mMyMarker.getIconBlackWhite());
 
-        setupMap(savedInstanceState, this);
+        //setupMap(savedInstanceState, this);
         //setupStreetViewPanorama(savedInstanceState);
 
 
         //image map:
         String url = "http://maps.google.com/maps/api/staticmap?center=" + mMyMarker.getLatitude() + "," + mMyMarker.getLongitude() + "&zoom=15&size=200x200&sensor=false";
 
-        Toolbar mUiToolbar = (Toolbar) findViewById(R.id.toilet_toolbar);
-        mUiToolbar.setBackgroundColor(Color.TRANSPARENT);
-        mUiToolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_app_icon, null));
+        setupUniversalImageLoader(url);
 
+        setupToolbar(this);
+
+    }
+
+    private void setupToolbar(final Context context) {
+        mUiToolbar = (Toolbar) findViewById(R.id.toilet_toolbar);
+        mUiToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "toast", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(context, MainActivity.class);
+                context.startActivity(i);
+            }
+        });
         setSupportActionBar(mUiToolbar);
-
         final ActionBar supportActionBar = getSupportActionBar();
         supportActionBar.setDisplayHomeAsUpEnabled(true);
         supportActionBar.setDisplayShowHomeEnabled(true);
-
         supportActionBar.setDisplayShowTitleEnabled(false);
 
     }
 
+    private void setupUniversalImageLoader(String image_url) {
+        ImageView imageView = (ImageView) findViewById(R.id.toilet_image_view);
+
+        ImageLoaderConfiguration imageLoaderConfiguration
+                = new ImageLoaderConfiguration.Builder(this)
+                .threadPriority(Thread.NORM_PRIORITY - 2)
+                .denyCacheImageMultipleSizesInMemory()
+                .diskCacheFileNameGenerator(new Md5FileNameGenerator())
+                .tasksProcessingOrder(QueueProcessingType.LIFO)
+                .build();
+
+        ImageLoader.getInstance().init(imageLoaderConfiguration);
+
+        ImageLoader imageLoader = ImageLoader.getInstance();
+        imageLoader.displayImage(image_url, imageView);
+    }
+
     private void setupMap(Bundle savedInstanceState, Context context) {
         MapsInitializer.initialize(this);
-        mapView = (MapView) findViewById(R.id.toilet_map);
+        //mapView = (MapView) findViewById(R.id.toilet_map);
 
         mapView.setClickable(false);
 
@@ -93,7 +126,6 @@ public class ToiletActivity extends AppCompatActivity {
         if (mapView != null) {
 
             mMap = mapView.getMap();
-
 
 
             mMap.getUiSettings().setMyLocationButtonEnabled(true);
@@ -188,14 +220,14 @@ public class ToiletActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mapView.onDestroy();
+        //mapView.onDestroy();
         //mStreetViewPanoramaView.onDestroy();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        mapView.onResume();
+//        mapView.onResume();
         //mStreetViewPanoramaView.onResume();
     }
 
@@ -208,7 +240,7 @@ public class ToiletActivity extends AppCompatActivity {
     @Override
     public void onLowMemory() {
         super.onLowMemory();
-        mapView.onLowMemory();
+//        mapView.onLowMemory();
         //mStreetViewPanoramaView.onLowMemory();
     }
 
