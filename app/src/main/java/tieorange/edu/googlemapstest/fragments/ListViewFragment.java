@@ -13,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.util.ArrayList;
 
 import tieorange.edu.googlemapstest.R;
@@ -61,7 +63,9 @@ public class ListViewFragment extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // specify an adapter (see also next example)
-        mAdapter = new MyListViewAdapter(view.getContext(), dummyMarkersFromDatabase);
+        final LatLng currentUserLocation = MapFragment.getCurrentUserLocation(getActivity());
+
+        mAdapter = new MyListViewAdapter(view.getContext(), dummyMarkersFromDatabase, currentUserLocation);
 
         mRecyclerView.setAdapter(mAdapter);
 

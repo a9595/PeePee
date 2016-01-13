@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
+import android.location.Location;
 import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,10 +15,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Random;
 
 import tieorange.edu.googlemapstest.R;
@@ -31,7 +35,7 @@ public class MyListViewAdapter extends RecyclerView.Adapter<MyListViewAdapter.Vi
     private final Context mContext;
     private ArrayList<MyMarker> mDataset;
 
-    public MyListViewAdapter(Context context, ArrayList<MyMarker> myDataSet) {
+    public MyListViewAdapter(Context context, ArrayList<MyMarker> myDataSet, LatLng currentUserLocation) {
         this.mDataset = myDataSet;
         this.mContext = context;
     }
@@ -71,14 +75,40 @@ public class MyListViewAdapter extends RecyclerView.Adapter<MyListViewAdapter.Vi
         holder.mUiTextHeader.setText(myMarker.getLabel());
 
 
-        // TODO: mock
-        Random random = new Random();
-        final int randomMeters = random.nextInt(100);
+        //calculate distance:
+        final LatLng currentUserLocation = tieorange.edu.googlemapstest.fragments.MapFragment.getCurrentUserLocation(mContext);
+        Location currentLocation = new Location("current");
+        currentLocation.setLatitude(currentLocation.getLatitude());
+        currentLocation.setLongitude(currentLocation.getLongitude());
+
+        Location toiletLocation = new Location("toilet");
+        toiletLocation.setLongitude(myMarker.getLongitude());
+        toiletLocation.setLatitude(myMarker.getLatitude());
+
+        float distanceToToilet = currentLocation.distanceTo(toiletLocation);
+
+
+
+
+        final float randomMeters = distanceToToilet;
         holder.mUiTextDescripton.setText(randomMeters + " meters from you");
 
         // set icon
         holder.mUiImageViewMarkerIcon.setImageResource(myMarker.getIconBlackWhite());
 
+    }
+
+    public static float distFrom(float lat1, float lng1, float lat2, float lng2) {
+        double earthRadius = 6371000; //meters
+        double dLat = Math.toRadians(lat2-lat1);
+        double dLng = Math.toRadians(lng2-lng1);
+        double a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2)) *
+                        Math.sin(dLng/2) * Math.sin(dLng/2);
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        float dist = (float) (earthRadius * c);
+
+        return dist;
     }
 
     @Override

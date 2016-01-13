@@ -51,8 +51,12 @@ public class MarkerInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
         mUiMarkerDescription = (TextView) infoWindowView.findViewById(R.id.marker_description);
 
 
-        mUiMarkerTitle.setText(myMarker.getLabel());
-
+        if (myMarker != null) {
+            mUiMarkerTitle.setText(myMarker.getLabel());
+        } else {
+            mUiMarkerTitle.setText("Current location");
+            infoWindowView.setClickable(false);
+        }
         return infoWindowView;
     }
 

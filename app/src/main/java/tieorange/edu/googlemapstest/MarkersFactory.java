@@ -96,15 +96,15 @@ public class MarkersFactory {
         if (mMyMarkersArray.size() > 0) { // check if is not empty
             for (MyMarker myMarker : mMyMarkersArray) {
 //                if (filter_selected_items.contains(myMarker.getType())) {
-                    // Create user marker with custom icon and other options
-                    MarkerOptions markerOption = new MarkerOptions().position(new LatLng(myMarker.getLatitude(), myMarker.getLongitude()));
+                // Create user marker with custom icon and other options
+                MarkerOptions markerOption = new MarkerOptions().position(new LatLng(myMarker.getLatitude(), myMarker.getLongitude()));
 
-                    //get Drawable from vector
-                    final BitmapDescriptor markerIcon = getIconByMarkerType(myMarker);
-                    markerOption.icon(markerIcon);
+                //get Drawable from vector
+                final BitmapDescriptor markerIcon = getIconByMarkerType(myMarker);
+                markerOption.icon(markerIcon);
 
-                    Marker currentMarker = mMap.addMarker(markerOption);
-                    mMarkersHashMap.put(currentMarker, myMarker);
+                Marker currentMarker = mMap.addMarker(markerOption);
+                mMarkersHashMap.put(currentMarker, myMarker);
 //                }
             }
             setupMarkerInfoWindow();
@@ -155,7 +155,7 @@ public class MarkersFactory {
         final MarkerInfoWindowAdapter infoWindowAdapter = new MarkerInfoWindowAdapter(mMarkersHashMap, mActivity);
         mMap.setInfoWindowAdapter(infoWindowAdapter); // TODO: create a window for marker.click()112
         mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
-            @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+            //            @TargetApi(Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onInfoWindowClick(Marker marker) {
                 Log.i("MY", String.valueOf(marker.getPosition().latitude));
@@ -187,8 +187,13 @@ public class MarkersFactory {
 //        int vectorDrawableIntrinsicHeight = ((int) Utils.convertDpToPixel(42, context));
 //        int vectorDrawableIntrinsicWidth = ((int) Utils.convertDpToPixel(25, context));
         final int icon_resize_const = 50;
-        int vectorDrawableIntrinsicHeight = vectorDrawable.getIntrinsicHeight() + icon_resize_const;
-        int vectorDrawableIntrinsicWidth = vectorDrawable.getIntrinsicWidth() + icon_resize_const;
+//        int vectorDrawableIntrinsicHeight = vectorDrawable.getIntrinsicHeight() + icon_resize_const;
+//        int vectorDrawableIntrinsicWidth = vectorDrawable.getIntrinsicWidth() + icon_resize_const;
+
+        //original size
+        int vectorDrawableIntrinsicHeight = vectorDrawable.getIntrinsicHeight();
+        int vectorDrawableIntrinsicWidth = vectorDrawable.getIntrinsicWidth();
+
 
         vectorDrawable.setBounds(0, 0, vectorDrawableIntrinsicWidth, vectorDrawableIntrinsicHeight);
         Bitmap bm = Bitmap.createBitmap(vectorDrawableIntrinsicWidth, vectorDrawableIntrinsicHeight, Bitmap.Config.ARGB_8888);
