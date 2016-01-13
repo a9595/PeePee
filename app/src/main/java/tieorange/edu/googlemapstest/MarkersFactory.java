@@ -2,17 +2,13 @@ package tieorange.edu.googlemapstest;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.VectorDrawable;
 import android.os.Build;
 import android.util.Log;
-import android.widget.ImageView;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -30,8 +26,6 @@ import java.util.List;
 import tieorange.edu.googlemapstest.activities.ToiletActivity;
 import tieorange.edu.googlemapstest.adapters.MarkerInfoWindowAdapter;
 import tieorange.edu.googlemapstest.pojo.MyMarker;
-
-import static java.lang.Double.*;
 
 /**
  * Created by tieorange on 23/12/15.
@@ -74,7 +68,8 @@ public class MarkersFactory {
                 MarkerOptions markerOption = new MarkerOptions().position(new LatLng(myMarker.getLatitude(), myMarker.getLongitude()));
 
                 //get Drawable from vector
-                final BitmapDescriptor iconByMarkerType = getIconByMarkerType(myMarker);
+//                final BitmapDescriptor iconByMarkerType = getBitmapDescriptorByMarkerType(myMarker);
+                final BitmapDescriptor iconByMarkerType = BitmapDescriptorFactory.fromResource(R.mipmap.ic_marker_other_working_png);
 
                 markerOption.icon(iconByMarkerType);
 //                markerOption.alpha(0.9f);
@@ -90,7 +85,7 @@ public class MarkersFactory {
 
 
     // TODO: mock
-    public HashMap<Marker, MyMarker> plotMarkersWithOtherIcons(List<Integer> filter_selected_items) {
+    public HashMap<Marker, MyMarker> plotMarkersWithOtherIcons() {
         mMap.clear();
 
         if (mMyMarkersArray.size() > 0) { // check if is not empty
@@ -100,7 +95,9 @@ public class MarkersFactory {
                 MarkerOptions markerOption = new MarkerOptions().position(new LatLng(myMarker.getLatitude(), myMarker.getLongitude()));
 
                 //get Drawable from vector
-                final BitmapDescriptor markerIcon = getIconByMarkerType(myMarker);
+//                final BitmapDescriptor markerIcon = getBitmapDescriptorByMarkerType(myMarker);
+                final BitmapDescriptor markerIcon = BitmapDescriptorFactory.fromResource(R.mipmap.ic_marker_other_working_png);
+
                 markerOption.icon(markerIcon);
 
                 Marker currentMarker = mMap.addMarker(markerOption);
@@ -112,7 +109,7 @@ public class MarkersFactory {
         return mMarkersHashMap;
     }
 
-    private BitmapDescriptor getIconByMarkerType(MyMarker myMarker) {
+    private BitmapDescriptor getBitmapDescriptorByMarkerType(MyMarker myMarker) {
         BitmapDescriptor icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_icon, mActivity.getApplicationContext());
 
         switch (myMarker.getType()) {

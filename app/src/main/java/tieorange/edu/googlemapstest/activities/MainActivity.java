@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
 
         markersFromDatabase = MyMarker.getMarkersAllMarkersList(this);
 
+
     }
 
     private void setupDatabase() {
@@ -231,7 +232,7 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
                         // TODO: 
                         List<Integer> selected_Filter_options = Arrays.asList(which);
                         filterMarkers(selected_Filter_options);
-                        mapFragment.markersFactory.plotMarkersWithOtherIcons(selected_Filter_options);
+                        mapFragment.markersFactory.plotMarkersWithOtherIcons();
                         return true;
                     }
                 })
