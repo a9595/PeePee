@@ -1,20 +1,33 @@
 apply plugin: 'com.android.application'
 
+
 android {
+    signingConfigs {
+        MyConfig {
+            keyAlias 'PeePeeKeystore'
+            keyPassword '15901590'
+            storeFile file('/Users/tieorange/AndroidStudioProjects/GoogleMapsTest/keystore.jks')
+            storePassword '15901590'
+        }
+    }
     compileSdkVersion 23
     buildToolsVersion '23.0.2'
-
     defaultConfig {
         applicationId "tieorange.edu.googlemapstest"
         minSdkVersion 21
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.MyConfig
+        }
+        debug {
+            signingConfig signingConfigs.MyConfig
         }
     }
 }
@@ -22,8 +35,6 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-
-
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.google.android.gms:play-services:8.4.0'
     compile 'com.google.maps.android:android-maps-utils:0.4'
@@ -36,11 +47,13 @@ dependencies {
     compile('com.github.afollestad.material-dialogs:core:0.8.5.3@aar') {
         transitive = true
     }
-
     compile 'com.google.code.gson:gson:2.2.4'
-
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
-
     compile 'com.android.support:palette-v7:23.1.1'
+    //maps:
+    compile 'com.google.android.gms:play-services-maps:8.4.0'
+    compile 'com.google.android.gms:play-services-location:8.4.0'
+
+    compile 'com.github.tajchert:nammu:1.1.1'
 
 }

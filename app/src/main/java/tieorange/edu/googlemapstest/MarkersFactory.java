@@ -52,7 +52,7 @@ public class MarkersFactory {
 
 
     public void initMarkers() {
-        moveMapCameraTo(mMyMarkersArray.get(1));
+        //moveMapCameraTo(mMyMarkersArray.get(1));
     }
 
     private void moveMapCameraTo(MyMarker markerMoveTo) {
