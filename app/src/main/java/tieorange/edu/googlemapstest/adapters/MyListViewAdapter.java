@@ -75,23 +75,20 @@ public class MyListViewAdapter extends RecyclerView.Adapter<MyListViewAdapter.Vi
         holder.mUiTextHeader.setText(myMarker.getLabel());
 
 
-        //calculate distance:
+        //calculate distance to toilet:
         final LatLng currentUserLocation = tieorange.edu.googlemapstest.fragments.MapFragment.getCurrentUserLocation(mContext);
-        Location currentLocation = new Location("current");
-        currentLocation.setLatitude(currentLocation.getLatitude());
-        currentLocation.setLongitude(currentLocation.getLongitude());
 
-        Location toiletLocation = new Location("toilet");
-        toiletLocation.setLongitude(myMarker.getLongitude());
-        toiletLocation.setLatitude(myMarker.getLatitude());
+        final float distanceInMeters = distFrom((float) currentUserLocation.latitude, (float) currentUserLocation.longitude,
+                myMarker.getLatitude().floatValue(), myMarker.getLongitude().floatValue());
 
-        float distanceToToilet = currentLocation.distanceTo(toiletLocation);
+        if (distanceInMeters >= 1000) { // kilometers
+            final float distanceInKilometers = distanceInMeters / 1000;
+            holder.mUiTextDescripton.setText(String.format("%.02f km from you", distanceInKilometers));
 
+        } else { // meters
+            holder.mUiTextDescripton.setText(String.format("%d m from you", (int) distanceInMeters));
 
-
-
-        final float randomMeters = distanceToToilet;
-        holder.mUiTextDescripton.setText(randomMeters + " meters from you");
+        }
 
         // set icon
         holder.mUiImageViewMarkerIcon.setImageResource(myMarker.getIconBlackWhite());
@@ -100,12 +97,12 @@ public class MyListViewAdapter extends RecyclerView.Adapter<MyListViewAdapter.Vi
 
     public static float distFrom(float lat1, float lng1, float lat2, float lng2) {
         double earthRadius = 6371000; //meters
-        double dLat = Math.toRadians(lat2-lat1);
-        double dLng = Math.toRadians(lng2-lng1);
-        double a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+        double dLat = Math.toRadians(lat2 - lat1);
+        double dLng = Math.toRadians(lng2 - lng1);
+        double a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
                 Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2)) *
-                        Math.sin(dLng/2) * Math.sin(dLng/2);
-        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+                        Math.sin(dLng / 2) * Math.sin(dLng / 2);
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
         float dist = (float) (earthRadius * c);
 
         return dist;
