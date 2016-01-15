@@ -21,7 +21,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 
-import pl.tajchert.nammu.Nammu;
 import tieorange.edu.googlemapstest.MarkersFactory;
 import tieorange.edu.googlemapstest.R;
 import tieorange.edu.googlemapstest.activities.MainActivity;
@@ -47,12 +46,9 @@ public class MapFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_map, container, false);
-        Nammu.init(getActivity().getApplicationContext());
-
 
         mainActivity = (MainActivity) getActivity(); // to get GoogleMap object and share it
         setupMap(savedInstanceState, view);
-
 
         return view;
     }
@@ -66,6 +62,8 @@ public class MapFragment extends Fragment {
             mainActivity.setMap(mapView.getMap());
             mMap = mainActivity.getMap();
             mMap.getUiSettings().setMyLocationButtonEnabled(true);
+            mMap.setMyLocationEnabled(true);
+
             setCurrentUserPositionOnMap();
         }
 
@@ -78,16 +76,20 @@ public class MapFragment extends Fragment {
         markersFactory.plotMarkers(); // put them to the mMap
     }
 
-    private void moveMapCameraTo() {
+    private void moveMapCameraTo(LatLng currentUserLocation) {
         final int zoomLevel = 14;
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(
-                getCurrentUserLocation(getActivity())
-                , zoomLevel);
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(currentUserLocation, zoomLevel);
         mMap.animateCamera(cameraUpdate);
     }
 
     private void setCurrentUserPositionOnMap() {
-        moveMapCameraTo();
+        LatLng currentUserLocation = getCurrentUserLocation(getActivity());
+        moveMapCameraTo(currentUserLocation);
+
+        MarkerOptions markerOption = new MarkerOptions().position(currentUserLocation);
+//        markerOption.icon()
+
+
         mMap.addMarker(new MarkerOptions().
                 position(getCurrentUserLocation(getActivity())).title("myLocation")); // add marker
     }
@@ -95,7 +97,7 @@ public class MapFragment extends Fragment {
     public static LatLng getCurrentUserLocation(Context context) {
         LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
         Criteria criteria = new Criteria();
-        criteria.setPowerRequirement(Criteria.POWER_LOW);
+        criteria.setPowerRequirement(Criteria.POWER_MEDIUM);
         String bestProvider = locationManager.getBestProvider(criteria, false);
         Location location = locationManager.getLastKnownLocation(bestProvider);
         LatLng currentLatLng = new LatLng(location.getLatitude(), location.getLongitude());
@@ -104,8 +106,8 @@ public class MapFragment extends Fragment {
 
     @Override
     public void onResume() {
-        mapView.onResume();
         super.onResume();
+        mapView.onResume();
     }
 
     @Override

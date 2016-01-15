@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdate;
@@ -175,22 +176,22 @@ public class MarkersFactory {
         });
     }
 
-    @TargetApi(Build.VERSION_CODES.M)
+    //    @TargetApi(Build.VERSION_CODES.M)
     private BitmapDescriptor getBitmapDescriptor(int id, Context context) {
         Drawable vectorDrawable = context.getDrawable(id);
-        int color = context.getColor(R.color.accent);
+//        int color =  ContextCompat.getColor(mActivity, R.color.accent);
+
         //vectorDrawable.setColorFilter(color, PorterDuff.Mode.SRC_IN);
 
 //        int vectorDrawableIntrinsicHeight = ((int) Utils.convertDpToPixel(42, context));
 //        int vectorDrawableIntrinsicWidth = ((int) Utils.convertDpToPixel(25, context));
-        final int icon_resize_const = 50;
+//        final int icon_resize_const = 50;
 //        int vectorDrawableIntrinsicHeight = vectorDrawable.getIntrinsicHeight() + icon_resize_const;
 //        int vectorDrawableIntrinsicWidth = vectorDrawable.getIntrinsicWidth() + icon_resize_const;
 
         //original size
         int vectorDrawableIntrinsicHeight = vectorDrawable.getIntrinsicHeight();
         int vectorDrawableIntrinsicWidth = vectorDrawable.getIntrinsicWidth();
-
 
         vectorDrawable.setBounds(0, 0, vectorDrawableIntrinsicWidth, vectorDrawableIntrinsicHeight);
         Bitmap bm = Bitmap.createBitmap(vectorDrawableIntrinsicWidth, vectorDrawableIntrinsicHeight, Bitmap.Config.ARGB_8888);

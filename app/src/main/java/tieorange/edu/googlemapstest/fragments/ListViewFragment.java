@@ -7,8 +7,11 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +34,7 @@ public class ListViewFragment extends Fragment {
     private ArrayList<MyMarker> dummyMarkersFromDatabase;
     private View view;
     private MainActivity mainActivity;
+    private String tag = "MY_TAG";
 
     public static ListViewFragment newInstance() {
         ListViewFragment fragment = new ListViewFragment();
@@ -42,6 +46,21 @@ public class ListViewFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_listview, container, false);
         mainActivity = (MainActivity) getActivity(); // to get GoogleMap object and share it
 
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
+        view.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                Log.i(tag, "keyCode: " + keyCode);
+                if( keyCode == KeyEvent.KEYCODE_BACK ) {
+                    Log.i(tag, "onKey Back listener is working!!!");
+                    getFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        });
 
         // TODO: Get data from CSV file
         dummyMarkersFromDatabase = mainActivity.markersFromDatabase;
@@ -90,6 +109,7 @@ public class ListViewFragment extends Fragment {
             }
         });
     }
+
 
 
     @Override

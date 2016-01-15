@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".activities.MainActivity">
     <!--<item-->
-        <!--android:id="@+id/action_settings"-->
-        <!--android:orderInCategory="100"-->
-        <!--android:title="@string/settings"></item>-->
+    <!--android:id="@+id/action_settings"-->
+    <!--android:orderInCategory="100"-->
+    <!--android:title="@string/settings"></item>-->
     <item
         android:id="@+id/action_map_view_change"
         android:icon="@drawable/ic_toolbar_map_view_change"
@@ -16,7 +16,7 @@
 
     <item
         android:id="@+id/action_filter"
-        android:icon="@drawable/ic_toolbar_filter_sort"
+        android:icon="@drawable/ic_toolbar_filter"
         android:orderInCategory="300"
         android:title="Sort filter"
         app:showAsAction="ifRoom" />

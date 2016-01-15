@@ -87,7 +87,9 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
 
     private void setupTab() {
         mUiTabHost = (MaterialTabHost) findViewById(R.id.materialTabHost);
+
         mViewPager = (ViewPager) findViewById(R.id.viewPager);
+        
 
         mMyPagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mMyPagerAdapter);
@@ -238,6 +240,7 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
                 })
                 .positiveText(R.string.filter_dialog_positive_text).build();
 
+        // Turn on all filters (by default)
         materialDialogFilterMap.setSelectedIndices(new Integer[]{0, 1, 2, 3, 4});
 
     }
