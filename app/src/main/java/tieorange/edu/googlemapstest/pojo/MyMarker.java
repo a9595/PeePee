@@ -6,6 +6,7 @@ import com.google.android.gms.maps.model.LatLng;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 import tieorange.edu.googlemapstest.R;
 import tieorange.edu.googlemapstest.models.GsonHelper;
@@ -34,6 +35,8 @@ public class MyMarker implements Serializable {
     private boolean isFree;
     private Double Latitude;
     private Double Longitude;
+
+    List<ToiletRating> ratingList;
 
     private int Type;
 
@@ -73,7 +76,7 @@ public class MyMarker implements Serializable {
     public static void getSwimmingPoolsMarkers(Context context) {
         // SwimmingPools
         final SwimmingPoolsList swimmingPoolsList = GsonHelper.getSwimmingPools(context);
-        for (SwimmingPool swimmingPool: swimmingPoolsList.data) {
+        for (SwimmingPool swimmingPool : swimmingPoolsList.data) {
             MyMarker metroMarker = swimmingPool.getMyMarker();
             markersList.add(metroMarker);
         }

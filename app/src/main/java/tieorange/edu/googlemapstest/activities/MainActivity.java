@@ -3,6 +3,7 @@ package tieorange.edu.googlemapstest.activities;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -306,5 +307,11 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
         private Drawable getIcon(int position) {
             return getDrawable(iconsArray[position]);
         }
+    }
+
+    public String GetAndroidUniqueId() {
+        String android_id = Settings.Secure.getString(this.getContentResolver(),
+                Settings.Secure.ANDROID_ID);
+        return android_id;
     }
 }

@@ -100,7 +100,7 @@
                 android:layout_marginEnd="16dp"
                 android:contentDescription="TODO"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_marker_local_dining"
+                android:src="@drawable/ic_marker_toi_toi_black_white"
                 android:transitionName="@string/transition_name_list_view" />
 
             <TextView

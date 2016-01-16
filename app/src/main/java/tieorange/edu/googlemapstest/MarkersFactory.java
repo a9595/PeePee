@@ -69,8 +69,8 @@ public class MarkersFactory {
                 MarkerOptions markerOption = new MarkerOptions().position(new LatLng(myMarker.getLatitude(), myMarker.getLongitude()));
 
                 //get Drawable from vector
-//                final BitmapDescriptor iconByMarkerType = getBitmapDescriptorByMarkerType(myMarker);
-                final BitmapDescriptor iconByMarkerType = BitmapDescriptorFactory.fromResource(R.mipmap.ic_marker_other_working_png);
+                final BitmapDescriptor iconByMarkerType = getBitmapDescriptorByMarkerType(myMarker);
+//                final BitmapDescriptor iconByMarkerType = BitmapDescriptorFactory.fromResource(R.mipmap.ic_marker_other_working_png);
 
                 markerOption.icon(iconByMarkerType);
 //                markerOption.alpha(0.9f);
@@ -111,7 +111,7 @@ public class MarkersFactory {
     }
 
     private BitmapDescriptor getBitmapDescriptorByMarkerType(MyMarker myMarker) {
-        BitmapDescriptor icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_icon, mActivity.getApplicationContext());
+        BitmapDescriptor icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_other_working, mActivity.getApplicationContext());
 
         switch (myMarker.getType()) {
             case MyMarker.MARKER_TYPE_RESTAURANT:
@@ -130,15 +130,22 @@ public class MarkersFactory {
                     icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_other_payed, mActivity.getApplicationContext());
                 break;
             case MyMarker.MARKER_TYPE_METRO:
-                icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_other_working, mActivity.getApplicationContext());
+                icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_toi_toi_working, mActivity.getApplicationContext());
 
                 break;
             case MyMarker.MARKER_TYPE_HOTEL:
-                icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_other_working, mActivity.getApplicationContext());
+                if (myMarker.getLabel().contains("Hotel"))
+                    icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_other_payed, mActivity.getApplicationContext());
+                else
+                    icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_other_working, mActivity.getApplicationContext());
+
                 break;
 
             case MyMarker.MARKER_TYPE_SWIMMING_POOL:
-                icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_other_working, mActivity.getApplicationContext());
+                if (myMarker.getLabel().contains("Fitness"))
+                    icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_restaurant_payed, mActivity.getApplicationContext());
+                else
+                    icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_restaurant_working, mActivity.getApplicationContext());
                 break;
             default:
                 break;

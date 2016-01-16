@@ -25,7 +25,7 @@
         android:layout_alignWithParentIfMissing="false"
         android:layout_marginLeft="16dp"
         android:contentDescription="TODO"
-        android:src="@drawable/ic_marker_local_dining"
+        android:src="@drawable/ic_marker_restaurant_black_white"
         android:transitionName="@string/transition_name_list_view" />
 
     <!--FIRST LINE-->
