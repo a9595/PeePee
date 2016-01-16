@@ -131,6 +131,7 @@ public class MarkersFactory {
                 break;
             case MyMarker.MARKER_TYPE_METRO:
                 icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_toi_toi_working, mActivity.getApplicationContext());
+                myMarker.setLabel("Toi-Toi");
 
                 break;
             case MyMarker.MARKER_TYPE_HOTEL:

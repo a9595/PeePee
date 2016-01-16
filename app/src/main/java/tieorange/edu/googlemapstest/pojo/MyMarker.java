@@ -116,11 +116,11 @@ public class MyMarker implements Serializable {
                 break;
 
             case MyMarker.MARKER_TYPE_METRO:
-                icon_marker_result = R.drawable.ic_marker_other_black_white;
+                icon_marker_result = R.drawable.ic_marker_toi_toi_black_white;
                 break;
 
             case MyMarker.MARKER_TYPE_SWIMMING_POOL:
-                icon_marker_result = R.drawable.ic_marker_toi_toi_black_white;
+                icon_marker_result = R.drawable.ic_marker_other_black_white;
                 break;
 
             case MyMarker.MARKER_TYPE_HOTEL:

@@ -21,6 +21,8 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Map;
 import java.util.Random;
 
@@ -35,13 +37,13 @@ public class MyListViewAdapter extends RecyclerView.Adapter<MyListViewAdapter.Vi
     private final Context mContext;
     private ArrayList<MyMarker> mDataset;
 
-    public MyListViewAdapter(Context context, ArrayList<MyMarker> myDataSet, LatLng currentUserLocation) {
-        this.mDataset = myDataSet;
+    public MyListViewAdapter(Context context) {
         this.mContext = context;
     }
 
-    public void setDataset(ArrayList<MyMarker> datasetList){
+    public void setDataset(ArrayList<MyMarker> datasetList) {
         mDataset = datasetList;
+        SortByAlphabet();
         notifyDataSetChanged();
     }
 
@@ -98,6 +100,16 @@ public class MyListViewAdapter extends RecyclerView.Adapter<MyListViewAdapter.Vi
         // set icon
         holder.mUiImageViewMarkerIcon.setImageResource(myMarker.getIconBlackWhite());
 
+    }
+
+    public void SortByAlphabet() {
+        Collections.sort(mDataset, new Comparator<MyMarker>() {
+            @Override
+            public int compare(MyMarker lhs, MyMarker rhs) {
+                return lhs.getLabel().compareToIgnoreCase(rhs.getLabel());
+            }
+
+        });
     }
 
     public static float distFrom(float lat1, float lng1, float lat2, float lng2) {
