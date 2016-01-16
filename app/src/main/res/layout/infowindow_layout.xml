@@ -22,15 +22,6 @@
         android:textStyle="bold" />
 
 
-    <TextView
-        android:id="@+id/marker_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="5dp"
-        android:text=""
-        android:textColor="@color/secondary_text"
-        android:textStyle="bold" />
 
 
 </LinearLayout>

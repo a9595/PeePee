@@ -36,6 +36,11 @@ public class MyMarker implements Serializable {
     private Double Longitude;
 
     private int Type;
+
+    public static ArrayList<MyMarker> getMarkersList() {
+        return markersList;
+    }
+
     private static ArrayList<MyMarker> markersList;
 
 

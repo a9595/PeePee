@@ -49,10 +49,8 @@ public class ToiletActivity extends AppCompatActivity {
     private StreetViewPanorama mPanorama;
 
     private TextView mUiTextViewName;
-    private TextView mUiTextViewDescription;
     private MyMarker mMyMarker;
     private ImageView mUiImageIcon;
-    private MapView mapView;
     private GoogleMap mMap;
     private Toolbar mUiToolbar;
     private CollapsingToolbarLayout mUiCollapsingToolbar;
@@ -69,7 +67,6 @@ public class ToiletActivity extends AppCompatActivity {
 
 
         mUiTextViewName.setText(mMyMarker.getLabel());
-        mUiTextViewDescription.setText("Opened: 8:00 - 23:00");
         mUiImageIcon.setImageResource(mMyMarker.getIconBlackWhite());
 
         FloatingActionButton floatingActionButton =
@@ -202,48 +199,6 @@ public class ToiletActivity extends AppCompatActivity {
 
     }
 
-    private void setupMap(Bundle savedInstanceState, Context context) {
-        MapsInitializer.initialize(this);
-        //mapView = (MapView) findViewById(R.id.toilet_map);
-
-        mapView.setClickable(false);
-
-        mapView.onCreate(savedInstanceState);
-        // Gets to GoogleMap from the MapView and does initialization stuff
-        if (mapView != null) {
-
-            mMap = mapView.getMap();
-
-
-            mMap.getUiSettings().setMyLocationButtonEnabled(true);
-
-
-            //mMap.setMyLocationEnabled(true);
-
-            MarkerOptions markerOption = new MarkerOptions().position(new LatLng(this.mMyMarker.getLatitude(),
-                    mMyMarker.getLongitude()));
-
-            final Marker marker = mMap.addMarker(markerOption);
-
-
-//Disable Map Toolbar:
-            mMap.getUiSettings().setMapToolbarEnabled(false);
-
-            mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
-
-                public boolean onMarkerClick(Marker marker) {
-//                    mMap.onMapClick(marker.getPosition());
-                    return true;
-                }
-            });
-
-
-        }
-
-        moveMapCameraTo(mMyMarker);
-
-
-    }
 
     private void moveMapCameraTo(MyMarker markerMoveTo) {
         // Move camera
@@ -261,7 +216,6 @@ public class ToiletActivity extends AppCompatActivity {
     private void findViews() {
         //        mUiToolbar = (Toolbar) findViewById(R.id.toilet_toolbar);
         mUiTextViewName = (TextView) findViewById(R.id.toilet_name);
-        mUiTextViewDescription = (TextView) findViewById(R.id.toilet_description);
         mUiImageIcon = (ImageView) findViewById(R.id.toilet_imageView_icon);
     }
 

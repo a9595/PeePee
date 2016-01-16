@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import tieorange.edu.googlemapstest.R;
 import tieorange.edu.googlemapstest.activities.MainActivity;
@@ -29,12 +30,11 @@ import tieorange.edu.googlemapstest.pojo.MyMarker;
 
 public class ListViewFragment extends Fragment {
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
+    private MyListViewAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private ArrayList<MyMarker> dummyMarkersFromDatabase;
     private View view;
     private MainActivity mainActivity;
-    private String tag = "MY_TAG";
 
     public static ListViewFragment newInstance() {
         ListViewFragment fragment = new ListViewFragment();
@@ -46,26 +46,8 @@ public class ListViewFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_listview, container, false);
         mainActivity = (MainActivity) getActivity(); // to get GoogleMap object and share it
 
-        view.setFocusableInTouchMode(true);
-        view.requestFocus();
-        view.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                Log.i(tag, "keyCode: " + keyCode);
-                if( keyCode == KeyEvent.KEYCODE_BACK ) {
-                    Log.i(tag, "onKey Back listener is working!!!");
-                    getFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-        });
-
-        // TODO: Get data from CSV file
         dummyMarkersFromDatabase = mainActivity.markersFromDatabase;
         setupRecycleListView(view);
-
 
         return view;
     }
@@ -85,6 +67,7 @@ public class ListViewFragment extends Fragment {
         final LatLng currentUserLocation = MapFragment.getCurrentUserLocation(getActivity());
 
         mAdapter = new MyListViewAdapter(view.getContext(), dummyMarkersFromDatabase, currentUserLocation);
+        mAdapter.setDataset(dummyMarkersFromDatabase);
 
         mRecyclerView.setAdapter(mAdapter);
 
@@ -110,6 +93,10 @@ public class ListViewFragment extends Fragment {
         });
     }
 
+    public void notifyDatasetChangedRecyclerView(){
+        mAdapter.notifyDataSetChanged();
+    }
+
 
 
     @Override
@@ -128,4 +115,7 @@ public class ListViewFragment extends Fragment {
     }
 
 
+    public void setFilter(List<Integer> selected_filter_options) {
+
+    }
 }

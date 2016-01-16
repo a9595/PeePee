@@ -48,7 +48,7 @@ public class MarkerInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
 
         mUiMarkerTitle = (TextView) infoWindowView.findViewById(R.id.info_layout_marker_title);
 
-        mUiMarkerDescription = (TextView) infoWindowView.findViewById(R.id.marker_description);
+//        mUiMarkerDescription = (TextView) infoWindowView.findViewById(R.id.marker_description);
 
 
         if (myMarker != null) {

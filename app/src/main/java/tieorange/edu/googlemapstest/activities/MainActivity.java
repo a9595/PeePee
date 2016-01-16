@@ -34,7 +34,7 @@ import tieorange.edu.googlemapstest.pojo.MyMarker;
 
 public class MainActivity extends AppCompatActivity implements MaterialTabListener {
 
-    MapFragment mapFragment;
+    MapFragment mFragmentMap;
 
     private Toolbar mUiToolbar;
 
@@ -43,14 +43,14 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
     private MyPagerAdapter mMyPagerAdapter;
     private static final int TAB_MAP = 0;
     private static final int TAB_LISTVIEW = 1;
-    private MapFragment fragment_map;
-    private ListViewFragment fragment_list_view;
+    private ListViewFragment mFragmentListView;
 
     private GoogleMap mMap;
     private TextView mUiToolbarTitle;
-    public Menu mMenu;
     private MenuItem mMenuItemMapViewChange;
     private MaterialDialog materialDialogFilterMap;
+
+    public Menu mMenu;
     public ArrayList<MyMarker> markersFromDatabase;
 
 
@@ -69,7 +69,9 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mapFragment = MapFragment.newInstance("", "");
+        mFragmentMap = MapFragment.newInstance("", "");
+        mFragmentListView = ListViewFragment.newInstance();
+
         setupToolbar();
         setupTab();
         setupDatabase();
@@ -89,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
         mUiTabHost = (MaterialTabHost) findViewById(R.id.materialTabHost);
 
         mViewPager = (ViewPager) findViewById(R.id.viewPager);
-        
+
 
         mMyPagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mMyPagerAdapter);
@@ -234,7 +236,11 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
                         // TODO: 
                         List<Integer> selected_Filter_options = Arrays.asList(which);
                         filterMarkers(selected_Filter_options);
-                        mapFragment.markersFactory.plotMarkersWithOtherIcons();
+                        mFragmentMap.markersFactory.plotMarkersWithOtherIcons();
+
+                        // listview Fragment changes
+                        mFragmentListView.setFilter(selected_Filter_options);
+                        mFragmentListView.notifyDatasetChangedRecyclerView();
                         return true;
                     }
                 })
@@ -248,12 +254,16 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
 
     public void filterMarkers(List<Integer> listFilterSelected) {
         markersFromDatabase.clear();
-        if (listFilterSelected.contains(MyMarker.MARKER_TYPE_HOTEL))
+        if (listFilterSelected.contains(MyMarker.MARKER_TYPE_HOTEL)) {
             MyMarker.getHotelsMarkers(this);
-        if (listFilterSelected.contains(MyMarker.MARKER_TYPE_METRO))
+        }
+        if (listFilterSelected.contains(MyMarker.MARKER_TYPE_METRO)) {
             MyMarker.getMetroStationsMarkers(this);
-        if (listFilterSelected.contains(MyMarker.MARKER_TYPE_SWIMMING_POOL))
+        }
+        if (listFilterSelected.contains(MyMarker.MARKER_TYPE_SWIMMING_POOL)) {
             MyMarker.getSwimmingPoolsMarkers(this);
+        }
+        markersFromDatabase.addAll(MyMarker.getMarkersList());
 //
 //        for (MyMarker marker : markersFromDatabase) {
 //
@@ -272,15 +282,12 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
         @Override
         public Fragment getItem(int i) {
             Fragment fragment = null;
-            fragment_map = null;
             switch (i) {
                 case TAB_MAP:
-                    fragment = mapFragment;
-                    fragment_map = MapFragment.newInstance("", "");
+                    fragment = mFragmentMap;
                     break;
                 case TAB_LISTVIEW:
-                    fragment = ListViewFragment.newInstance();
-                    fragment_list_view = ListViewFragment.newInstance();
+                    fragment = mFragmentListView;
                     break;
             }
             return fragment;

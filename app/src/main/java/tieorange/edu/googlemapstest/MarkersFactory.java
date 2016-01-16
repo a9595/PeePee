@@ -96,8 +96,8 @@ public class MarkersFactory {
                 MarkerOptions markerOption = new MarkerOptions().position(new LatLng(myMarker.getLatitude(), myMarker.getLongitude()));
 
                 //get Drawable from vector
-//                final BitmapDescriptor markerIcon = getBitmapDescriptorByMarkerType(myMarker);
-                final BitmapDescriptor markerIcon = BitmapDescriptorFactory.fromResource(R.mipmap.ic_marker_other_working_png);
+                final BitmapDescriptor markerIcon = getBitmapDescriptorByMarkerType(myMarker);
+//                final BitmapDescriptor markerIcon = BitmapDescriptorFactory.fromResource(R.mipmap.ic_marker_other_working_png);
 
                 markerOption.icon(markerIcon);
 

@@ -64,7 +64,15 @@ public class MapFragment extends Fragment {
             mMap.getUiSettings().setMyLocationButtonEnabled(true);
             mMap.setMyLocationEnabled(true);
 
-            setCurrentUserPositionOnMap();
+            mMap.setOnMyLocationButtonClickListener(new GoogleMap.OnMyLocationButtonClickListener() {
+                @Override
+                public boolean onMyLocationButtonClick() {
+//                    setCurrentUserPositionOnMap();
+//                    mMap.getMyLocation();
+                    return false;
+                }
+            });
+//            setCurrentUserPositionOnMap();
         }
 
 //        // TODO: get markers from CSV

@@ -40,6 +40,11 @@ public class MyListViewAdapter extends RecyclerView.Adapter<MyListViewAdapter.Vi
         this.mContext = context;
     }
 
+    public void setDataset(ArrayList<MyMarker> datasetList){
+        mDataset = datasetList;
+        notifyDataSetChanged();
+    }
+
     public void add(int position, MyMarker item) {
         mDataset.add(position, item);
         notifyItemInserted(position);
@@ -83,10 +88,10 @@ public class MyListViewAdapter extends RecyclerView.Adapter<MyListViewAdapter.Vi
 
         if (distanceInMeters >= 1000) { // kilometers
             final float distanceInKilometers = distanceInMeters / 1000;
-            holder.mUiTextDescripton.setText(String.format("%.02f km from you", distanceInKilometers));
+            holder.mUiTextDescripton.setText(String.format("%.02f km od Ciebie", distanceInKilometers));
 
         } else { // meters
-            holder.mUiTextDescripton.setText(String.format("%d m from you", (int) distanceInMeters));
+            holder.mUiTextDescripton.setText(String.format("%d m od Ciebie", (int) distanceInMeters));
 
         }
 
