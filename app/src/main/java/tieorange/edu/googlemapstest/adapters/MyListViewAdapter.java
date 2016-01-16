@@ -36,14 +36,16 @@ import tieorange.edu.googlemapstest.pojo.MyMarker;
 public class MyListViewAdapter extends RecyclerView.Adapter<MyListViewAdapter.ViewHolder> {
     private final Context mContext;
     private ArrayList<MyMarker> mDataset;
+    private final LatLng currentUserLocation;
 
     public MyListViewAdapter(Context context) {
         this.mContext = context;
+        currentUserLocation = tieorange.edu.googlemapstest.fragments.MapFragment.getCurrentUserLocation(mContext);
     }
 
     public void setDataset(ArrayList<MyMarker> datasetList) {
         mDataset = datasetList;
-        SortByAlphabet();
+        SortByNearest();
         notifyDataSetChanged();
     }
 
@@ -83,7 +85,6 @@ public class MyListViewAdapter extends RecyclerView.Adapter<MyListViewAdapter.Vi
 
 
         //calculate distance to toilet:
-        final LatLng currentUserLocation = tieorange.edu.googlemapstest.fragments.MapFragment.getCurrentUserLocation(mContext);
 
         final float distanceInMeters = distFrom((float) currentUserLocation.latitude, (float) currentUserLocation.longitude,
                 myMarker.getLatitude().floatValue(), myMarker.getLongitude().floatValue());
@@ -107,6 +108,29 @@ public class MyListViewAdapter extends RecyclerView.Adapter<MyListViewAdapter.Vi
             @Override
             public int compare(MyMarker lhs, MyMarker rhs) {
                 return lhs.getLabel().compareToIgnoreCase(rhs.getLabel());
+            }
+
+        });
+    }
+
+    public void SortByNearest() {
+        Collections.sort(mDataset, new Comparator<MyMarker>() {
+            @Override
+            public int compare(MyMarker first, MyMarker second) {
+                final float distFromFirst = distFrom((float) currentUserLocation.latitude,
+                        (float) currentUserLocation.longitude,
+                        first.getLatitude().floatValue(),
+                        first.getLongitude().floatValue());
+
+                final float distFromSecond = distFrom((float) currentUserLocation.latitude,
+                        (float) currentUserLocation.longitude,
+                        second.getLatitude().floatValue(),
+                        second.getLongitude().floatValue());
+                if(distFromFirst > distFromSecond)
+                    return 1;
+                else if (distFromFirst < distFromSecond)
+                    return -1;
+                return 0;
             }
 
         });
