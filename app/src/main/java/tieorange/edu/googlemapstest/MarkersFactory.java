@@ -33,14 +33,14 @@ import tieorange.edu.googlemapstest.pojo.MyMarker;
  */
 public class MarkersFactory {
     private HashMap<Marker, MyMarker> mMarkersHashMap;
-    private ArrayList<MyMarker> mMyMarkersArray = new ArrayList<>();
+    private ArrayList<MyMarker> mMyMarkersArray;
     private final GoogleMap mMap;
     private final Activity mActivity;
 
     public MarkersFactory(Activity activity, GoogleMap map, ArrayList<MyMarker> dummyMarkersFromDatabase) {
         this.mActivity = activity;
         this.mMap = map;
-        mMyMarkersArray.addAll(dummyMarkersFromDatabase);
+        mMyMarkersArray = dummyMarkersFromDatabase;
 
         mMarkersHashMap = new HashMap<>();
     }
