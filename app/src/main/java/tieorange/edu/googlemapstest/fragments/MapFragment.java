@@ -64,6 +64,8 @@ public class MapFragment extends Fragment {
             mMap.getUiSettings().setMyLocationButtonEnabled(true);
             mMap.setMyLocationEnabled(true);
 
+            moveMapCameraTo(getCurrentUserLocation(getActivity()));
+
             mMap.setOnMyLocationButtonClickListener(new GoogleMap.OnMyLocationButtonClickListener() {
                 @Override
                 public boolean onMyLocationButtonClick() {

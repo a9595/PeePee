@@ -91,10 +91,10 @@ public class MyListViewAdapter extends RecyclerView.Adapter<MyListViewAdapter.Vi
 
         if (distanceInMeters >= 1000) { // kilometers
             final float distanceInKilometers = distanceInMeters / 1000;
-            holder.mUiTextDescripton.setText(String.format("%.02f km od Ciebie", distanceInKilometers));
+            holder.mUiTextDescripton.setText(String.format("%.02fkm od Ciebie", distanceInKilometers));
 
         } else { // meters
-            holder.mUiTextDescripton.setText(String.format("%d m od Ciebie", (int) distanceInMeters));
+            holder.mUiTextDescripton.setText(String.format("%dm od Ciebie", (int) distanceInMeters));
 
         }
 

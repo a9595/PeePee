@@ -103,7 +103,7 @@ public class MyMarker implements Serializable {
     }
 
     public int getIconBlackWhite() {
-        int icon_marker_result = R.drawable.ic_marker_icon;
+        int icon_marker_result = R.drawable.ic_marker_other_black_white;
 
         switch (getType()) {
             case MyMarker.MARKER_TYPE_RESTAURANT:
@@ -117,7 +117,7 @@ public class MyMarker implements Serializable {
                 break;
 
             case MyMarker.MARKER_TYPE_METRO:
-                icon_marker_result = R.drawable.ic_marker_toi_toi_black_white;
+                icon_marker_result = R.drawable.ic_marker_other_black_white;
                 break;
 
             case MyMarker.MARKER_TYPE_SWIMMING_POOL:
@@ -125,7 +125,7 @@ public class MyMarker implements Serializable {
                 break;
 
             case MyMarker.MARKER_TYPE_HOTEL:
-                icon_marker_result = R.drawable.ic_marker_restaurant_black_white;
+                icon_marker_result = R.drawable.ic_marker_other_black_white;
                 break;
             default:
                 break;
