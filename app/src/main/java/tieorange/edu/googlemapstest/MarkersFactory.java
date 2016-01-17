@@ -33,15 +33,15 @@ import tieorange.edu.googlemapstest.pojo.MyMarker;
  */
 public class MarkersFactory {
     private HashMap<Marker, MyMarker> mMarkersHashMap;
-    private ArrayList<MyMarker> mMyMarkersArray;
+    private ArrayList<MyMarker> mMyMarkersArray = new ArrayList<>();
     private final GoogleMap mMap;
     private final Activity mActivity;
 
     public MarkersFactory(Activity activity, GoogleMap map, ArrayList<MyMarker> dummyMarkersFromDatabase) {
         this.mActivity = activity;
         this.mMap = map;
+        mMyMarkersArray.addAll(dummyMarkersFromDatabase);
 
-        mMyMarkersArray = dummyMarkersFromDatabase;
         mMarkersHashMap = new HashMap<>();
     }
 
@@ -117,11 +117,16 @@ public class MarkersFactory {
             case MyMarker.MARKER_TYPE_RESTAURANT:
                 if (myMarker.isFree())
                     icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_restaurant_working, mActivity.getApplicationContext());
-                else
+                else if (!myMarker.isFree())
                     icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_restaurant_payed, mActivity.getApplicationContext());
+                if (!myMarker.isWorkingNow())
+                    icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_restaurant_not_working, mActivity.getApplicationContext());
                 break;
             case MyMarker.MARKER_TYPE_TOI_TOI:
-                icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_toi_toi_working, mActivity.getApplicationContext());
+                if (myMarker.isWorkingNow())
+                    icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_toi_toi_working, mActivity.getApplicationContext());
+                else
+                    icon_marker_result = getBitmapDescriptor(R.drawable.ic_marker_toi_toi_not_working, mActivity.getApplicationContext());
                 break;
             case MyMarker.MARKER_TYPE_OTHER:
                 if (myMarker.isFree())

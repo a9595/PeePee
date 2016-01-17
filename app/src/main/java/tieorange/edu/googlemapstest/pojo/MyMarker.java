@@ -2,7 +2,6 @@ package tieorange.edu.googlemapstest.pojo;
 
 import android.content.Context;
 
-import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.io.Serializable;
@@ -45,6 +44,7 @@ public class MyMarker implements Serializable {
         return markersList;
     }
 
+
     private static ArrayList<MyMarker> markersList;
 
 
@@ -71,6 +71,8 @@ public class MyMarker implements Serializable {
         getHotelsMarkers(context);
         getMetroStationsMarkers(context);
         getSwimmingPoolsMarkers(context);
+        getRestaurantsDummyMarkers();
+        getToiToiDummyMarkers();
         return markersList;
     }
 
@@ -83,6 +85,76 @@ public class MyMarker implements Serializable {
         }
     }
 
+    public static void getRestaurantsDummyMarkers() {
+        ArrayList<MyMarker> restaurantsList = new ArrayList<>();
+
+        restaurantsList.add(new MyMarker("Costa Coffee Plac Bankowy",
+                MyMarker.MARKER_TYPE_RESTAURANT, true, true,
+                52.244355,
+                21.002185));
+        restaurantsList.add(new MyMarker("KFC Gruba Kaśka",
+                MyMarker.MARKER_TYPE_RESTAURANT, false, true,
+                52.245097,
+                21.001927));
+        restaurantsList.add(new MyMarker("Charlotte",
+                MyMarker.MARKER_TYPE_RESTAURANT, true, true,
+                52.220075,
+                21.018939));
+        restaurantsList.add(new MyMarker("Plan.B",
+                MyMarker.MARKER_TYPE_RESTAURANT, true, true,
+                52.219964,
+                21.018574));
+        restaurantsList.add(new MyMarker("KFC Piękna",
+                MARKER_TYPE_RESTAURANT, false, true,
+                52.223429,
+                21.016281));
+        restaurantsList.add(new MyMarker("AiOli inspired by MINI",
+                MARKER_TYPE_RESTAURANT, true, true,
+                52.222357,
+                21.015263));
+        restaurantsList.add(new MyMarker("KFC",
+                MARKER_TYPE_RESTAURANT, false, true,
+                52.230725,
+                21.017522));
+        restaurantsList.add(new MyMarker("Cuda na Kiju",
+                MARKER_TYPE_RESTAURANT, true, false,
+                52.231428,
+                21.022354));
+        restaurantsList.add(new MyMarker("AiOli inspired by MINI",
+                MARKER_TYPE_RESTAURANT, true, false,
+                52.222357,
+                21.015263));
+
+        markersList.addAll(restaurantsList);
+//        return restaurantsList;
+    }
+
+    public static void getToiToiDummyMarkers() {
+        ArrayList<MyMarker> toiToiList = new ArrayList<>();
+
+        toiToiList.add(new MyMarker("Toi Toi Cud nad Wisłą",
+                MyMarker.MARKER_TYPE_TOI_TOI, true, false,
+                52.228299,
+                21.04285));
+        toiToiList.add(new MyMarker("Toi Toi nad Wisłą",
+                MyMarker.MARKER_TYPE_TOI_TOI, true, false,
+                52.236116,
+                21.0374));
+        toiToiList.add(new MyMarker("Toi Toi nad Wisłą",
+                MyMarker.MARKER_TYPE_TOI_TOI, true, false,
+                52.237225,
+                21.036056));
+        toiToiList.add(new MyMarker("Toi Toi nad Wisłą",
+                MyMarker.MARKER_TYPE_TOI_TOI, true, true,
+                52.239444,
+                21.033217));
+        toiToiList.add(new MyMarker("Toi Toi Swietokrzyska",
+                MyMarker.MARKER_TYPE_TOI_TOI, true, true,
+                52.234715,
+                21.007504));
+
+        markersList.addAll(toiToiList);
+    }
 
     public static void getMetroStationsMarkers(Context context) {
         // Metro

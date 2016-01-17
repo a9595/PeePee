@@ -90,10 +90,9 @@ public class ListViewFragment extends Fragment {
         });
     }
 
-    public void notifyDatasetChangedRecyclerView(){
+    public void notifyDatasetChangedRecyclerView() {
         mAdapter.notifyDataSetChanged();
     }
-
 
 
     @Override
@@ -114,5 +113,12 @@ public class ListViewFragment extends Fragment {
 
     public void setFilter(List<Integer> selected_filter_options) {
 
+    }
+
+    public void setNewDataSet(ArrayList<MyMarker> markersFromDatabase) {
+//        mAdapter.getDataSet().clear();
+//        mAdapter.notifyDataSetChanged();
+//        mAdapter.getDataSet().addAll(markersFromDatabase);
+        mAdapter.notifyDataSetChanged();
     }
 }

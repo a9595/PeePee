@@ -240,8 +240,9 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
                         mFragmentMap.markersFactory.plotMarkersWithOtherIcons();
 
                         // listview Fragment changes
-                        mFragmentListView.setFilter(selected_Filter_options);
-                        mFragmentListView.notifyDatasetChangedRecyclerView();
+//                        mFragmentListView.setFilter(selected_Filter_options);
+//                        mFragmentListView.notifyDatasetChangedRecyclerView();
+                        mFragmentListView.setNewDataSet(markersFromDatabase);
                         return true;
                     }
                 })
@@ -255,6 +256,7 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
 
     public void filterMarkers(List<Integer> listFilterSelected) {
         markersFromDatabase.clear();
+        MyMarker.getMarkersList().clear();
         if (listFilterSelected.contains(MyMarker.MARKER_TYPE_HOTEL)) {
             MyMarker.getHotelsMarkers(this);
         }
@@ -264,7 +266,14 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
         if (listFilterSelected.contains(MyMarker.MARKER_TYPE_SWIMMING_POOL)) {
             MyMarker.getSwimmingPoolsMarkers(this);
         }
-        markersFromDatabase.addAll(MyMarker.getMarkersList());
+        if (listFilterSelected.contains(MyMarker.MARKER_TYPE_TOI_TOI)) {
+            MyMarker.getToiToiDummyMarkers();
+        }
+        if (listFilterSelected.contains(MyMarker.MARKER_TYPE_RESTAURANT)) {
+            MyMarker.getRestaurantsDummyMarkers();
+        }
+//        markersFromDatabase.addAll(MyMarker.getMarkersList());
+        int i = 5;
 //
 //        for (MyMarker marker : markersFromDatabase) {
 //

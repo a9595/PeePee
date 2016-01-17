@@ -154,6 +154,10 @@ public class MyListViewAdapter extends RecyclerView.Adapter<MyListViewAdapter.Vi
         return mDataset == null ? 0 : mDataset.size();
     }
 
+    public ArrayList<MyMarker> getDataSet() {
+        return mDataset;
+    }
+
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
