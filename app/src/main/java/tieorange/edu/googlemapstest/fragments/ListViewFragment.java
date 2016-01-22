@@ -61,7 +61,8 @@ public class ListViewFragment extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // specify an adapter (see also next example)
-        final LatLng currentUserLocation = MapFragment.getCurrentUserLocation(getActivity());
+//        final LatLng currentUserLocation = MapFragment.getCurrentUserLocation(getActivity());
+        final LatLng currentUserLocation = MapFragment.getLocation(getActivity());
 
         mAdapter = new MyListViewAdapter(view.getContext());
         mAdapter.setDataset(dummyMarkersFromDatabase);

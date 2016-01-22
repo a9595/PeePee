@@ -40,7 +40,7 @@ public class MyListViewAdapter extends RecyclerView.Adapter<MyListViewAdapter.Vi
 
     public MyListViewAdapter(Context context) {
         this.mContext = context;
-        currentUserLocation = tieorange.edu.googlemapstest.fragments.MapFragment.getCurrentUserLocation(mContext);
+        currentUserLocation = tieorange.edu.googlemapstest.fragments.MapFragment.getLocation(mContext);
     }
 
     public void setDataset(ArrayList<MyMarker> datasetList) {
