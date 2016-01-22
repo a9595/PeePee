@@ -2,7 +2,7 @@
 
     <style name="SplashScreenTheme"
         parent="@style/AppTheme">
-        <item name="android:windowBackground">@mipmap/splash_screen_bigger</item>
+        <item name="android:windowBackground">@mipmap/basia_splash_screen_new</item>
     </style>
     <style name="Base.Theme.MyMaterial" parent="Theme.AppCompat.NoActionBar">
 

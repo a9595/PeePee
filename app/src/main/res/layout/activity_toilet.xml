@@ -24,7 +24,7 @@
                 android:id="@+id/toilet_image_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@mipmap/background"
+                android:background="@mipmap/basia_splash_screen_new"
                 android:scaleType="centerCrop"
                 app:layout_collapseMode="parallax" />
 
@@ -104,10 +104,11 @@
                 android:transitionName="@string/transition_name_list_view" />
 
             <TextView
-                android:id="@+id/toilet_name" android:layout_marginTop="10dp"
+                android:id="@+id/toilet_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Burger KingBurger KingBurger KingBurger sfsdfdsfsdfdsfdsfds"
+                android:layout_marginTop="10dp"
+                android:text="Burger KingBurger KingBurger\n KingBurger\n sfsdfdsfsdfdsfdsfds"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
         </LinearLayout>
